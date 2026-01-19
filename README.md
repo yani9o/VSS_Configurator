@@ -5,8 +5,10 @@ A simple web based configurator for [Vintage Story](https://www.vintagestory.at/
 1) [Download the latest VSS_Configurator.html](https://github.com/yani9o/VSS_Configurator/releases/latest/download/VSS_Configurator.html)-file and open it in any internet browser.
 2) Change the settings to your liking.
 3) Press "Export Configuration" and download serverconfig.json.
-4) Put the downloaded file into [ServerPath]/data/ .
+4) Put the downloaded file in your server's data folder. *
 5) Start the Server.
+
+\* On Windows that's in C:\Users\[Username]\AppData\Roaming\VintagestoryData\
 
 ## Used Languages
 - HTML
@@ -26,4 +28,5 @@ A simple web based configurator for [Vintage Story](https://www.vintagestory.at/
 ## Special Thanks / Credits
 - [Anego Studios](https://anegostudios.com/) for making Vintage Story.
 - T.Read on official Vintage Story Discord for providing useful links.
+- NoPantsMcDance on official Vintage Story Discord for giving feedback to improve the code.
 - Vintage Story Server Software (base serverconfig.json).
