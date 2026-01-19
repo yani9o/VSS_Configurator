@@ -1423,10 +1423,12 @@
 	    const normalized = cleaned.replace(/[\\/]+$/, '');
 	    const finalPath = normalized + separator + name + '.vcdbs';
 		serverConfig.WorldConfig = insertAfterKey(serverConfig.WorldConfig, 'Seed', 'SaveFileLocation', finalPath);
+		delete serverConfig.SaveFileLocation;
 	  } else {
 		if (serverConfig.WorldConfig) {
 		  delete serverConfig.WorldConfig.SaveFileLocation;
 		}
+		delete serverConfig.SaveFileLocation;
 	  }
 
       serverConfig.WorldConfig.WorldName = name;
@@ -1455,6 +1457,8 @@
       } else {
           exportData = JSON.parse(JSON.stringify(serverConfig));
       }
+	  
+	  serverConfig.SaveFileLocation = savepath;
 
       const blob = new Blob(
           [JSON.stringify(exportData, null, 2)],
