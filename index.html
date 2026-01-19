@@ -1118,7 +1118,7 @@
       serverConfig.WorldConfig.WorldConfiguration =
           JSON.parse(JSON.stringify(defaultWorldConfig));
 
-      serverConfig.WorldConfig.PlayStyle = "surviveandbuild";
+      serverConfig.WorldConfig.PlayStyle = "default";
 
       baseConfig = JSON.parse(JSON.stringify(defaultWorldConfig));
 
@@ -1373,7 +1373,11 @@
       const name = serverConfig.ServerName || 'Vintage Story Server';
       serverConfig.WorldConfig.WorldName = name;
       serverConfig.ServerIdentifier = crypto.randomUUID();
-
+    
+      if (serverConfig.WorldConfig.PlayStyle === "default") {
+          serverConfig.WorldConfig.PlayStyle = "surviveandbuild";
+      }
+    
       let exportData;
 
       if (exportWorldOnly) {
