@@ -1419,7 +1419,8 @@
       const savepath = serverConfig.SaveFileLocation;
 	  if (typeof savepath === 'string' && savepath.trim() !== '') {
 	    const separator = savepath.includes('\\') ? '\\' : '/';
-	    const normalized = savepath.replace(/[\\/]+$/, '');
+		const cleaned = savepath.replace(/\\\\/g, '\\');
+	    const normalized = cleaned.replace(/[\\/]+$/, '');
 	    const finalPath = normalized + separator + name + '.vcdbs';
 		serverConfig.WorldConfig = insertAfterKey(serverConfig.WorldConfig, 'Seed', 'SaveFileLocation', finalPath);
 	  } else {
