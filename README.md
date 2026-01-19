@@ -2,7 +2,7 @@
 A simple web based configurator for [Vintage Story](https://www.vintagestory.at/) Servers.
 
 # Usage
-1) [Download the latest VSS_Configurator.html](https://github.com/yani9o/VSS_Configurator/releases/latest/download/VSS_Configurator.html)-file and open it in any internet browser.
+1) [Download the latest VSS_Configurator.html](https://github.com/yani9o/VSS_Configurator/releases/latest/download/VSS_Configurator.html)-file and open it in any internet browser - or go [here](https://vss-configurator.pages.dev/).
 2) Change the settings to your liking.
 3) Press "Export Configuration" and download serverconfig.json.
 4) Put the downloaded file in your server's data folder. *
