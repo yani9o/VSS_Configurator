@@ -7,12 +7,12 @@ const SERVERCONFIG_DATA = {
   "ServerName": "Vintage Story Server",
   "ServerUrl": null,
   "ServerDescription": "This is my Vintage Story Server",
-  "WelcomeMessage": "Welcome, {0}, may you survive well and prosper!",
+  "WelcomeMessage": "Welcome {0}, may you survive well and prosper",
   "Ip": null,
   "Port": 42420,
   "Upnp": false,
   "CompressPackets": true,
-  "AdvertiseServer": true,
+  "AdvertiseServer": false,
   "MaxClients": 16,
   "MaxClientsInQueue": 0,
   "PassTimeWhenEmpty": false,
@@ -330,87 +330,15 @@ const SERVERCONFIG_DATA = {
     }
   ],
   "DefaultRoleCode": "suplayer",
-  "ModPaths": [
-    "Mods",
-    "../data\\Mods"
-  ],
   "AntiAbuse": 0,
   "WorldConfig": {
     "Seed": null,
-    "SaveFileLocation": "../data\\Saves\\Vintage Story Server.vcdbs",
-    "WorldName": "Vintage Story Server",
+    "WorldName": null,
     "AllowCreativeMode": false,
     "PlayStyle": "surviveandbuild",
     "PlayStyleLangCode": "surviveandbuild-bands",
     "WorldType": "standard",
-    "WorldConfiguration": {
-        "gameMode": "survival",
-        "playerlives": "-1",
-        "startingClimate": "temperate",
-        "spawnRadius": "50",
-        "graceTimer": "0",
-        "deathPunishment": "keep",
-        "droppedItemsTimer": "600",
-        "seasons": "enabled",
-        "daysPerMonth": "9",
-        "harshWinters": "true",
-        "blockGravity": "sandgravel",
-        "caveIns": "off",
-        "allowFallingBlocks": true,
-        "allowFireSpread": true,
-        "lightningFires": false,
-        "allowUndergroundFarming": false,
-        "noLiquidSourceTransport": false,
-        "playerHealthPoints": "15",
-        "playerHealthRegenSpeed": "1",
-        "playerHungerSpeed": "1",
-        "lungCapacity": "40000",
-        "bodyTemperatureResistance": "0",
-        "playerMoveSpeed": "1.5",
-        "creatureHostility": "aggressive",
-        "creatureStrength": "1",
-        "creatureSwimSpeed": "2",
-        "foodSpoilSpeed": "1",
-        "saplingGrowthRate": "1",
-        "toolDurability": "1",
-        "toolMiningSpeed": "1",
-        "propickNodeSearchRadius": "6",
-        "microblockChiseling": "stonewood",
-        "allowCoordinateHud": true,
-        "allowMap": true,
-        "colorAccurateWorldmap": false,
-        "loreContent": true,
-        "clutterObtainable": "ifrepaired",
-        "temporalStability": true,
-        "temporalStorms": "sometimes",
-        "tempstormDurationMul": "1",
-        "temporalRifts": "visible",
-        "temporalGearRespawnUses": "20",
-        "temporalStormSleeping": "0",
-        "worldClimate": "realistic",
-        "landcover": "0.975",
-        "oceanscale": "5",
-        "upheavelCommonness": "0.3",
-        "geologicActivity": "0.05",
-        "landformScale": "1.0",
-        "worldWidth": "1024000",
-        "worldLength": "1024000",
-        "worldEdge": "traversable",
-        "polarEquatorDistance": "100000",
-        "storyStructuresDistScaling": "1",
-        "globalTemperature": "1",
-        "globalPrecipitation": "1",
-        "globalForestation": "0",
-        "globalDepositSpawnRate": "1",
-        "surfaceCopperDeposits": "0.12",
-        "surfaceTinDeposits": "0.007",
-        "snowAccum": "true",
-        "allowLandClaiming": true,
-        "classExclusiveRecipes": true,
-        "auctionHouse": true,
-        "playstyle": "surviveandbuild",
-        "worldHeight": 256
-      },
+    "WorldConfiguration": null,
     "MapSizeY": null,
     "CreatedByPlayerName": null,
     "DisabledMods": null,
@@ -689,6 +617,9 @@ const OPTIONS_DATA = {
   // Separate Static Info so the other arrays can easier be updated
 const OPTIONS_INFO = {
   // Playstyle Preset
+  default: {
+    name: "Default"
+  },
   surviveandbuild: {
     name: "Standard"
   },
@@ -1160,11 +1091,33 @@ async function loadData() {
     const cfg = SERVERCONFIG_DATA;
     serverConfig = cfg;
 
-    baseConfig = JSON.parse(JSON.stringify(serverConfig.WorldConfig.WorldConfiguration));
-
     const meta = OPTIONS_DATA;
-    playstyles = meta.playstyles;
-    meta.worldConfigAttributes.forEach(a => { attributesByCode[a.code] = a; });
+
+    const defaultWorldConfig = buildDefaultWorldConfig();
+
+    playstyles = [
+        {
+            code: "default",
+            playListCode: "server",
+            langCode: "preset-default",
+            mods: [],
+            listOrder: 0,
+            worldType: "standard",
+            worldConfig: defaultWorldConfig
+        },
+        ...meta.playstyles
+    ];
+
+    serverConfig.WorldConfig.WorldConfiguration =
+        JSON.parse(JSON.stringify(defaultWorldConfig));
+
+    serverConfig.WorldConfig.PlayStyle = "default";
+
+    baseConfig = JSON.parse(JSON.stringify(defaultWorldConfig));
+
+    meta.worldConfigAttributes.forEach(a => {
+        attributesByCode[a.code] = a;
+    });
 
     buildPlaystyleSelect();
     buildUI();
@@ -1188,10 +1141,8 @@ function applyPlaystyle(code) {
     const ps = playstyles.find(p => p.code === code);
     if (!ps) return;
 
-    // Reset to base configuration first
     serverConfig.WorldConfig.WorldConfiguration = JSON.parse(JSON.stringify(baseConfig));
 
-    // Apply preset values
     Object.entries(ps.worldConfig).forEach(([k, v]) => {
         serverConfig.WorldConfig.WorldConfiguration[k] = v;
     });
@@ -1413,7 +1364,6 @@ function exportConfig() {
 
     const name = serverConfig.ServerName || 'Vintage Story Server';
     serverConfig.WorldConfig.WorldName = name;
-    serverConfig.WorldConfig.SaveFileLocation = `../data\\Saves\\${name}.vcdbs`;
     serverConfig.ServerIdentifier = crypto.randomUUID();
 
     const blob = new Blob(
@@ -1427,7 +1377,7 @@ function exportConfig() {
     a.click();
 
     // Visual feedback
-    btn.textContent = 'Put the downloaded file into [ServerPath]/data/.';
+    btn.textContent = "Put the downloaded file in your server's data folder!";
     btn.disabled = true;
     btn.classList.add('export-glow');
 
@@ -1436,6 +1386,21 @@ function exportConfig() {
         btn.disabled = false;
         btn.classList.remove('export-glow');
     }, 10000);
+}
+
+function buildDefaultWorldConfig() {
+    const cfg = {};
+    OPTIONS_DATA.worldConfigAttributes.forEach(attr => {
+        if (attr.default !== undefined) {
+            // bools must be real booleans
+            if (attr.dataType === 'bool') {
+                cfg[attr.code] = attr.default === 'true';
+            } else {
+                cfg[attr.code] = attr.default;
+            }
+        }
+    });
+    return cfg;
 }
 
 loadData();
