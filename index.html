@@ -21,9 +21,9 @@
     "ClientConnectionTimeout": 150,
     "EntityDebugMode": false,
     "Password": null,
-    "MapSizeX": 1024000,
-    "MapSizeY": 256,
-    "MapSizeZ": 1024000,
+    "MapSizeX": null,
+    "MapSizeY": null,
+    "MapSizeZ": null,
     "ServerLanguage": "en",
     "MaxChunkRadius": 12,
     "TickTime": 33.333332,
@@ -674,6 +674,10 @@
       name: "Port",
       desc: "Port what server should listen. Portforwarding needed."
     },
+    SaveFileLocation: {
+      name: "Savefile Location",
+      desc: "[OPTIONAL] Set a custom Savefile Location. \nFilename will be set from Servername. \nKnow what you're doing..."
+    },
 
     // Other Options
     other: {
@@ -1180,7 +1184,8 @@
           ['Password','text'],
           ['AdvertiseServer','bool'],
           ['PassTimeWhenEmpty','bool'],
-          ['Port','number']
+          ['Port','number'],
+          ['SaveFileLocation','text']
       ];
 
       fields.forEach(([key, type]) => {
@@ -1188,7 +1193,7 @@
           const tdLabel = document.createElement('td');
           const info = OPTIONS_INFO[key];
           const name = info?.name ?? key;
-          const desc = info?.desc ?? null;
+          const desc = info?.desc ?? '';
           tdLabel.textContent = name;
           tdLabel.title = desc;
           const tdInput = document.createElement('td');
@@ -1301,7 +1306,7 @@
               const meta = attributesByCode[key];
               const info = OPTIONS_INFO[key];
               const name = info?.name ?? key;
-              const desc = info?.desc ?? null;
+              const desc = info?.desc ?? '';
               const tr = document.createElement('tr');
               const tdLabel = document.createElement('td');
               tdLabel.textContent = name;
@@ -1364,6 +1369,46 @@
 
       return input;
   }
+  
+  function toNumberIfNumeric(value) {
+    if (typeof value === 'number') return value;
+  
+    if (typeof value === 'string') {
+      const trimmed = value.trim();
+      if (trimmed === '') return value;
+  
+      const n = Number(trimmed);
+      if (!Number.isNaN(n)) return n;
+    }
+  
+    return value;
+  }
+  
+  function normalizeNumbers(obj) {
+    for (const key in obj) {
+      const val = obj[key];
+  
+      if (val && typeof val === 'object' && !Array.isArray(val)) {
+        normalizeNumbers(val);
+      } else {
+        obj[key] = toNumberIfNumeric(val);
+      }
+    }
+  }
+  
+  function insertAfterKey(obj, afterKey, newKey, newValue) {
+    const result = {};
+  
+    for (const key of Object.keys(obj)) {
+      result[key] = obj[key];
+  
+      if (key === afterKey) {
+        result[newKey] = newValue;
+      }
+    }
+  
+    return result;
+  }
 
   function exportConfig() {
       const btn = document.getElementById('exportBtn');
@@ -1371,13 +1416,37 @@
       const exportWorldOnly = document.getElementById('exportWorldOnly').checked;
 
       const name = serverConfig.ServerName || 'Vintage Story Server';
+      const savepath = serverConfig.SaveFileLocation;
+	  if (typeof savepath === 'string' && savepath.trim() !== '') {
+	    const separator = savepath.includes('\\') ? '\\' : '/';
+	    const normalized = savepath.replace(/[\\/]+$/, '');
+	    const finalPath = normalized + separator + name + '.vcdbs';
+		serverConfig.WorldConfig = insertAfterKey(serverConfig.WorldConfig, 'Seed', 'SaveFileLocation', finalPath);
+	  } else {
+		if (serverConfig.WorldConfig) {
+		  delete serverConfig.WorldConfig.SaveFileLocation;
+		}
+	  }
+
       serverConfig.WorldConfig.WorldName = name;
       serverConfig.ServerIdentifier = crypto.randomUUID();
-    
+	  
+	  const MapSizeX = serverConfig.WorldConfig.WorldConfiguration.worldWidth ?? 1024000;
+	  const MapSizeY = serverConfig.WorldConfig.WorldConfiguration.worldHeight ?? 256;
+	  const MapSizeZ = serverConfig.WorldConfig.WorldConfiguration.worldLength ?? 1024000;
+	  
+	  serverConfig.MapSizeX = MapSizeX;
+	  serverConfig.MapSizeY = MapSizeY;
+	  serverConfig.WorldConfig.WorldConfiguration.worldHeight = MapSizeY;
+	  serverConfig.WorldConfig.MapSizeY = MapSizeY;
+	  serverConfig.MapSizeZ = MapSizeZ;
+
       if (serverConfig.WorldConfig.PlayStyle === "default") {
           serverConfig.WorldConfig.PlayStyle = "surviveandbuild";
       }
-    
+
+	  normalizeNumbers(serverConfig);
+
       let exportData;
 
       if (exportWorldOnly) {
@@ -1417,10 +1486,13 @@
           if (attr.default !== undefined) {
               // bools must be real booleans
               if (attr.dataType === 'bool') {
-                  cfg[attr.code] = attr.default === 'true';
-              } else {
-                  cfg[attr.code] = attr.default;
-              }
+			    cfg[attr.code] = attr.default === 'true';
+			  } else if (attr.dataType === 'int' || attr.dataType === 'float') {
+			    const n = Number(attr.default);
+			    cfg[attr.code] = Number.isNaN(n) ? attr.default : n;
+			  } else {
+			    cfg[attr.code] = attr.default;
+			  }
           }
       });
       return cfg;
