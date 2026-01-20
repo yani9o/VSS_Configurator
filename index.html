@@ -1396,6 +1396,24 @@
 					tr.appendChild(tdLabel);
 					tr.appendChild(tdInput);
 					table.appendChild(tr);
+					
+					// Visual separator after worldHeight in worldgen
+					if (cat === "worldgen" && key === "worldHeight") {
+						const sepTr = document.createElement('tr');
+						const sepTd = document.createElement('td');
+
+						sepTd.colSpan = 2;
+						sepTd.style.padding = "6px 0";
+
+						const hr = document.createElement('hr');
+						hr.style.border = "0";
+						hr.style.borderTop = "1px solid #333";
+
+						sepTd.appendChild(hr);
+						sepTr.appendChild(sepTd);
+						table.appendChild(sepTr);
+					}
+					
 				});
 
 				fs.appendChild(table);
