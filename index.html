@@ -332,17 +332,17 @@
     "DefaultRoleCode": "suplayer",
     "AntiAbuse": 0,
     "WorldConfig": {
-	"Seed": null,
-	"WorldName": null,
-	"AllowCreativeMode": false,
-	"PlayStyle": "surviveandbuild",
-	"PlayStyleLangCode": "surviveandbuild-bands",
-	"WorldType": "standard",
-	"WorldConfiguration": null,
-	"MapSizeY": null,
-	"CreatedByPlayerName": null,
-	"DisabledMods": null,
-	"RepairMode": false
+		"Seed": null,
+		"WorldName": null,
+		"AllowCreativeMode": false,
+		"PlayStyle": "surviveandbuild",
+		"PlayStyleLangCode": "surviveandbuild-bands",
+		"WorldType": "standard",
+		"WorldConfiguration": null,
+		"MapSizeY": null,
+		"CreatedByPlayerName": null,
+		"DisabledMods": null,
+		"RepairMode": false
     },
     "NextPlayerGroupUid": 10,
     "GroupChatHistorySize": 20,
@@ -614,9 +614,34 @@
 		]
     };
 
+    const OPTIONS_CREATIVE = {
+		"playstyles": [
+            {
+                "code": "creativebuilding",
+                "playListCode": "creative",
+                "langCode": "creativebuilding",
+                "listOrder": 10,
+                "mods": ["game", "creative"],
+                "worldType": "superflat",
+                "worldConfig": {
+                    "worldClimate": "superflat",
+                    "gameMode": "creative",
+                    "hoursPerDay": "2400",
+                    "cloudypos": "0.5",
+                    "temporalStability": "false",
+                    "temporalStorms": "off",
+                    "snowAccum": "false",
+                    "colorAccurateWorldmap": "true",
+                    "temporalRifts": "off",
+                    "loreContent": "false"
+                }
+            }
+        ]
+    };
+
     // Separate Static Info so the other arrays can easier be updated
 	const OPTIONS_INFO = {
-	
+
 		// Playstyle Preset
 		default: {
 			name: "Default"
@@ -632,6 +657,9 @@
 		},
 		homosapiens: {
 			name: "Homo Sapiens"
+		},
+		creativebuilding: {
+			name: "Creative"
 		},
 
 		// Server Options
@@ -875,7 +903,7 @@
 			name: "World Height",
 			desc: "Height of the world during generation. (slow chunk loading above 384 blocks)"
 		},
-		
+
 		// World Generation Options
 		worldgen: {
 			name: "World Generation"
@@ -1057,14 +1085,14 @@
 		  animation: glowUp 0.4s ease-out forwards;
 		  background-color: #2f3b55;
 	}
-		
+
 	.tabs {
 		display: flex;
 		gap: 6px;
 		margin: 20px 0 10px 0;
 		border-bottom: 1px solid #333;
 	}
-	
+
 	.tab {
 		padding: 8px 14px;
 		cursor: pointer;
@@ -1073,21 +1101,21 @@
 		border: 1px solid #333;
 		border-bottom: none;
 	}
-	
+
 	.tab.active {
 		background: #2a2a2a;
 		color: #fff;
 		border-color: #555;
 	}
-	
+
 	.tab-content {
 		display: none;
 	}
-	
+
 	.tab-content.active {
 		display: block;
 	}
-	
+
 
 	</style>
 	</head>
@@ -1122,10 +1150,40 @@
 	let playstyles = [];
 
 	let baseConfig; // deep copy
-	
+
 	let lastActiveTab = null;
-	
-	
+
+	function addCreativeMode() {
+
+		const existingCodes = new Set(
+			OPTIONS_DATA.playstyles.map(ps => ps.code)
+		);
+
+		OPTIONS_CREATIVE.playstyles.forEach(ps => {
+			if (!existingCodes.has(ps.code)) {
+			OPTIONS_DATA.playstyles.push(ps);
+			}
+		});
+
+		const attr = OPTIONS_DATA.worldConfigAttributes.find(
+			a => a.code === "worldClimate"
+		);
+
+		if (!attr) return;
+
+		// Add value if missing
+		if (!attr.values.includes("superflat")) {
+			attr.values.push("superflat");
+		}
+
+		// Add display name if missing
+		if (!attr.names.includes("Superflat")) {
+			attr.names.push("Superflat");
+		}
+	}
+
+	// Call once after OPTIONS_DATA is defined
+	addCreativeMode();
 
 	function addOtherOptions(attrs) {
 		const before = [];
@@ -1178,9 +1236,9 @@
 
 		return [...before,...worldgen,...after];
 	}
-	
+
 	OPTIONS_DATA.worldConfigAttributes = addOtherOptions(OPTIONS_DATA.worldConfigAttributes);
-	
+
 	async function loadData() {
 		const cfg = SERVERCONFIG_DATA;
 		serverConfig = cfg;
@@ -1214,7 +1272,7 @@
 		});
 
 		buildPlaystyleSelect();
-		buildUI();
+		applyPlaystyle('surviveandbuild');
 	}
 
 	function buildPlaystyleSelect() {
@@ -1301,7 +1359,7 @@
 		fs.appendChild(table);
 		root.appendChild(fs);
 	}
-  
+
 	function createTab(code, label) {
 		const tab = document.createElement('div');
 		tab.className = 'tab';
@@ -1389,7 +1447,7 @@
 					tr.appendChild(tdLabel);
 					tr.appendChild(tdInput);
 					table.appendChild(tr);
-					
+
 					// Visual separator after worldHeight in worldgen
 					if (cat === "worldgen" && key === "worldHeight") {
 						const sepTr = document.createElement('tr');
@@ -1406,7 +1464,7 @@
 						sepTr.appendChild(sepTd);
 						table.appendChild(sepTr);
 					}
-					
+
 				});
 
 				fs.appendChild(table);
@@ -1422,7 +1480,7 @@
 		activateTab(tabToActivate);
 
 	}
-	
+
 	function makeInput(key, value) {
 		const meta = attributesByCode[key];
 		let input;
@@ -1437,10 +1495,12 @@
 		if (meta && meta.dataType === 'dropdown') {
 			input = document.createElement('select');
 			meta.values.forEach((v, i) => {
-				const opt = document.createElement('option');
-				opt.value = v;
-				opt.textContent = meta.names?.[i] ?? v;
-				input.appendChild(opt);
+				if ( v !== "superflat" || serverConfig.WorldConfig.PlayStyle === "creativebuilding" ) {
+					const opt = document.createElement('option');
+					opt.value = v;
+					opt.textContent = meta.names?.[i] ?? v;
+					input.appendChild(opt);
+				}
 			});
 			input.value = value;
 			input.onchange = () => serverConfig.WorldConfig.WorldConfiguration[key] = input.value;
@@ -1466,7 +1526,7 @@
 			input.onchange = () =>
 				serverConfig.WorldConfig.WorldConfiguration[key] = input.value;
 		}
-		
+
 		if (meta.onlyDuringWorldCreate) {
 			const wrapper = document.createElement('span');
 			wrapper.appendChild(input);
@@ -1492,14 +1552,20 @@
 		return value;
 	}
 
-	function normalizeNumbers(obj) {
+	function normalizeValues(obj) {
 		for (const key in obj) {
 			const val = obj[key];
 
 			if (val && typeof val === 'object' && !Array.isArray(val)) {
-				normalizeNumbers(val);
+				normalizeValues(val);
 			} else {
-				obj[key] = toNumberIfNumeric(val);
+				if (val === "true") {
+					obj[key] = true;
+				} else if (val === "false") {
+					obj[key] = false;
+				} else {
+					obj[key] = toNumberIfNumeric(val);
+				}
 			}
 		}
 	}
@@ -1541,7 +1607,7 @@
 
 			serverConfig.WorldConfig.WorldName = name;
 			serverConfig.ServerIdentifier = crypto.randomUUID();
-			
+
 			const Seed = serverConfig.WorldConfig.WorldConfiguration.Seed ?? null;
 			if (Seed) {
 				serverConfig.WorldConfig.Seed = Seed;
@@ -1549,23 +1615,31 @@
 				serverConfig.WorldConfig.Seed = null;
 			}
 			delete serverConfig.WorldConfig.WorldConfiguration.Seed
-			
+
+			if (serverConfig.WorldConfig.PlayStyle === "default") {
+				serverConfig.WorldConfig.PlayStyle = "surviveandbuild";
+			}
+
+			serverConfig.WorldConfig.PlayStyleLangCode = serverConfig.WorldConfig.PlayStyle + "-bands";
+
+			if ( serverConfig.WorldConfig.WorldConfiguration.worldClimate === "superflat" ) {
+				serverConfig.WorldConfig.WorldType = "superflat";
+			} else {
+				serverConfig.WorldConfig.WorldType = "standard";
+			}
+
 			const MapSizeX = serverConfig.WorldConfig.WorldConfiguration.worldWidth ?? 1024000;
 			const MapSizeY = serverConfig.WorldConfig.WorldConfiguration.worldHeight ?? 256;
 			const MapSizeZ = serverConfig.WorldConfig.WorldConfiguration.worldLength ?? 1024000;
-			
-			
+
+
 			serverConfig.MapSizeX = MapSizeX;
 			serverConfig.MapSizeY = MapSizeY;
 			serverConfig.WorldConfig.WorldConfiguration.worldHeight = MapSizeY;
 			serverConfig.WorldConfig.MapSizeY = MapSizeY;
 			serverConfig.MapSizeZ = MapSizeZ;
 
-		if (serverConfig.WorldConfig.PlayStyle === "default") {
-			serverConfig.WorldConfig.PlayStyle = "surviveandbuild";
-		}
-
-			normalizeNumbers(serverConfig);
+			normalizeValues(serverConfig);
 
 		let exportData;
 
@@ -1574,7 +1648,7 @@
 		} else {
 			exportData = JSON.parse(JSON.stringify(serverConfig));
 		}
-			
+
 			serverConfig.SaveFileLocation = savepath;
 			serverConfig.WorldConfig.WorldConfiguration.Seed = Seed;
 
