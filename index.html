@@ -35,314 +35,314 @@
     "SkipEveryChunkRow": 0,
     "SkipEveryChunkRowWidth": 0,
     "Roles": [
-      {
-        "Code": "suvisitor",
-        "PrivilegeLevel": -1,
-        "Name": "Survival Visitor",
-        "Description": "Can only visit this world and chat but not use/place/break anything",
-        "DefaultSpawn": null,
-        "ForcedSpawn": null,
-        "Privileges": [
-          "chat"
-        ],
-        "RuntimePrivileges": [],
-        "DefaultGameMode": 1,
-        "Color": "Green",
-        "LandClaimAllowance": 0,
-        "LandClaimMinSize": {
-          "X": 5,
-          "Y": 5,
-          "Z": 5
-        },
-        "LandClaimMaxAreas": 3,
-        "AutoGrant": false
-      },
-      {
-        "Code": "crvisitor",
-        "PrivilegeLevel": -1,
-        "Name": "Creative Visitor",
-        "Description": "Can only visit this world, chat and fly but not use/place/break anything",
-        "DefaultSpawn": null,
-        "ForcedSpawn": null,
-        "Privileges": [
-          "chat"
-        ],
-        "RuntimePrivileges": [],
-        "DefaultGameMode": 2,
-        "Color": "DarkGray",
-        "LandClaimAllowance": 0,
-        "LandClaimMinSize": {
-          "X": 5,
-          "Y": 5,
-          "Z": 5
-        },
-        "LandClaimMaxAreas": 3,
-        "AutoGrant": false
-      },
-      {
-        "Code": "limitedsuplayer",
-        "PrivilegeLevel": -1,
-        "Name": "Limited Survival Player",
-        "Description": "Can use/place/break blocks only in permitted areas (priv level -1), create/manage player groups and chat",
-        "DefaultSpawn": null,
-        "ForcedSpawn": null,
-        "Privileges": [
-          "controlplayergroups",
-          "manageplayergroups",
-          "chat",
-          "build",
-          "useblock",
-          "attackcreatures",
-          "attackplayers",
-          "selfkill"
-        ],
-        "RuntimePrivileges": [],
-        "DefaultGameMode": 1,
-        "Color": "White",
-        "LandClaimAllowance": 0,
-        "LandClaimMinSize": {
-          "X": 5,
-          "Y": 5,
-          "Z": 5
-        },
-        "LandClaimMaxAreas": 3,
-        "AutoGrant": false
-      },
-      {
-        "Code": "limitedcrplayer",
-        "PrivilegeLevel": -1,
-        "Name": "Limited Creative Player",
-        "Description": "Can use/place/break blocks in only in permitted areas (priv level -1), create/manage player groups, chat, fly and set his own game mode (= allows fly and change of move speed)",
-        "DefaultSpawn": null,
-        "ForcedSpawn": null,
-        "Privileges": [
-          "controlplayergroups",
-          "manageplayergroups",
-          "chat",
-          "build",
-          "useblock",
-          "gamemode",
-          "freemove",
-          "attackcreatures",
-          "attackplayers",
-          "selfkill"
-        ],
-        "RuntimePrivileges": [],
-        "DefaultGameMode": 2,
-        "Color": "LightGreen",
-        "LandClaimAllowance": 0,
-        "LandClaimMinSize": {
-          "X": 5,
-          "Y": 5,
-          "Z": 5
-        },
-        "LandClaimMaxAreas": 3,
-        "AutoGrant": false
-      },
-      {
-        "Code": "suplayer",
-        "PrivilegeLevel": 0,
-        "Name": "Survival Player",
-        "Description": "Can use/place/break blocks in unprotected areas (priv level 0), create/manage player groups and chat. Can claim an area of up to 8 chunks.",
-        "DefaultSpawn": null,
-        "ForcedSpawn": null,
-        "Privileges": [
-          "controlplayergroups",
-          "manageplayergroups",
-          "chat",
-          "areamodify",
-          "build",
-          "useblock",
-          "attackcreatures",
-          "attackplayers",
-          "selfkill"
-        ],
-        "RuntimePrivileges": [],
-        "DefaultGameMode": 1,
-        "Color": "White",
-        "LandClaimAllowance": 262144,
-        "LandClaimMinSize": {
-          "X": 5,
-          "Y": 5,
-          "Z": 5
-        },
-        "LandClaimMaxAreas": 3,
-        "AutoGrant": false
-      },
-      {
-        "Code": "crplayer",
-        "PrivilegeLevel": 100,
-        "Name": "Creative Player",
-        "Description": "Can use/place/break blocks in all areas (priv level 100), create/manage player groups, chat, fly and set his own game mode (= allows fly and change of move speed). Can claim an area of up to 40 chunks.",
-        "DefaultSpawn": null,
-        "ForcedSpawn": null,
-        "Privileges": [
-          "controlplayergroups",
-          "manageplayergroups",
-          "chat",
-          "areamodify",
-          "build",
-          "useblock",
-          "gamemode",
-          "freemove",
-          "attackcreatures",
-          "attackplayers",
-          "selfkill"
-        ],
-        "RuntimePrivileges": [],
-        "DefaultGameMode": 2,
-        "Color": "LightGreen",
-        "LandClaimAllowance": 1310720,
-        "LandClaimMinSize": {
-          "X": 5,
-          "Y": 5,
-          "Z": 5
-        },
-        "LandClaimMaxAreas": 6,
-        "AutoGrant": false
-      },
-      {
-        "Code": "sumod",
-        "PrivilegeLevel": 200,
-        "Name": "Survival Moderator",
-        "Description": "Can use/place/break blocks everywhere (priv level 200), create/manage own/other player groups, chat, kick/ban players and do serverwide announcements. Can claim an area of up to 4 chunks.",
-        "DefaultSpawn": null,
-        "ForcedSpawn": null,
-        "Privileges": [
-          "controlplayergroups",
-          "manageplayergroups",
-          "manageotherplayergroups",
-          "chat",
-          "areamodify",
-          "build",
-          "useblock",
-          "buildblockseverywhere",
-          "useblockseverywhere",
-          "kick",
-          "ban",
-          "announce",
-          "readlists",
-          "attackcreatures",
-          "attackplayers",
-          "selfkill"
-        ],
-        "RuntimePrivileges": [],
-        "DefaultGameMode": 1,
-        "Color": "Cyan",
-        "LandClaimAllowance": 1310720,
-        "LandClaimMinSize": {
-          "X": 5,
-          "Y": 5,
-          "Z": 5
-        },
-        "LandClaimMaxAreas": 60,
-        "AutoGrant": false
-      },
-      {
-        "Code": "crmod",
-        "PrivilegeLevel": 500,
-        "Name": "Creative Moderator",
-        "Description": "Can use/place/break blocks everywhere (priv level 500), create/manage own/other player groups, chat, kick/ban players, fly and set his own or other players game modes (= allows fly and change of move speed). Can claim an area of up to 40 chunks.",
-        "DefaultSpawn": null,
-        "ForcedSpawn": null,
-        "Privileges": [
-          "controlplayergroups",
-          "manageplayergroups",
-          "manageotherplayergroups",
-          "chat",
-          "areamodify",
-          "build",
-          "useblock",
-          "buildblockseverywhere",
-          "useblockseverywhere",
-          "kick",
-          "ban",
-          "gamemode",
-          "freemove",
-          "commandplayer",
-          "announce",
-          "readlists",
-          "attackcreatures",
-          "attackplayers",
-          "selfkill"
-        ],
-        "RuntimePrivileges": [],
-        "DefaultGameMode": 2,
-        "Color": "Cyan",
-        "LandClaimAllowance": 1310720,
-        "LandClaimMinSize": {
-          "X": 5,
-          "Y": 5,
-          "Z": 5
-        },
-        "LandClaimMaxAreas": 60,
-        "AutoGrant": false
-      },
-      {
-        "Code": "admin",
-        "PrivilegeLevel": 99999,
-        "Name": "Admin",
-        "Description": "Has all privileges, including giving other players admin status.",
-        "DefaultSpawn": null,
-        "ForcedSpawn": null,
-        "Privileges": [
-          "build",
-          "useblock",
-          "buildblockseverywhere",
-          "useblockseverywhere",
-          "attackplayers",
-          "attackcreatures",
-          "freemove",
-          "gamemode",
-          "pickingrange",
-          "chat",
-          "kick",
-          "ban",
-          "whitelist",
-          "setwelcome",
-          "announce",
-          "readlists",
-          "give",
-          "areamodify",
-          "setspawn",
-          "controlserver",
-          "tp",
-          "time",
-          "grantrevoke",
-          "root",
-          "commandplayer",
-          "controlplayergroups",
-          "manageplayergroups",
-          "selfkill",
-          "manageotherplayergroups"
-        ],
-        "RuntimePrivileges": [],
-        "DefaultGameMode": 1,
-        "Color": "LightBlue",
-        "LandClaimAllowance": 2147483647,
-        "LandClaimMinSize": {
-          "X": 5,
-          "Y": 5,
-          "Z": 5
-        },
-        "LandClaimMaxAreas": 99999,
-        "AutoGrant": true
-      }
+	{
+		"Code": "suvisitor",
+		"PrivilegeLevel": -1,
+		"Name": "Survival Visitor",
+		"Description": "Can only visit this world and chat but not use/place/break anything",
+		"DefaultSpawn": null,
+		"ForcedSpawn": null,
+		"Privileges": [
+		  "chat"
+		],
+		"RuntimePrivileges": [],
+		"DefaultGameMode": 1,
+		"Color": "Green",
+		"LandClaimAllowance": 0,
+		"LandClaimMinSize": {
+		  "X": 5,
+		  "Y": 5,
+		  "Z": 5
+		},
+		"LandClaimMaxAreas": 3,
+		"AutoGrant": false
+	},
+	{
+		"Code": "crvisitor",
+		"PrivilegeLevel": -1,
+		"Name": "Creative Visitor",
+		"Description": "Can only visit this world, chat and fly but not use/place/break anything",
+		"DefaultSpawn": null,
+		"ForcedSpawn": null,
+		"Privileges": [
+		  "chat"
+		],
+		"RuntimePrivileges": [],
+		"DefaultGameMode": 2,
+		"Color": "DarkGray",
+		"LandClaimAllowance": 0,
+		"LandClaimMinSize": {
+		  "X": 5,
+		  "Y": 5,
+		  "Z": 5
+		},
+		"LandClaimMaxAreas": 3,
+		"AutoGrant": false
+	},
+	{
+		"Code": "limitedsuplayer",
+		"PrivilegeLevel": -1,
+		"Name": "Limited Survival Player",
+		"Description": "Can use/place/break blocks only in permitted areas (priv level -1), create/manage player groups and chat",
+		"DefaultSpawn": null,
+		"ForcedSpawn": null,
+		"Privileges": [
+		  "controlplayergroups",
+		  "manageplayergroups",
+		  "chat",
+		  "build",
+		  "useblock",
+		  "attackcreatures",
+		  "attackplayers",
+		  "selfkill"
+		],
+		"RuntimePrivileges": [],
+		"DefaultGameMode": 1,
+		"Color": "White",
+		"LandClaimAllowance": 0,
+		"LandClaimMinSize": {
+		  "X": 5,
+		  "Y": 5,
+		  "Z": 5
+		},
+		"LandClaimMaxAreas": 3,
+		"AutoGrant": false
+	},
+	{
+		"Code": "limitedcrplayer",
+		"PrivilegeLevel": -1,
+		"Name": "Limited Creative Player",
+		"Description": "Can use/place/break blocks in only in permitted areas (priv level -1), create/manage player groups, chat, fly and set his own game mode (= allows fly and change of move speed)",
+		"DefaultSpawn": null,
+		"ForcedSpawn": null,
+		"Privileges": [
+		  "controlplayergroups",
+		  "manageplayergroups",
+		  "chat",
+		  "build",
+		  "useblock",
+		  "gamemode",
+		  "freemove",
+		  "attackcreatures",
+		  "attackplayers",
+		  "selfkill"
+		],
+		"RuntimePrivileges": [],
+		"DefaultGameMode": 2,
+		"Color": "LightGreen",
+		"LandClaimAllowance": 0,
+		"LandClaimMinSize": {
+		  "X": 5,
+		  "Y": 5,
+		  "Z": 5
+		},
+		"LandClaimMaxAreas": 3,
+		"AutoGrant": false
+	},
+	{
+		"Code": "suplayer",
+		"PrivilegeLevel": 0,
+		"Name": "Survival Player",
+		"Description": "Can use/place/break blocks in unprotected areas (priv level 0), create/manage player groups and chat. Can claim an area of up to 8 chunks.",
+		"DefaultSpawn": null,
+		"ForcedSpawn": null,
+		"Privileges": [
+		  "controlplayergroups",
+		  "manageplayergroups",
+		  "chat",
+		  "areamodify",
+		  "build",
+		  "useblock",
+		  "attackcreatures",
+		  "attackplayers",
+		  "selfkill"
+		],
+		"RuntimePrivileges": [],
+		"DefaultGameMode": 1,
+		"Color": "White",
+		"LandClaimAllowance": 262144,
+		"LandClaimMinSize": {
+		  "X": 5,
+		  "Y": 5,
+		  "Z": 5
+		},
+		"LandClaimMaxAreas": 3,
+		"AutoGrant": false
+	},
+	{
+		"Code": "crplayer",
+		"PrivilegeLevel": 100,
+		"Name": "Creative Player",
+		"Description": "Can use/place/break blocks in all areas (priv level 100), create/manage player groups, chat, fly and set his own game mode (= allows fly and change of move speed). Can claim an area of up to 40 chunks.",
+		"DefaultSpawn": null,
+		"ForcedSpawn": null,
+		"Privileges": [
+		  "controlplayergroups",
+		  "manageplayergroups",
+		  "chat",
+		  "areamodify",
+		  "build",
+		  "useblock",
+		  "gamemode",
+		  "freemove",
+		  "attackcreatures",
+		  "attackplayers",
+		  "selfkill"
+		],
+		"RuntimePrivileges": [],
+		"DefaultGameMode": 2,
+		"Color": "LightGreen",
+		"LandClaimAllowance": 1310720,
+		"LandClaimMinSize": {
+		  "X": 5,
+		  "Y": 5,
+		  "Z": 5
+		},
+		"LandClaimMaxAreas": 6,
+		"AutoGrant": false
+	},
+	{
+		"Code": "sumod",
+		"PrivilegeLevel": 200,
+		"Name": "Survival Moderator",
+		"Description": "Can use/place/break blocks everywhere (priv level 200), create/manage own/other player groups, chat, kick/ban players and do serverwide announcements. Can claim an area of up to 4 chunks.",
+		"DefaultSpawn": null,
+		"ForcedSpawn": null,
+		"Privileges": [
+		  "controlplayergroups",
+		  "manageplayergroups",
+		  "manageotherplayergroups",
+		  "chat",
+		  "areamodify",
+		  "build",
+		  "useblock",
+		  "buildblockseverywhere",
+		  "useblockseverywhere",
+		  "kick",
+		  "ban",
+		  "announce",
+		  "readlists",
+		  "attackcreatures",
+		  "attackplayers",
+		  "selfkill"
+		],
+		"RuntimePrivileges": [],
+		"DefaultGameMode": 1,
+		"Color": "Cyan",
+		"LandClaimAllowance": 1310720,
+		"LandClaimMinSize": {
+		  "X": 5,
+		  "Y": 5,
+		  "Z": 5
+		},
+		"LandClaimMaxAreas": 60,
+		"AutoGrant": false
+	},
+	{
+		"Code": "crmod",
+		"PrivilegeLevel": 500,
+		"Name": "Creative Moderator",
+		"Description": "Can use/place/break blocks everywhere (priv level 500), create/manage own/other player groups, chat, kick/ban players, fly and set his own or other players game modes (= allows fly and change of move speed). Can claim an area of up to 40 chunks.",
+		"DefaultSpawn": null,
+		"ForcedSpawn": null,
+		"Privileges": [
+		  "controlplayergroups",
+		  "manageplayergroups",
+		  "manageotherplayergroups",
+		  "chat",
+		  "areamodify",
+		  "build",
+		  "useblock",
+		  "buildblockseverywhere",
+		  "useblockseverywhere",
+		  "kick",
+		  "ban",
+		  "gamemode",
+		  "freemove",
+		  "commandplayer",
+		  "announce",
+		  "readlists",
+		  "attackcreatures",
+		  "attackplayers",
+		  "selfkill"
+		],
+		"RuntimePrivileges": [],
+		"DefaultGameMode": 2,
+		"Color": "Cyan",
+		"LandClaimAllowance": 1310720,
+		"LandClaimMinSize": {
+		  "X": 5,
+		  "Y": 5,
+		  "Z": 5
+		},
+		"LandClaimMaxAreas": 60,
+		"AutoGrant": false
+	},
+	{
+		"Code": "admin",
+		"PrivilegeLevel": 99999,
+		"Name": "Admin",
+		"Description": "Has all privileges, including giving other players admin status.",
+		"DefaultSpawn": null,
+		"ForcedSpawn": null,
+		"Privileges": [
+		  "build",
+		  "useblock",
+		  "buildblockseverywhere",
+		  "useblockseverywhere",
+		  "attackplayers",
+		  "attackcreatures",
+		  "freemove",
+		  "gamemode",
+		  "pickingrange",
+		  "chat",
+		  "kick",
+		  "ban",
+		  "whitelist",
+		  "setwelcome",
+		  "announce",
+		  "readlists",
+		  "give",
+		  "areamodify",
+		  "setspawn",
+		  "controlserver",
+		  "tp",
+		  "time",
+		  "grantrevoke",
+		  "root",
+		  "commandplayer",
+		  "controlplayergroups",
+		  "manageplayergroups",
+		  "selfkill",
+		  "manageotherplayergroups"
+		],
+		"RuntimePrivileges": [],
+		"DefaultGameMode": 1,
+		"Color": "LightBlue",
+		"LandClaimAllowance": 2147483647,
+		"LandClaimMinSize": {
+		  "X": 5,
+		  "Y": 5,
+		  "Z": 5
+		},
+		"LandClaimMaxAreas": 99999,
+		"AutoGrant": true
+	}
     ],
     "DefaultRoleCode": "suplayer",
     "AntiAbuse": 0,
     "WorldConfig": {
-      "Seed": null,
-      "WorldName": null,
-      "AllowCreativeMode": false,
-      "PlayStyle": "surviveandbuild",
-      "PlayStyleLangCode": "surviveandbuild-bands",
-      "WorldType": "standard",
-      "WorldConfiguration": null,
-      "MapSizeY": null,
-      "CreatedByPlayerName": null,
-      "DisabledMods": null,
-      "RepairMode": false
+	"Seed": null,
+	"WorldName": null,
+	"AllowCreativeMode": false,
+	"PlayStyle": "surviveandbuild",
+	"PlayStyleLangCode": "surviveandbuild-bands",
+	"WorldType": "standard",
+	"WorldConfiguration": null,
+	"MapSizeY": null,
+	"CreatedByPlayerName": null,
+	"DisabledMods": null,
+	"RepairMode": false
     },
     "NextPlayerGroupUid": 10,
     "GroupChatHistorySize": 20,
@@ -378,601 +378,601 @@
 
     // raw WorldConfig array for easier updates - from https://github.com/anegostudios/vssurvivalmod/blob/master/Properties/AssemblyInfo.cs
   const OPTIONS_DATA = {
-        "playstyles": [
-            {
-                "code": "surviveandbuild",
-                "playListCode": "survival",
-                "langCode": "preset-surviveandbuild",
-                "mods": ["game", "survival"],
-                "listOrder": 5,
-                "worldType": "standard",
-                "worldConfig": {
-                    "worldClimate": "realistic",
-                    "gameMode": "survival",
-                    "temporalStability": "true",
-                    "temporalStorms": "sometimes",
-                    "graceTimer": "0",
-                    "microblockChiseling": "stonewood",
-                    "polarEquatorDistance": "100000",
-                    "lungCapacity": "40000",
-                    "harshWinters": "true",
-                    "daysPerMonth": "9",
-                    "saplingGrowthRate": "1",
-                    "propickNodeSearchRadius": "6",
-                    "allowUndergroundFarming": "false",
-                    "allowFallingBlocks": "true",
-                    "allowFireSpread": "true",
-                    "temporalGearRespawnUses": "20",
-                    "temporalStormSleeping": "0",
-                    "clutterObtainable": "ifrepaired"
-                }
-            },
-            {
-                "code": "exploration",
-                "playListCode": "survival",
-                "langCode": "preset-exploration",
-                "mods": ["game", "survival"],
-                "listOrder": 6,
-                "worldType": "standard",
-                "worldConfig": {
-                    "worldClimate": "realistic",
-                    "gameMode": "survival",
-                    "microblockChiseling": "all",
-                    "deathPunishment": "keep",
-                    "graceTimer": "5",
-                    "creatureHostility": "passive",
-                    "playerHealthPoints": "20",
-                    "playerHungerSpeed": "0.5",
-                    "playerHealthRegenSpeed": "1",
-                    "foodSpoilSpeed": "0.5",
-                    "lungCapacity": "120000",
-                    "toolDurability": "2",
-                    "saplingGrowthRate": "0.5",
-                    "playerMoveSpeed": "1.25",
-                    "temporalStability": "false",
-                    "temporalStorms": "off",
-                    "surfaceCopperDeposits": "0.2",
-                    "surfaceTinDeposits": "0.03",
-                    "globalDepositSpawnRate": "1.6",
-                    "propickNodeSearchRadius": "8",
-                    "polarEquatorDistance": "50000",
-                    "harshWinters": "false",
-                    "allowUndergroundFarming": "true",
-                    "allowFallingBlocks": "true",
-                    "allowFireSpread": "true",
-                    "temporalGearRespawnUses": "-1",
-                    "temporalStormSleeping": "1",
-                    "classExclusiveRecipes": "false",
-                    "clutterObtainable": "yes"
-                }
-            },
-            {
-                "code": "wildernesssurvival",
-                "playListCode": "survival",
-                "langCode": "preset-wildernesssurvival",
-                "mods": ["game", "survival"],
-                "listOrder": 7,
-                "worldType": "standard",
-                "worldConfig": {
-                    "worldClimate": "realistic",
-                    "gameMode": "survival",
-                    "microblockChiseling": "off",
-                    "deathPunishment": "drop",
-                    "bodyTemperatureResistance": "10",
-                    "blockGravity": "sandgravelsoil",
-                    "caveIns": "on",
-                    "allowFallingBlocks": "true",
-                    "allowFireSpread": "true",
-                    "creatureHostility": "aggressive",
-                    "playerHealthPoints": "10",
-                    "creatureStrength": "1.5",
-                    "playerHungerSpeed": "1.25",
-                    "playerHealthRegenSpeed": "1",
-                    "lungCapacity": "20000",
-                    "foodSpoilSpeed": "1.25",
-                    "graceTimer": "0",
-                    "allowCoordinateHud": "false",
-                    "allowMap": "false",
-                    "allowLandClaiming": "false",
-                    "surfaceCopperDeposits": "0.05",
-                    "surfaceTinDeposits": "0",
-                    "saplingGrowthRate": "2",
-                    "temporalStability": "true",
-                    "temporalStorms": "often",
-                    "polarEquatorDistance": "100000",
-                    "harshWinters": "true",
-                    "daysPerMonth": "9",
-                    "spawnRadius": "5000",
-                    "allowUndergroundFarming": "false",
-                    "noLiquidSourceTransport": "true",
-                    "temporalGearRespawnUses": "3",
-                    "temporalStormSleeping": "0",
-                    "clutterObtainable": "ifrepaired",
-                    "lightningFires": "true"
-                }
-            },
-            {
-                "code": "homosapiens",
-                "playListCode": "survival",
-                "langCode": "preset-homosapiens",
-                "mods": ["game", "survival"],
-                "listOrder": 7,
-                "worldType": "standard",
-                "worldConfig": {
-                    "worldClimate": "realistic",
-                    "gameMode": "survival",
-                    "deathPunishment": "drop",
-                    "bodyTemperatureResistance": "5",
-                    "blockGravity": "sandgravelsoil",
-                    "allowFallingBlocks": "true",
-                    "allowFireSpread": "true",
-                    "creatureHostility": "aggressive",
-                    "playerHealthPoints": "10",
-                    "creatureStrength": "1.5",
-                    "playerHungerSpeed": "1",
-                    "playerHealthRegenSpeed": "1",
-                    "lungCapacity": "30000",
-                    "foodSpoilSpeed": "1.25",
-                    "graceTimer": "0",
-                    "allowCoordinateHud": "false",
-                    "allowMap": "false",
-                    "allowLandClaiming": "false",
-                    "surfaceCopperDeposits": "0.05",
-                    "surfaceTinDeposits": "0",
-                    "saplingGrowthRate": "2",
-                    "temporalStorms": "off",
-                    "polarEquatorDistance": "200000",
-                    "harshWinters": "true",
-                    "daysPerMonth": "9",
-                    "allowUndergroundFarming": "false",
-                    "noLiquidSourceTransport": "true",
-                    "spawnRadius": "5000",
-                    "temporalGearRespawnUses": "0",
-                    "temporalStormSleeping": "0",
-                    "temporalRifts": "off",
-                    "temporalStability": "false",
-                    "loreContent": "false",
-                    "clutterObtainable": "no"
-                }
-            }
-        ],
+		"playstyles": [
+		{
+			  "code": "surviveandbuild",
+			  "playListCode": "survival",
+			  "langCode": "preset-surviveandbuild",
+			  "mods": ["game", "survival"],
+			  "listOrder": 5,
+			  "worldType": "standard",
+			  "worldConfig": {
+				"worldClimate": "realistic",
+				"gameMode": "survival",
+				"temporalStability": "true",
+				"temporalStorms": "sometimes",
+				"graceTimer": "0",
+				"microblockChiseling": "stonewood",
+				"polarEquatorDistance": "100000",
+				"lungCapacity": "40000",
+				"harshWinters": "true",
+				"daysPerMonth": "9",
+				"saplingGrowthRate": "1",
+				"propickNodeSearchRadius": "6",
+				"allowUndergroundFarming": "false",
+				"allowFallingBlocks": "true",
+				"allowFireSpread": "true",
+				"temporalGearRespawnUses": "20",
+				"temporalStormSleeping": "0",
+				"clutterObtainable": "ifrepaired"
+			  }
+		},
+		{
+			  "code": "exploration",
+			  "playListCode": "survival",
+			  "langCode": "preset-exploration",
+			  "mods": ["game", "survival"],
+			  "listOrder": 6,
+			  "worldType": "standard",
+			  "worldConfig": {
+				"worldClimate": "realistic",
+				"gameMode": "survival",
+				"microblockChiseling": "all",
+				"deathPunishment": "keep",
+				"graceTimer": "5",
+				"creatureHostility": "passive",
+				"playerHealthPoints": "20",
+				"playerHungerSpeed": "0.5",
+				"playerHealthRegenSpeed": "1",
+				"foodSpoilSpeed": "0.5",
+				"lungCapacity": "120000",
+				"toolDurability": "2",
+				"saplingGrowthRate": "0.5",
+				"playerMoveSpeed": "1.25",
+				"temporalStability": "false",
+				"temporalStorms": "off",
+				"surfaceCopperDeposits": "0.2",
+				"surfaceTinDeposits": "0.03",
+				"globalDepositSpawnRate": "1.6",
+				"propickNodeSearchRadius": "8",
+				"polarEquatorDistance": "50000",
+				"harshWinters": "false",
+				"allowUndergroundFarming": "true",
+				"allowFallingBlocks": "true",
+				"allowFireSpread": "true",
+				"temporalGearRespawnUses": "-1",
+				"temporalStormSleeping": "1",
+				"classExclusiveRecipes": "false",
+				"clutterObtainable": "yes"
+			  }
+		},
+		{
+			  "code": "wildernesssurvival",
+			  "playListCode": "survival",
+			  "langCode": "preset-wildernesssurvival",
+			  "mods": ["game", "survival"],
+			  "listOrder": 7,
+			  "worldType": "standard",
+			  "worldConfig": {
+				"worldClimate": "realistic",
+				"gameMode": "survival",
+				"microblockChiseling": "off",
+				"deathPunishment": "drop",
+				"bodyTemperatureResistance": "10",
+				"blockGravity": "sandgravelsoil",
+				"caveIns": "on",
+				"allowFallingBlocks": "true",
+				"allowFireSpread": "true",
+				"creatureHostility": "aggressive",
+				"playerHealthPoints": "10",
+				"creatureStrength": "1.5",
+				"playerHungerSpeed": "1.25",
+				"playerHealthRegenSpeed": "1",
+				"lungCapacity": "20000",
+				"foodSpoilSpeed": "1.25",
+				"graceTimer": "0",
+				"allowCoordinateHud": "false",
+				"allowMap": "false",
+				"allowLandClaiming": "false",
+				"surfaceCopperDeposits": "0.05",
+				"surfaceTinDeposits": "0",
+				"saplingGrowthRate": "2",
+				"temporalStability": "true",
+				"temporalStorms": "often",
+				"polarEquatorDistance": "100000",
+				"harshWinters": "true",
+				"daysPerMonth": "9",
+				"spawnRadius": "5000",
+				"allowUndergroundFarming": "false",
+				"noLiquidSourceTransport": "true",
+				"temporalGearRespawnUses": "3",
+				"temporalStormSleeping": "0",
+				"clutterObtainable": "ifrepaired",
+				"lightningFires": "true"
+			  }
+		},
+		{
+			  "code": "homosapiens",
+			  "playListCode": "survival",
+			  "langCode": "preset-homosapiens",
+			  "mods": ["game", "survival"],
+			  "listOrder": 7,
+			  "worldType": "standard",
+			  "worldConfig": {
+				"worldClimate": "realistic",
+				"gameMode": "survival",
+				"deathPunishment": "drop",
+				"bodyTemperatureResistance": "5",
+				"blockGravity": "sandgravelsoil",
+				"allowFallingBlocks": "true",
+				"allowFireSpread": "true",
+				"creatureHostility": "aggressive",
+				"playerHealthPoints": "10",
+				"creatureStrength": "1.5",
+				"playerHungerSpeed": "1",
+				"playerHealthRegenSpeed": "1",
+				"lungCapacity": "30000",
+				"foodSpoilSpeed": "1.25",
+				"graceTimer": "0",
+				"allowCoordinateHud": "false",
+				"allowMap": "false",
+				"allowLandClaiming": "false",
+				"surfaceCopperDeposits": "0.05",
+				"surfaceTinDeposits": "0",
+				"saplingGrowthRate": "2",
+				"temporalStorms": "off",
+				"polarEquatorDistance": "200000",
+				"harshWinters": "true",
+				"daysPerMonth": "9",
+				"allowUndergroundFarming": "false",
+				"noLiquidSourceTransport": "true",
+				"spawnRadius": "5000",
+				"temporalGearRespawnUses": "0",
+				"temporalStormSleeping": "0",
+				"temporalRifts": "off",
+				"temporalStability": "false",
+				"loreContent": "false",
+				"clutterObtainable": "no"
+			  }
+		}
+		],
 
-        "worldConfigAttributes": [
-            { "category": "spawnndeath", "code": "gameMode", "dataType": "dropdown", "values": ["survival", "creative"], "names": ["Survival", "Creative"], "default": "survival" },
-            { "category": "spawnndeath", "code": "playerlives", "dataType": "dropdown", "values": ["1", "2", "3", "4", "5", "10", "20", "-1"], "names": ["1", "2", "3", "4", "5", "10", "20", "infinite"], "default": "-1" },
+		"worldConfigAttributes": [
+		{ "category": "spawnndeath", "code": "gameMode", "dataType": "dropdown", "values": ["survival", "creative"], "names": ["Survival", "Creative"], "default": "survival" },
+		{ "category": "spawnndeath", "code": "playerlives", "dataType": "dropdown", "values": ["1", "2", "3", "4", "5", "10", "20", "-1"], "names": ["1", "2", "3", "4", "5", "10", "20", "infinite"], "default": "-1" },
 
-            { "category": "spawnndeath", "code": "startingClimate", "dataType": "dropdown", "values": ["hot", "warm", "temperate", "cool", "icy"], "names": ["Hot (28-32°C)", "Warm (19-23 °C)", "Temperate (6-14 °C)", "Cool (-5 to 1 °C)", "Icy (-15 to -10°C)"], "default": "temperate", "onlyDuringWorldCreate": true },
-            { "category": "spawnndeath", "code": "spawnRadius", "dataType": "dropdown", "values": ["10000", "5000", "2500", "1000", "500", "250", "100", "50", "25", "0"], "names": ["10000 blocks", "5000 blocks", "2500 blocks", "1000 blocks", "500 blocks", "250 blocks", "100 blocks", "50 blocks", "25 blocks","0 blocks"], "default": "50" },
-            { "category": "spawnndeath", "code": "graceTimer", "dataType": "dropdown", "values": ["10", "5", "4", "3", "2", "1", "0"], "names": ["10 days before monsters appear", "5 days before monsters appear", "4 days before monsters appear", "3 days before monsters appear", "2 days before monsters appear", "1 day before monsters appear", "No timer. Monsters spawn right away."], "default": "0", "onlyDuringWorldCreate": true },
-            { "category": "spawnndeath", "code": "deathPunishment", "dataType": "dropdown", "values": ["drop", "keep"], "names": ["Drop inventory contents", "Keep inventory contents"], "default": "drop" },
-            { "category": "spawnndeath", "code": "droppedItemsTimer", "dataType": "dropdown", "values": ["300", "600", "1200", "1800", "3600"], "names": ["5 minutes", "10 minutes", "20 minutes", "30 minutes", "1 hour"], "default": "600" },
+		{ "category": "spawnndeath", "code": "startingClimate", "dataType": "dropdown", "values": ["hot", "warm", "temperate", "cool", "icy"], "names": ["Hot (28-32°C)", "Warm (19-23 °C)", "Temperate (6-14 °C)", "Cool (-5 to 1 °C)", "Icy (-15 to -10°C)"], "default": "temperate", "onlyDuringWorldCreate": true },
+		{ "category": "spawnndeath", "code": "spawnRadius", "dataType": "dropdown", "values": ["10000", "5000", "2500", "1000", "500", "250", "100", "50", "25", "0"], "names": ["10000 blocks", "5000 blocks", "2500 blocks", "1000 blocks", "500 blocks", "250 blocks", "100 blocks", "50 blocks", "25 blocks","0 blocks"], "default": "50" },
+		{ "category": "spawnndeath", "code": "graceTimer", "dataType": "dropdown", "values": ["10", "5", "4", "3", "2", "1", "0"], "names": ["10 days before monsters appear", "5 days before monsters appear", "4 days before monsters appear", "3 days before monsters appear", "2 days before monsters appear", "1 day before monsters appear", "No timer. Monsters spawn right away."], "default": "0", "onlyDuringWorldCreate": true },
+		{ "category": "spawnndeath", "code": "deathPunishment", "dataType": "dropdown", "values": ["drop", "keep"], "names": ["Drop inventory contents", "Keep inventory contents"], "default": "drop" },
+		{ "category": "spawnndeath", "code": "droppedItemsTimer", "dataType": "dropdown", "values": ["300", "600", "1200", "1800", "3600"], "names": ["5 minutes", "10 minutes", "20 minutes", "30 minutes", "1 hour"], "default": "600" },
 
-            { "category": "survivalchallenges", "code": "seasons", "dataType": "dropdown", "values": ["enabled", "spring", "summer", "fall", "winter"], "names": ["Enabled", "Off, always spring", "Off, always summer", "Off, always fall", "Off, always winter"], "default": "enabled" },
-            { "category": "survivalchallenges", "code": "daysPerMonth", "dataType": "dropdown", "values": ["30", "20", "12", "9", "6", "3"], "names": ["30 days (24 real life hours)", "20 days (16 real life hours)", "12 days (9.6 real life hours)", "9 days (7.2 real life hours)", "6 days (4.8 real life hours)", "3 days (2.4 real life hours)"], "default": "9" },
-            { "category": "survivalchallenges", "code": "harshWinters", "dataType": "dropdown", "values": ["true", "false"], "names": ["Enabled", "Disabled"], "default": "true" },
-            { "category": "survivalchallenges", "code": "blockGravity", "dataType": "dropdown", "values": ["sandgravel", "sandgravelsoil"], "names": ["Sand and gravel", "Sand, gravel and soil with sideways instability"], "default": "sandgravel" },
-            { "category": "survivalchallenges", "code": "caveIns", "dataType": "dropdown", "values": ["off", "on"], "names": ["Disabled", "Enabled"], "default": "off" },
-            { "category": "survivalchallenges", "code": "allowFallingBlocks", "dataType": "bool", "default": "true" },
-            { "category": "survivalchallenges", "code": "allowFireSpread", "dataType": "bool", "default": "true" },
-            { "category": "survivalchallenges", "code": "lightningFires", "dataType": "bool", "default": "false" },
-            { "category": "survivalchallenges", "code": "allowUndergroundFarming", "dataType": "bool", "default": "false" },
-            { "category": "survivalchallenges", "code": "noLiquidSourceTransport", "dataType": "bool", "default": "false" },
-            { "category": "survivalchallenges", "code": "playerHealthPoints", "dataType": "dropdown", "values": ["5", "10", "15", "20", "25", "30", "35"], "names": ["5 hp", "10 hp", "15 hp", "20 hp", "25 hp", "30 hp", "35 hp"], "default": "15" },
-            { "category": "survivalchallenges", "code": "playerHealthRegenSpeed", "dataType": "dropdown", "values": ["2", "1.5", "1.25", "1", "0.75", "0.5", "0.25"], "names": ["Very fast (200%)", "Fast (150%)", "Slightly faster (125%)", "Normal (100%)", "Slightly slower (75%)", "Slower (50%)", "Much slower (25%)"], "default": "1" },
-            { "category": "survivalchallenges", "code": "playerHungerSpeed", "dataType": "dropdown", "values": ["2", "1.5", "1.25", "1", "0.75", "0.5", "0.25"], "names": ["Very fast (200%)", "Fast (150%)", "Slightly faster (125%)", "Normal (100%)", "Slightly slower (75%)", "Slower (50%)", "Much slower (25%)"], "default": "1" },
-            { "category": "survivalchallenges", "code": "lungCapacity", "dataType": "dropdown", "values": ["10000", "20000", "30000", "40000", "60000", "120000", "3600000"], "names": ["10 seconds", "20 seconds", "30 seconds", "40 seconds", "60 seconds", "2 minutes", "60 minutes"], "default": "40000" },
-            { "category": "survivalchallenges", "code": "bodyTemperatureResistance", "dataType": "dropdown", "values": ["-40", "-30", "-25", "-20", "-15", "-10", "-5", "0", "5", "10", "15", "20"], "names": ["-40", "-30", "-25", "-20", "-15", "-10", "-5", "0", "5", "10", "15", "20"], "default": "0" },
-            { "category": "survivalchallenges", "code": "playerMoveSpeed", "dataType": "dropdown", "values": ["2", "1.75", "1.5", "1.25", "1", "0.75"], "names": ["Fast", "Slightly faster", "Normal", "Slightly slower", "Slower", "Much slower"], "default": "1.5" },
-            { "category": "survivalchallenges", "code": "creatureHostility", "dataType": "dropdown", "values": ["aggressive", "passive", "off"], "names": ["Aggressive", "Passive", "Never hostile"], "default": "aggressive" },
-            { "category": "survivalchallenges", "code": "creatureStrength", "dataType": "dropdown", "values": ["4", "2", "1.5", "1", "0.5", "0.25"], "names": ["Deadly (400%)", "Very Strong (200%)", "Strong (150%)", "Normal (100%)", "Weak (50%)", "Very weak (25%)"], "default": "1" },
-            { "category": "survivalchallenges", "code": "creatureSwimSpeed", "dataType": "dropdown", "values": ["0.5", "0.75", "1", "1.25", "1.5", "1.75", "2", "3"], "names": ["50%", "75%", "100%", "125%", "150%", "175%", "200%", "300%"], "default": "2" },
-            { "category": "survivalchallenges", "code": "foodSpoilSpeed", "dataType": "dropdown", "values": ["4", "3", "2", "1.5", "1.25", "1", "0.75", "0.5", "0.25"], "names": ["400%", "300%", "200%", "150%", "125%", "100%", "75%", "50%", "25%"], "default": "1" },
-            { "category": "survivalchallenges", "code": "saplingGrowthRate", "dataType": "dropdown", "values": ["16", "8", "4", "2", "1.5", "1", "0.75", "0.5", "0.25"], "names": ["Extremely slow (16x)", "Much slower (8x)", "Slower (4x)", "Somewhat slower (2x)", "Slightly slower (1.5x)", "Normal (1x)", "Slightly faster (0.75x)", "Faster (0.5x)", "Much faster (0.25x)"], "default": "1" },
-            { "category": "survivalchallenges", "code": "toolDurability", "dataType": "dropdown", "values": ["4", "3", "2", "1.5", "1.25", "1", "0.75", "0.5"], "names": ["400%", "300%", "200%", "150%", "125%", "100%", "75%", "50%"], "default": "1" },
-            { "category": "survivalchallenges", "code": "toolMiningSpeed", "dataType": "dropdown", "values": ["3", "2", "1.5", "1.25", "1", "0.75", "0.5", "0.25"], "names": ["300%", "200%", "150%", "125%", "100%", "75%", "50%", "25%"], "default": "1" },
-            { "category": "survivalchallenges", "code": "propickNodeSearchRadius", "dataType": "dropdown", "values": ["0", "2", "4", "6", "8"], "names": ["Disabled", "2 blocks", "4 blocks", "6 blocks", "8 blocks"], "default": "0" },
-            { "category": "survivalchallenges", "code": "microblockChiseling", "dataType": "dropdown", "values": ["off", "stonewood", "all"], "names": ["Off", "Stone and Wood", "Most cubic blocks"], "default": "stonewood" },
-            { "category": "survivalchallenges", "code": "allowCoordinateHud", "dataType": "bool", "default": "true" },
-            { "category": "survivalchallenges", "code": "allowMap", "dataType": "bool", "default": "true" },
-            { "category": "survivalchallenges", "code": "colorAccurateWorldmap", "dataType": "bool", "default": "false" },
-            { "category": "survivalchallenges", "code": "loreContent", "dataType": "bool", "default": "true" },
-            { "category": "survivalchallenges", "code": "clutterObtainable", "dataType": "dropdown", "values": ["ifrepaired", "yes", "no"], "names": ["ifrepaired", "yes", "no"], "default": "ifrepaired" },
+		{ "category": "survivalchallenges", "code": "seasons", "dataType": "dropdown", "values": ["enabled", "spring", "summer", "fall", "winter"], "names": ["Enabled", "Off, always spring", "Off, always summer", "Off, always fall", "Off, always winter"], "default": "enabled" },
+		{ "category": "survivalchallenges", "code": "daysPerMonth", "dataType": "dropdown", "values": ["30", "20", "12", "9", "6", "3"], "names": ["30 days (24 real life hours)", "20 days (16 real life hours)", "12 days (9.6 real life hours)", "9 days (7.2 real life hours)", "6 days (4.8 real life hours)", "3 days (2.4 real life hours)"], "default": "9" },
+		{ "category": "survivalchallenges", "code": "harshWinters", "dataType": "dropdown", "values": ["true", "false"], "names": ["Enabled", "Disabled"], "default": "true" },
+		{ "category": "survivalchallenges", "code": "blockGravity", "dataType": "dropdown", "values": ["sandgravel", "sandgravelsoil"], "names": ["Sand and gravel", "Sand, gravel and soil with sideways instability"], "default": "sandgravel" },
+		{ "category": "survivalchallenges", "code": "caveIns", "dataType": "dropdown", "values": ["off", "on"], "names": ["Disabled", "Enabled"], "default": "off" },
+		{ "category": "survivalchallenges", "code": "allowFallingBlocks", "dataType": "bool", "default": "true" },
+		{ "category": "survivalchallenges", "code": "allowFireSpread", "dataType": "bool", "default": "true" },
+		{ "category": "survivalchallenges", "code": "lightningFires", "dataType": "bool", "default": "false" },
+		{ "category": "survivalchallenges", "code": "allowUndergroundFarming", "dataType": "bool", "default": "false" },
+		{ "category": "survivalchallenges", "code": "noLiquidSourceTransport", "dataType": "bool", "default": "false" },
+		{ "category": "survivalchallenges", "code": "playerHealthPoints", "dataType": "dropdown", "values": ["5", "10", "15", "20", "25", "30", "35"], "names": ["5 hp", "10 hp", "15 hp", "20 hp", "25 hp", "30 hp", "35 hp"], "default": "15" },
+		{ "category": "survivalchallenges", "code": "playerHealthRegenSpeed", "dataType": "dropdown", "values": ["2", "1.5", "1.25", "1", "0.75", "0.5", "0.25"], "names": ["Very fast (200%)", "Fast (150%)", "Slightly faster (125%)", "Normal (100%)", "Slightly slower (75%)", "Slower (50%)", "Much slower (25%)"], "default": "1" },
+		{ "category": "survivalchallenges", "code": "playerHungerSpeed", "dataType": "dropdown", "values": ["2", "1.5", "1.25", "1", "0.75", "0.5", "0.25"], "names": ["Very fast (200%)", "Fast (150%)", "Slightly faster (125%)", "Normal (100%)", "Slightly slower (75%)", "Slower (50%)", "Much slower (25%)"], "default": "1" },
+		{ "category": "survivalchallenges", "code": "lungCapacity", "dataType": "dropdown", "values": ["10000", "20000", "30000", "40000", "60000", "120000", "3600000"], "names": ["10 seconds", "20 seconds", "30 seconds", "40 seconds", "60 seconds", "2 minutes", "60 minutes"], "default": "40000" },
+		{ "category": "survivalchallenges", "code": "bodyTemperatureResistance", "dataType": "dropdown", "values": ["-40", "-30", "-25", "-20", "-15", "-10", "-5", "0", "5", "10", "15", "20"], "names": ["-40", "-30", "-25", "-20", "-15", "-10", "-5", "0", "5", "10", "15", "20"], "default": "0" },
+		{ "category": "survivalchallenges", "code": "playerMoveSpeed", "dataType": "dropdown", "values": ["2", "1.75", "1.5", "1.25", "1", "0.75"], "names": ["Fast", "Slightly faster", "Normal", "Slightly slower", "Slower", "Much slower"], "default": "1.5" },
+		{ "category": "survivalchallenges", "code": "creatureHostility", "dataType": "dropdown", "values": ["aggressive", "passive", "off"], "names": ["Aggressive", "Passive", "Never hostile"], "default": "aggressive" },
+		{ "category": "survivalchallenges", "code": "creatureStrength", "dataType": "dropdown", "values": ["4", "2", "1.5", "1", "0.5", "0.25"], "names": ["Deadly (400%)", "Very Strong (200%)", "Strong (150%)", "Normal (100%)", "Weak (50%)", "Very weak (25%)"], "default": "1" },
+		{ "category": "survivalchallenges", "code": "creatureSwimSpeed", "dataType": "dropdown", "values": ["0.5", "0.75", "1", "1.25", "1.5", "1.75", "2", "3"], "names": ["50%", "75%", "100%", "125%", "150%", "175%", "200%", "300%"], "default": "2" },
+		{ "category": "survivalchallenges", "code": "foodSpoilSpeed", "dataType": "dropdown", "values": ["4", "3", "2", "1.5", "1.25", "1", "0.75", "0.5", "0.25"], "names": ["400%", "300%", "200%", "150%", "125%", "100%", "75%", "50%", "25%"], "default": "1" },
+		{ "category": "survivalchallenges", "code": "saplingGrowthRate", "dataType": "dropdown", "values": ["16", "8", "4", "2", "1.5", "1", "0.75", "0.5", "0.25"], "names": ["Extremely slow (16x)", "Much slower (8x)", "Slower (4x)", "Somewhat slower (2x)", "Slightly slower (1.5x)", "Normal (1x)", "Slightly faster (0.75x)", "Faster (0.5x)", "Much faster (0.25x)"], "default": "1" },
+		{ "category": "survivalchallenges", "code": "toolDurability", "dataType": "dropdown", "values": ["4", "3", "2", "1.5", "1.25", "1", "0.75", "0.5"], "names": ["400%", "300%", "200%", "150%", "125%", "100%", "75%", "50%"], "default": "1" },
+		{ "category": "survivalchallenges", "code": "toolMiningSpeed", "dataType": "dropdown", "values": ["3", "2", "1.5", "1.25", "1", "0.75", "0.5", "0.25"], "names": ["300%", "200%", "150%", "125%", "100%", "75%", "50%", "25%"], "default": "1" },
+		{ "category": "survivalchallenges", "code": "propickNodeSearchRadius", "dataType": "dropdown", "values": ["0", "2", "4", "6", "8"], "names": ["Disabled", "2 blocks", "4 blocks", "6 blocks", "8 blocks"], "default": "0" },
+		{ "category": "survivalchallenges", "code": "microblockChiseling", "dataType": "dropdown", "values": ["off", "stonewood", "all"], "names": ["Off", "Stone and Wood", "Most cubic blocks"], "default": "stonewood" },
+		{ "category": "survivalchallenges", "code": "allowCoordinateHud", "dataType": "bool", "default": "true" },
+		{ "category": "survivalchallenges", "code": "allowMap", "dataType": "bool", "default": "true" },
+		{ "category": "survivalchallenges", "code": "colorAccurateWorldmap", "dataType": "bool", "default": "false" },
+		{ "category": "survivalchallenges", "code": "loreContent", "dataType": "bool", "default": "true" },
+		{ "category": "survivalchallenges", "code": "clutterObtainable", "dataType": "dropdown", "values": ["ifrepaired", "yes", "no"], "names": ["ifrepaired", "yes", "no"], "default": "ifrepaired" },
 
-            { "category": "temporalstability", "code": "temporalStability", "dataType": "bool", "default": "true" },
-            { "category": "temporalstability", "code": "temporalStorms", "dataType": "dropdown", "values": ["off", "veryrare", "rare", "sometimes", "often", "veryoften"], "names": ["Off", "Every 30-40 days, increase strength/frequency by 2.5% each time, capped at +25%", "Approx. every 20-30 days, increase strength/frequency by 5% each time, capped at +50%", "Approx. every 10-20 days, increase strength/frequency by +10% each time, capped at 100%", "Approx. every 5-10 days, increase strength/frequency by 15% each time, capped at +150%", "Approx. every 3-6 days, increase strength/frequency by 20% each time, capped at +200%"], "default": "sometimes" },
-            { "category": "temporalstability", "code": "tempstormDurationMul", "dataType": "dropdown", "values": ["2", "1.5", "1.25", "1", "0.75", "0.5", "0.25"], "names": ["Much longer (200%)", "Longer (150%)", "Slightly longer (125%)", "Normal (100%)", "Slightly shorter (75%)", "Shorter (50%)", "Much Shorter (25%)"], "default": "1" },
-            { "category": "temporalstability", "code": "temporalRifts", "dataType": "dropdown", "values": ["off", "invisible", "visible"], "names": ["Off", "Invisible", "Visible"], "default": "visible" },
-            { "category": "temporalstability", "code": "temporalGearRespawnUses", "dataType": "dropdown", "values": ["-1", "20", "10", "5", "4", "3", "2", "1"], "names": ["Infinite", "20 times", "10 times", "5 times", "4 times", "3 times", "2 times", "One time"], "default": "1" },
-            { "category": "temporalstability", "code": "temporalStormSleeping", "dataType": "dropdown", "values": ["0", "1"], "names": ["Disallowed", "Allowed"], "default": "1" },
+		{ "category": "temporalstability", "code": "temporalStability", "dataType": "bool", "default": "true" },
+		{ "category": "temporalstability", "code": "temporalStorms", "dataType": "dropdown", "values": ["off", "veryrare", "rare", "sometimes", "often", "veryoften"], "names": ["Off", "Every 30-40 days, increase strength/frequency by 2.5% each time, capped at +25%", "Approx. every 20-30 days, increase strength/frequency by 5% each time, capped at +50%", "Approx. every 10-20 days, increase strength/frequency by +10% each time, capped at 100%", "Approx. every 5-10 days, increase strength/frequency by 15% each time, capped at +150%", "Approx. every 3-6 days, increase strength/frequency by 20% each time, capped at +200%"], "default": "sometimes" },
+		{ "category": "temporalstability", "code": "tempstormDurationMul", "dataType": "dropdown", "values": ["2", "1.5", "1.25", "1", "0.75", "0.5", "0.25"], "names": ["Much longer (200%)", "Longer (150%)", "Slightly longer (125%)", "Normal (100%)", "Slightly shorter (75%)", "Shorter (50%)", "Much Shorter (25%)"], "default": "1" },
+		{ "category": "temporalstability", "code": "temporalRifts", "dataType": "dropdown", "values": ["off", "invisible", "visible"], "names": ["Off", "Invisible", "Visible"], "default": "visible" },
+		{ "category": "temporalstability", "code": "temporalGearRespawnUses", "dataType": "dropdown", "values": ["-1", "20", "10", "5", "4", "3", "2", "1"], "names": ["Infinite", "20 times", "10 times", "5 times", "4 times", "3 times", "2 times", "One time"], "default": "1" },
+		{ "category": "temporalstability", "code": "temporalStormSleeping", "dataType": "dropdown", "values": ["0", "1"], "names": ["Disallowed", "Allowed"], "default": "1" },
 
-            { "category": "worldgen", "code": "worldClimate", "dataType": "dropdown", "values": ["realistic", "patchy"], "names": ["Realistic", "Patchy"], "default": "realistic", "onlyDuringWorldCreate": true },
-            { "category": "worldgen", "code": "landcover", "dataType": "dropdown", "values": ["0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "0.95", "0.975", "1"], "names": ["~0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "95%", "97.5%", "100%"], "default": "0.975", "onlyDuringWorldCreate": true },
-            { "category": "worldgen", "code": "oceanscale", "dataType": "dropdown", "values": ["0.1", "0.25", "0.5", "0.75", "1", "1.25", "1.5", "1.75", "2", "3", "4", "5"], "names": ["10%", "25%", "50%", "75%", "100%", "125%", "150%", "175%", "200%", "300%", "400%", "500%"], "default": "5", "onlyDuringWorldCreate": true },
-            { "category": "worldgen", "code": "upheavelCommonness", "dataType": "dropdown", "values": ["0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"], "names": ["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"], "default": "0.3", "onlyDuringWorldCreate": true },
-            { "category": "worldgen", "code": "geologicActivity", "dataType": "dropdown", "values": ["0", "0.05", "0.1", "0.2", "0.4"], "names": ["None", "Rare", "Uncommon", "Common", "Very Common"], "default": "0.05", "onlyDuringWorldCreate": true },
-            { "category": "worldgen", "code": "landformScale", "dataType": "dropdown", "values": ["0.2", "0.4", "0.6", "0.8", "1.0", "1.2", "1.4", "1.6", "1.8", "2", "3"], "names": ["20%", "40%", "60%", "80%", "100%", "120%", "140%", "160%", "180%", "200%", "300%"], "default": "1.0", "onlyDuringWorldCreate": true },
-
-
-            { "category": "worldgen", "code": "worldWidth", "dataType": "dropdown", "values": ["8192000", "4096000", "2048000", "1024000", "600000", "512000", "384000", "256000", "102400", "51200", "25600", "10240", "5120", "1024", "512", "384", "256", "128", "64", "32" ], "names": ["8 mil blocks", "4 mil blocks", "2 mil blocks", "1 mil blocks", "600k blocks", "512k blocks", "384k blocks", "256k blocks", "102k blocks", "51k blocks", "25k blocks", "10k blocks", "5120 blocks", "1024 blocks", "512 blocks", "384 blocks", "256 blocks", "128 blocks", "64 blocks", "32 blocks"], "default": "1024000", "onlyDuringWorldCreate": true },
-            { "category": "worldgen", "code": "worldLength", "dataType": "dropdown", "values": ["8192000", "4096000", "2048000", "1024000", "600000", "512000", "384000", "256000", "102400", "51200", "25600", "10240", "5120", "1024", "512", "384", "256", "128", "64", "32" ], "names": ["8 mil blocks", "4 mil blocks", "2 mil blocks", "1 mil blocks", "600k blocks", "512k blocks", "384k blocks", "256k blocks", "102k blocks", "51k blocks", "25k blocks", "10k blocks", "5120 blocks", "1024 blocks", "512 blocks", "384 blocks", "256 blocks", "128 blocks", "64 blocks", "32 blocks"], "default": "1024000", "onlyDuringWorldCreate": true },
-            { "category": "worldgen", "code": "worldEdge", "dataType": "dropdown", "values": ["blocked", "traversable" ], "names": ["Blocked", "Traversable (Can fall down)"], "default": "traversable" },
-            { "category": "worldgen", "code": "polarEquatorDistance", "dataType": "dropdown", "values": ["800000", "400000", "200000", "100000", "50000", "25000", "15000", "10000", "5000"], "names": ["800k blocks", "400k blocks", "200k blocks", "100k blocks", "50k blocks", "25k blocks", "15k blocks", "10k blocks", "5000 blocks"], "default": "50000", "onlyDuringWorldCreate": true },
-            { "category": "worldgen", "code": "storyStructuresDistScaling", "dataType": "dropdown", "values": ["0.15", "0.25", "0.5", "0.75", "1", "1.5", "2", "3"], "names": ["15%", "25%", "50%", "75%", "100%", "150%", "200%", "300%"], "default": "1", "onlyDuringWorldCreate": true },
-            { "category": "worldgen", "code": "globalTemperature", "dataType": "dropdown", "values": ["4", "2", "1.5", "1", "0.75", "0.5", "0.25"], "names": ["Scorching hot", "Very hot", "Hot", "Normal", "Cold", "Very Cold", "Snowball earth"], "default": "1", "onlyDuringWorldCreate": true },
-            { "category": "worldgen", "code": "globalPrecipitation", "dataType": "dropdown", "values": ["4", "2", "1.5", "1", "0.5", "0.25", "0.1"], "names": ["Super humid", "Very humid", "Humid", "Normal", "Semi-Arid", "Arid", "Hyperarid"], "default": "1", "onlyDuringWorldCreate": true },
-            { "category": "worldgen", "code": "globalForestation", "dataType": "dropdown", "values": ["1", "0.9", "0.75", "0.5", "0.25", "0", "-0.25", "-0.5", "-0.75", "-0.9", "-1"], "names": ["Forest World (+100%)", "Extremely forested (+90%)", "Very highly forested (+75%)", "Highly forested (+50%)", "Somewhat more forest (+25%)", "Normal", "Somewhat less forest (-25%)", "Significantly less forested (-50%)", "Much less forested (-75%)", "Near Tree-less (-90%)", "Tree-less World (-100%)"], "default": "0", "onlyDuringWorldCreate": true },
-            { "category": "worldgen", "code": "globalDepositSpawnRate", "dataType": "dropdown", "values": ["3", "2", "1.8", "1.6", "1.4", "1.2", "1", "0.8", "0.6", "0.4", "0.2"], "names": ["300%", "200%", "180%", "160%", "140%", "120%", "100%", "80%", "60%", "40%", "20%"], "default": "1" },
-            { "category": "worldgen", "code": "surfaceCopperDeposits", "dataType": "dropdown", "values": ["1", "0.5", "0.2", "0.12", "0.05", "0.015", "0"], "names": ["Very common", "Common", "Uncommon", "Rare", "Very Rare", "Extremly rare", "Never"], "default": "0.12" },
-            { "category": "worldgen", "code": "surfaceTinDeposits", "dataType": "dropdown", "values": ["0.5", "0.25", "0.12", "0.03", "0.014", "0.007", "0"], "names": ["Very common", "Common", "Uncommon", "Rare", "Very Rare", "Extremly rare", "Never"], "default": "0.007" },
-            { "category": "worldgen", "code": "snowAccum", "dataType": "dropdown", "values": ["true", "false"], "names": ["Enabled", "Disabled"], "default": "true" },
+		{ "category": "worldgen", "code": "worldClimate", "dataType": "dropdown", "values": ["realistic", "patchy"], "names": ["Realistic", "Patchy"], "default": "realistic", "onlyDuringWorldCreate": true },
+		{ "category": "worldgen", "code": "landcover", "dataType": "dropdown", "values": ["0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "0.95", "0.975", "1"], "names": ["~0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "95%", "97.5%", "100%"], "default": "0.975", "onlyDuringWorldCreate": true },
+		{ "category": "worldgen", "code": "oceanscale", "dataType": "dropdown", "values": ["0.1", "0.25", "0.5", "0.75", "1", "1.25", "1.5", "1.75", "2", "3", "4", "5"], "names": ["10%", "25%", "50%", "75%", "100%", "125%", "150%", "175%", "200%", "300%", "400%", "500%"], "default": "5", "onlyDuringWorldCreate": true },
+		{ "category": "worldgen", "code": "upheavelCommonness", "dataType": "dropdown", "values": ["0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"], "names": ["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"], "default": "0.3", "onlyDuringWorldCreate": true },
+		{ "category": "worldgen", "code": "geologicActivity", "dataType": "dropdown", "values": ["0", "0.05", "0.1", "0.2", "0.4"], "names": ["None", "Rare", "Uncommon", "Common", "Very Common"], "default": "0.05", "onlyDuringWorldCreate": true },
+		{ "category": "worldgen", "code": "landformScale", "dataType": "dropdown", "values": ["0.2", "0.4", "0.6", "0.8", "1.0", "1.2", "1.4", "1.6", "1.8", "2", "3"], "names": ["20%", "40%", "60%", "80%", "100%", "120%", "140%", "160%", "180%", "200%", "300%"], "default": "1.0", "onlyDuringWorldCreate": true },
 
 
+		{ "category": "worldgen", "code": "worldWidth", "dataType": "dropdown", "values": ["8192000", "4096000", "2048000", "1024000", "600000", "512000", "384000", "256000", "102400", "51200", "25600", "10240", "5120", "1024", "512", "384", "256", "128", "64", "32" ], "names": ["8 mil blocks", "4 mil blocks", "2 mil blocks", "1 mil blocks", "600k blocks", "512k blocks", "384k blocks", "256k blocks", "102k blocks", "51k blocks", "25k blocks", "10k blocks", "5120 blocks", "1024 blocks", "512 blocks", "384 blocks", "256 blocks", "128 blocks", "64 blocks", "32 blocks"], "default": "1024000", "onlyDuringWorldCreate": true },
+		{ "category": "worldgen", "code": "worldLength", "dataType": "dropdown", "values": ["8192000", "4096000", "2048000", "1024000", "600000", "512000", "384000", "256000", "102400", "51200", "25600", "10240", "5120", "1024", "512", "384", "256", "128", "64", "32" ], "names": ["8 mil blocks", "4 mil blocks", "2 mil blocks", "1 mil blocks", "600k blocks", "512k blocks", "384k blocks", "256k blocks", "102k blocks", "51k blocks", "25k blocks", "10k blocks", "5120 blocks", "1024 blocks", "512 blocks", "384 blocks", "256 blocks", "128 blocks", "64 blocks", "32 blocks"], "default": "1024000", "onlyDuringWorldCreate": true },
+		{ "category": "worldgen", "code": "worldEdge", "dataType": "dropdown", "values": ["blocked", "traversable" ], "names": ["Blocked", "Traversable (Can fall down)"], "default": "traversable" },
+		{ "category": "worldgen", "code": "polarEquatorDistance", "dataType": "dropdown", "values": ["800000", "400000", "200000", "100000", "50000", "25000", "15000", "10000", "5000"], "names": ["800k blocks", "400k blocks", "200k blocks", "100k blocks", "50k blocks", "25k blocks", "15k blocks", "10k blocks", "5000 blocks"], "default": "50000", "onlyDuringWorldCreate": true },
+		{ "category": "worldgen", "code": "storyStructuresDistScaling", "dataType": "dropdown", "values": ["0.15", "0.25", "0.5", "0.75", "1", "1.5", "2", "3"], "names": ["15%", "25%", "50%", "75%", "100%", "150%", "200%", "300%"], "default": "1", "onlyDuringWorldCreate": true },
+		{ "category": "worldgen", "code": "globalTemperature", "dataType": "dropdown", "values": ["4", "2", "1.5", "1", "0.75", "0.5", "0.25"], "names": ["Scorching hot", "Very hot", "Hot", "Normal", "Cold", "Very Cold", "Snowball earth"], "default": "1", "onlyDuringWorldCreate": true },
+		{ "category": "worldgen", "code": "globalPrecipitation", "dataType": "dropdown", "values": ["4", "2", "1.5", "1", "0.5", "0.25", "0.1"], "names": ["Super humid", "Very humid", "Humid", "Normal", "Semi-Arid", "Arid", "Hyperarid"], "default": "1", "onlyDuringWorldCreate": true },
+		{ "category": "worldgen", "code": "globalForestation", "dataType": "dropdown", "values": ["1", "0.9", "0.75", "0.5", "0.25", "0", "-0.25", "-0.5", "-0.75", "-0.9", "-1"], "names": ["Forest World (+100%)", "Extremely forested (+90%)", "Very highly forested (+75%)", "Highly forested (+50%)", "Somewhat more forest (+25%)", "Normal", "Somewhat less forest (-25%)", "Significantly less forested (-50%)", "Much less forested (-75%)", "Near Tree-less (-90%)", "Tree-less World (-100%)"], "default": "0", "onlyDuringWorldCreate": true },
+		{ "category": "worldgen", "code": "globalDepositSpawnRate", "dataType": "dropdown", "values": ["3", "2", "1.8", "1.6", "1.4", "1.2", "1", "0.8", "0.6", "0.4", "0.2"], "names": ["300%", "200%", "180%", "160%", "140%", "120%", "100%", "80%", "60%", "40%", "20%"], "default": "1" },
+		{ "category": "worldgen", "code": "surfaceCopperDeposits", "dataType": "dropdown", "values": ["1", "0.5", "0.2", "0.12", "0.05", "0.015", "0"], "names": ["Very common", "Common", "Uncommon", "Rare", "Very Rare", "Extremly rare", "Never"], "default": "0.12" },
+		{ "category": "worldgen", "code": "surfaceTinDeposits", "dataType": "dropdown", "values": ["0.5", "0.25", "0.12", "0.03", "0.014", "0.007", "0"], "names": ["Very common", "Common", "Uncommon", "Rare", "Very Rare", "Extremly rare", "Never"], "default": "0.007" },
+		{ "category": "worldgen", "code": "snowAccum", "dataType": "dropdown", "values": ["true", "false"], "names": ["Enabled", "Disabled"], "default": "true" },
 
-            { "desc": "Allows Players to claim Land", "category": "multiplayer", "code": "allowLandClaiming", "dataType": "bool", "default": "true" },
-            { "category": "multiplayer", "code": "classExclusiveRecipes", "dataType": "bool", "default": "true" },
-            { "category": "multiplayer", "code": "auctionHouse", "dataType": "bool", "default": "true" }
-        ]
+
+
+		{ "desc": "Allows Players to claim Land", "category": "multiplayer", "code": "allowLandClaiming", "dataType": "bool", "default": "true" },
+		{ "category": "multiplayer", "code": "classExclusiveRecipes", "dataType": "bool", "default": "true" },
+		{ "category": "multiplayer", "code": "auctionHouse", "dataType": "bool", "default": "true" }
+		]
     };
 
     // Separate Static Info so the other arrays can easier be updated
   const OPTIONS_INFO = {
     // Playstyle Preset
     default: {
-      name: "Default"
+	name: "Default"
     },
     surviveandbuild: {
-      name: "Standard"
+	name: "Standard"
     },
     exploration: {
-      name: "Exploration"
+	name: "Exploration"
     },
     wildernesssurvival: {
-      name: "Wilderness Survival"
+	name: "Wilderness Survival"
     },
     homosapiens: {
-      name: "Homo Sapiens"
+	name: "Homo Sapiens"
     },
 
 
     // Server Options
     server: {
-      name: "Server Options"
+	name: "Server Options"
     },
     ServerName: {
-      name: "Server Name",
-      desc: "Server name visible in the server list."
+	name: "Server Name",
+	desc: "Server name visible in the server list."
     },
     ServerDescription: {
-      name: "Server Description",
-      desc: "Server Description visible in server list details."
+	name: "Server Description",
+	desc: "Server Description visible in server list details."
     },
     WelcomeMessage: {
-      name: "Welcome Message",
-      desc: "Welcome message when players join the server. Placeholder {0} will be replaced with the player's nickname."
+	name: "Welcome Message",
+	desc: "Welcome message when players join the server. Placeholder {0} will be replaced with the player's nickname."
     },
     MaxClients: {
-      name: "Player Limit",
-      desc: "Maximum number of players that may connect to the server."
+	name: "Player Limit",
+	desc: "Maximum number of players that may connect to the server."
     },
     MaxClientsInQueue: {
-      name: "Player Queue Limit",
-      desc: "Maximum number of players in queue when server is full."
+	name: "Player Queue Limit",
+	desc: "Maximum number of players in queue when server is full."
     },
     Password: {
-      name: "Password",
-      desc: "Set a password for your server. If none is set anyone can join."
+	name: "Password",
+	desc: "Set a password for your server. If none is set anyone can join."
     },
     AdvertiseServer: {
-      name: "Make Server Public",
-      desc: "If enabled, the server will be added to the public server listing."
+	name: "Make Server Public",
+	desc: "If enabled, the server will be added to the public server listing."
     },
     PassTimeWhenEmpty: {
-      name: "Persistent Calendar",
-      desc: "If time should pass when the server has no connected players."
+	name: "Persistent Calendar",
+	desc: "If time should pass when the server has no connected players."
     },
     Port: {
-      name: "Port",
-      desc: "Port what server should listen. Portforwarding needed."
+	name: "Port",
+	desc: "Port what server should listen. Portforwarding needed."
     },
     SaveFileLocation: {
-      name: "Savefile Location",
-      desc: "[OPTIONAL] Set a custom Savefile Location. \nFilename will be set from Servername. \nKnow what you're doing..."
+	name: "Savefile Location",
+	desc: "[OPTIONAL] Set a custom Savefile Location. \nFilename will be set from Servername. \nKnow what you're doing..."
     },
 
     // Other Options
     other: {
-      name: "Additional Server Options"
+	name: "World Options"
     },
-    WorldHeight: {
-      name: "World Height",
-      desc: "Height of the world during generation. (slow chunk loading above 384 blocks)"
+    worldHeight: {
+	name: "World Height",
+	desc: "Height of the world during generation. (slow chunk loading above 384 blocks)"
     },
     Seed: {
-      name: "World Seed",
-      desc: "Does not guarantee exactly the same world each time!"
+	name: "World Seed",
+	desc: "Does not guarantee exactly the same world each time!"
     },
 
     // Player, Spawn and Death
     spawnndeath: {
-      name: "Player, Spawn and Death"
+	name: "Player, Spawn and Death"
     },
     gameMode: {
-      name: "Game Mode",
-      desc: "Survival: Limited blocks, limited health, cannot fly. \nCreative: Infinite blocks, infinite health, can fly and access to the World Edit tools."
+	name: "Game Mode",
+	desc: "Survival: Limited blocks, limited health, cannot fly. \nCreative: Infinite blocks, infinite health, can fly and access to the World Edit tools."
     },
     playerlives: {
-      name: "Player Lives",
-      desc: "Sets the amount of lives a player has before he can no longer respawn."
+	name: "Player Lives",
+	desc: "Sets the amount of lives a player has before he can no longer respawn."
     },
     startingClimate: {
-      name: "Starting Climate",
-      desc: "The climate the player will start out in. Only applies if Climate Distribution is set to Realistic."
+	name: "Starting Climate",
+	desc: "The climate the player will start out in. Only applies if Climate Distribution is set to Realistic."
     },
     spawnRadius: {
-      name: "Random Respawn Radius",
-      desc: "When a new player joins or dies without setting a new spawn point, this is the radius around the map center inside which the player randomly spawns."
+	name: "Random Respawn Radius",
+	desc: "When a new player joins or dies without setting a new spawn point, this is the radius around the map center inside which the player randomly spawns."
     },
     graceTimer: {
-      name: "Grace Timer",
-      desc: "How many days before mobs begin to spawn."
+	name: "Grace Timer",
+	desc: "How many days before mobs begin to spawn."
     },
     deathPunishment: {
-      name: "Death Punishment",
-      desc: "Whether or not to keep your inventory when you die."
+	name: "Death Punishment",
+	desc: "Whether or not to keep your inventory when you die."
     },
     droppedItemsTimer: {
-      name: "Dropped Items Timer",
-      desc: "If you drop your inventory contents when you die, how long (in real world time) the dropped items will remain before being automatically de-spawned."
+	name: "Dropped Items Timer",
+	desc: "If you drop your inventory contents when you die, how long (in real world time) the dropped items will remain before being automatically de-spawned."
     },
 
     // Survival Options
     survivalchallenges: {
-      name: "Survival Challenges"
+	name: "Survival Challenges"
     },
     seasons: {
-      name: "Seasons",
-      desc: "If enabled, seasons will pass over time, otherwise 'spring' will make the climate always stay at spring."
+	name: "Seasons",
+	desc: "If enabled, seasons will pass over time, otherwise 'spring' will make the climate always stay at spring."
     },
     daysPerMonth: {
-      name: "Days per Month",
-      desc: "Amount of days each in-game month should have. This determines the length of a year and the length of seasons. One year is always 12 months. We recommend adjusting hunger rate, health regeneration rate and food spoilage to match any changes to days per month."
+	name: "Days per Month",
+	desc: "Amount of days each in-game month should have. This determines the length of a year and the length of seasons. One year is always 12 months. We recommend adjusting hunger rate, health regeneration rate and food spoilage to match any changes to days per month."
     },
     harshWinters: {
-      name: "True Winters",
-      desc: "When enabled, cold temperatures will damage crops, reduce animal spawn during winter and reduce meat harvested from animals."
+	name: "True Winters",
+	desc: "When enabled, cold temperatures will damage crops, reduce animal spawn during winter and reduce meat harvested from animals."
     },
     blockGravity: {
-      name: "Block Gravity",
-      desc: "Which blocks should fall down if they are not supported by a block below."
+	name: "Block Gravity",
+	desc: "Which blocks should fall down if they are not supported by a block below."
     },
     caveIns: {
-      name: "Cave-Ins",
-      desc: "Causes unstable rock to collapse when mined."
+	name: "Cave-Ins",
+	desc: "Causes unstable rock to collapse when mined."
     },
     allowFallingBlocks: {
-      name: "Allow falling Blocks",
-      desc: "Causes unstable rock to collapse when mined."
+	name: "Allow falling Blocks",
+	desc: "Causes unstable rock to collapse when mined."
     },
     allowFireSpread: {
-      name: "Allow Fire Spread",
-      desc: "Allows fire to spread to other flammable blocks."
+	name: "Allow Fire Spread",
+	desc: "Allows fire to spread to other flammable blocks."
     },
     lightningFires: {
-      name: "Fire from Lightning",
-      desc: "Whether a lightning strike should ignite a fire without protection from lightning rods."
+	name: "Fire from Lightning",
+	desc: "Whether a lightning strike should ignite a fire without protection from lightning rods."
     },
     allowUndergroundFarming: {
-      name: "Allow Underground Farming",
-      desc: "On: Crops can be grown below sea level with artificial light (block light). \nOff: Each meter below sea level incurs a 1 light level penalty, making deep farming impossible."
+	name: "Allow Underground Farming",
+	desc: "On: Crops can be grown below sea level with artificial light (block light). \nOff: Each meter below sea level incurs a 1 light level penalty, making deep farming impossible."
     },
     noLiquidSourceTransport: {
-      name: "Prevent Liquid Source Transport",
-      desc: "On: Buckets cannot be used to create new water source blocks. \nOff: Buckets can be used to create new water source blocks."
+	name: "Prevent Liquid Source Transport",
+	desc: "On: Buckets cannot be used to create new water source blocks. \nOff: Buckets can be used to create new water source blocks."
     },
     playerHealthPoints: {
-      name: "Player Health Points",
-      desc: "How many base health points the player starts out with, excluding the extra health points gained from the nutrition system."
+	name: "Player Health Points",
+	desc: "How many base health points the player starts out with, excluding the extra health points gained from the nutrition system."
     },
     playerHealthRegenSpeed: {
-      name: "Health Regeneration Rate",
-      desc: "The rate at which the player regenerates Health."
+	name: "Health Regeneration Rate",
+	desc: "The rate at which the player regenerates Health."
     },
     playerHungerSpeed: {
-      name: "Hunger Rate",
-      desc: "The rate at which the player gets hungry."
+	name: "Hunger Rate",
+	desc: "The rate at which the player gets hungry."
     },
     lungCapacity: {
-      name: "Lung Capacity",
-      desc: "How long you can breathe underwater."
+	name: "Lung Capacity",
+	desc: "How long you can breathe underwater."
     },
     bodyTemperatureResistance: {
-      name: "Body Temperature Hardiness",
-      desc: "The outside temperature in °C the player can withstand without clothing, when dry and standing still."
+	name: "Body Temperature Hardiness",
+	desc: "The outside temperature in °C the player can withstand without clothing, when dry and standing still."
     },
     playerMoveSpeed: {
-      name: "Walk Speed",
-      desc: "The speed at which the player normally moves around. In-game choices (character class, armor) will also affect movement speed."
+	name: "Walk Speed",
+	desc: "The speed at which the player normally moves around. In-game choices (character class, armor) will also affect movement speed."
     },
     creatureHostility: {
-      name: "Creature Hostility",
-      desc: "Aggressive: Wolves, Drifters and Locust will attack you on sight. Other creatures attack when provoked. \nPassive: Creatures only attack when provoked. \nNever hostile: Creatures will never fight back."
+	name: "Creature Hostility",
+	desc: "Aggressive: Wolves, Drifters and Locust will attack you on sight. Other creatures attack when provoked. \nPassive: Creatures only attack when provoked. \nNever hostile: Creatures will never fight back."
     },
     creatureStrength: {
-      name: "Creature Strength",
-      desc: "How much damage a creature should inflict, e.g. at 200% creatures will do twice the amount of the usual damage."
+	name: "Creature Strength",
+	desc: "How much damage a creature should inflict, e.g. at 200% creatures will do twice the amount of the usual damage."
     },
     creatureSwimSpeed: {
-      name: "Creature Swim Speed",
-      desc: "Affects overall swim speed of all creatures."
+	name: "Creature Swim Speed",
+	desc: "Affects overall swim speed of all creatures."
     },
     foodSpoilSpeed: {
-      name: "Food Spoilage Rate",
-      desc: "How fast food should spoil."
+	name: "Food Spoilage Rate",
+	desc: "How fast food should spoil."
     },
     saplingGrowthRate: {
-      name: "Sapling Growth Rate",
-      desc: "Tree sapling growth time."
+	name: "Sapling Growth Rate",
+	desc: "Tree sapling growth time."
     },
     toolDurability: {
-      name: "Tool Durability",
-      desc: "How long tools should last until they break."
+	name: "Tool Durability",
+	desc: "How long tools should last until they break."
     },
     toolMiningSpeed: {
-      name: "Tool Mining Speed",
-      desc: "How fast tools should break blocks."
+	name: "Tool Mining Speed",
+	desc: "How fast tools should break blocks."
     },
     propickNodeSearchRadius: {
-      name: "Prospecting Radius",
-      desc: "The prospecting pick is a tool to help players to find the location of ores. When this Node Search mode is enabled, it assists the player greatly in locating ores: if a node is detected, the ore is guaranteed to be within the specified range."
+	name: "Prospecting Radius",
+	desc: "The prospecting pick is a tool to help players to find the location of ores. When this Node Search mode is enabled, it assists the player greatly in locating ores: if a node is detected, the ore is guaranteed to be within the specified range."
     },
     microblockChiseling: {
-      name: "Microblock Chiseling",
-      desc: "If enabled, the chisel can be used to carve and change the shape of blocks. \nDefault: Stone, Wood & Bricks in survival. \nMost cubic blocks in creative"
+	name: "Microblock Chiseling",
+	desc: "If enabled, the chisel can be used to carve and change the shape of blocks. \nDefault: Stone, Wood & Bricks in survival. \nMost cubic blocks in creative"
     },
     allowCoordinateHud: {
-      name: "Coordinate Overlay",
-      desc: "Whether to allow the use of the coordinate overlay toggled via Ctrl + V."
+	name: "Coordinate Overlay",
+	desc: "Whether to allow the use of the coordinate overlay toggled via Ctrl + V."
     },
     allowMap: {
-      name: "World Map",
-      desc: "Whether to allow the use of the world map."
+	name: "World Map",
+	desc: "Whether to allow the use of the world map."
     },
     colorAccurateWorldmap: {
-      name: "Color-Accurate World Map",
-      desc: "If activated, the world map will be rendered with the authentic block colors, otherwise, it will feature visuals reminiscent of a medieval world map."
+	name: "Color-Accurate World Map",
+	desc: "If activated, the world map will be rendered with the authentic block colors, otherwise, it will feature visuals reminiscent of a medieval world map."
     },
     loreContent: {
-      name: "Lore Content",
-      desc: "Whether to generate lore related content or anything related to previous human history."
+	name: "Lore Content",
+	desc: "Whether to generate lore related content or anything related to previous human history."
     },
     clutterObtainable: {
-      name: "Clutter obtainable",
-      desc: "Can the player obtain clutter blocks from ruins by breaking them?"
+	name: "Clutter obtainable",
+	desc: "Can the player obtain clutter blocks from ruins by breaking them?"
     },
 
     // Temporal Options
     temporalstability: {
-      name: "Temporal Stability",
+	name: "Temporal Stability",
     },
     temporalStability: {
-      name: "Temporal Stability",
-      desc: "Enables or disables the temporal stability game mechanic."
+	name: "Temporal Stability",
+	desc: "Enables or disables the temporal stability game mechanic."
     },
     temporalStorms: {
-      name: "Temporal Storms",
-      desc: "How often temporal storms should occur."
+	name: "Temporal Storms",
+	desc: "How often temporal storms should occur."
     },
     tempstormDurationMul: {
-      name: "Temporal Storm Length",
-      desc: "How long a temporal storm should last."
+	name: "Temporal Storm Length",
+	desc: "How long a temporal storm should last."
     },
     temporalRifts: {
-      name: "Temporal Rifts",
-      desc: "Temporal rifts cause Drifters to appear on the worlds surface. \nOff: Disables rifts and surface drifters. \nInvisible: Rifts spawn drifters, but are invisible, do not affect your temporal stability and make no sound. \nVisible: Rifts spawn drifters, can be seen, emit sounds and affect your temporal stability."
+	name: "Temporal Rifts",
+	desc: "Temporal rifts cause Drifters to appear on the worlds surface. \nOff: Disables rifts and surface drifters. \nInvisible: Rifts spawn drifters, but are invisible, do not affect your temporal stability and make no sound. \nVisible: Rifts spawn drifters, can be seen, emit sounds and affect your temporal stability."
     },
     temporalGearRespawnUses: {
-      name: "Temporal Gear Respawns",
-      desc: "The temporal gear allows you to set a spawn point. Here you can configure how often it can be used for respawning at the set point."
+	name: "Temporal Gear Respawns",
+	desc: "The temporal gear allows you to set a spawn point. Here you can configure how often it can be used for respawning at the set point."
     },
     temporalStormSleeping: {
-      name: "Temporal Storm Sleeping",
-      desc: "Sleeping during temporal storms."
+	name: "Temporal Storm Sleeping",
+	desc: "Sleeping during temporal storms."
     },
 
     // World Generation Options
     worldgen: {
-      name: "World Generation"
+	name: "World Generation"
     },
     worldClimate: {
-      name: "Climate Distribution",
-      desc: "Realistic: Cold towards north, hot towards south. Walking east and west has roughly the same climate. (recommended) \nPatchy: Random patches of hot and cold. \nPlease note: The seasons system has been optimized for Realistic climate."
+	name: "Climate Distribution",
+	desc: "Realistic: Cold towards north, hot towards south. Walking east and west has roughly the same climate. (recommended) \nPatchy: Random patches of hot and cold. \nPlease note: The seasons system has been optimized for Realistic climate."
     },
     landcover: {
-      name: "Landcover",
-      desc: "How much percent of the world should be land. The rest is ocean."
+	name: "Landcover",
+	desc: "How much percent of the world should be land. The rest is ocean."
     },
     oceanscale: {
-      name: "Ocean Scale",
-      desc: "Determines how much ocean will be between pieces of land."
+	name: "Ocean Scale",
+	desc: "Determines how much ocean will be between pieces of land."
     },
     upheavelCommonness: {
-      name: "Upheaval Rate",
-      desc: "How common geologic upheaval should be. Produces large scale hilly terrain."
+	name: "Upheaval Rate",
+	desc: "How common geologic upheaval should be. Produces large scale hilly terrain."
     },
     geologicActivity: {
-      name: "Geologic Activity",
-      desc: "Some areas now have underground lava rivers closer to the surface, as well as hot springs above underground lava pools."
+	name: "Geologic Activity",
+	desc: "Some areas now have underground lava rivers closer to the surface, as well as hot springs above underground lava pools."
     },
     landformScale: {
-      name: "Landform Scale",
-      desc: "Landforms are the principal mechanic that shape the terrain. \nThey are what determine where are lakes, mountains, hills, flat lands, cliffs,... how common they are, and (optionally) in what climate they can occur. \nAn increased landform scale means the same landform will occupy a larger area. In other words, you will encounter wider mountains, wider lakes, wider flat lands, etc."
+	name: "Landform Scale",
+	desc: "Landforms are the principal mechanic that shape the terrain. \nThey are what determine where are lakes, mountains, hills, flat lands, cliffs,... how common they are, and (optionally) in what climate they can occur. \nAn increased landform scale means the same landform will occupy a larger area. In other words, you will encounter wider mountains, wider lakes, wider flat lands, etc."
     },
     worldWidth: {
-      name: "World Width",
-      desc: "How wide the world map should be (X axis, West-East)"
+	name: "World Width",
+	desc: "How wide the world map should be (X axis, West-East)"
     },
     worldLength: {
-      name: "World Length",
-      desc: "How long the world map should be (Z axis, North-South)"
+	name: "World Length",
+	desc: "How long the world map should be (Z axis, North-South)"
     },
     worldEdge: {
-      name: "World Edge",
-      desc: "What should happen when a player or a creature walks over the edge of the world."
+	name: "World Edge",
+	desc: "What should happen when a player or a creature walks over the edge of the world."
     },
     polarEquatorDistance: {
-      name: "Polar-Equator Distance",
-      desc: "How far (in blocks) a player must walk to reach the equator, starting from polar regions. \nOnly applies if Climate Distribution is set to Realistic."
+	name: "Polar-Equator Distance",
+	desc: "How far (in blocks) a player must walk to reach the equator, starting from polar regions. \nOnly applies if Climate Distribution is set to Realistic."
     },
     storyStructuresDistScaling: {
-      name: "Story Distance Scaling",
-      desc: "If lore content is enabled, this determines how far you have to travel to reach them (50% means only half as far as the default). \nDefault value is an estimated 2.5hours of full travel with Elk to all the locations."
+	name: "Story Distance Scaling",
+	desc: "If lore content is enabled, this determines how far you have to travel to reach them (50% means only half as far as the default). \nDefault value is an estimated 2.5hours of full travel with Elk to all the locations."
     },
     globalTemperature: {
-      name: "Global Temperature",
-      desc: "Changes the world-wide temperature. \nLow or high temperatures might be difficult or impossible to survive or progress through."
+	name: "Global Temperature",
+	desc: "Changes the world-wide temperature. \nLow or high temperatures might be difficult or impossible to survive or progress through."
     },
     globalPrecipitation: {
-      name: "Global Precipitation",
-      desc: "Changes the world wide precipitation levels. \nExtreme aridity or humidity might be difficult or impossible to survive."
+	name: "Global Precipitation",
+	desc: "Changes the world wide precipitation levels. \nExtreme aridity or humidity might be difficult or impossible to survive."
     },
     globalForestation: {
-      name: "Forestation & Shrubs",
-      desc: "Changes the amount of forests and shrubs to be generated. High values will tend to make crossing terrain slower for players."
+	name: "Forestation & Shrubs",
+	desc: "Changes the amount of forests and shrubs to be generated. High values will tend to make crossing terrain slower for players."
     },
     globalDepositSpawnRate: {
-      name: "Global Deposit Spawn Rate",
-      desc: "Affects the spawn rate of all ores. Does not affect areas devoid of certain minerals."
+	name: "Global Deposit Spawn Rate",
+	desc: "Affects the spawn rate of all ores. Does not affect areas devoid of certain minerals."
     },
     surfaceCopperDeposits: {
-      name: "Surface Copper Frequency",
-      desc: "How often surface copper deposits should spawn."
+	name: "Surface Copper Frequency",
+	desc: "How often surface copper deposits should spawn."
     },
     surfaceTinDeposits: {
-      name: "Surface Tin Frequency",
-      desc: "How often surface tin deposits should spawn."
+	name: "Surface Tin Frequency",
+	desc: "How often surface tin deposits should spawn."
     },
     snowAccum: {
-      name: "Snow and Ice",
-      desc: "When enabled, snow will accumulate on the ground in snowy weather at cold temperatures, as well as water freezing when it's cold enough. \nSnow and ice will melt at warm temperatures."
+	name: "Snow and Ice",
+	desc: "When enabled, snow will accumulate on the ground in snowy weather at cold temperatures, as well as water freezing when it's cold enough. \nSnow and ice will melt at warm temperatures."
     },
     multiplayer: {
-      name: "Multiplayer"
+	name: "Multiplayer"
     },
     allowLandClaiming: {
-      name: "Land Claiming",
-      desc: "Whether to allow the use of the land claiming system, which allows players to deny access to areas of the world to other players."
+	name: "Land Claiming",
+	desc: "Whether to allow the use of the land claiming system, which allows players to deny access to areas of the world to other players."
     },
     classExclusiveRecipes: {
-      name: "Class exclusive Recipes",
-      desc: "If enabled, some crafting recipes become exclusive to certain character classes. (recommended)"
+	name: "Class exclusive Recipes",
+	desc: "If enabled, some crafting recipes become exclusive to certain character classes. (recommended)"
     },
     auctionHouse: {
-      name: "Auction House",
-      desc: "Whether to allow the use of the server-wide auction house at Trader wagons."
+	name: "Auction House",
+	desc: "Whether to allow the use of the server-wide auction house at Trader wagons."
     },
     key: {
-      name: "NameValue",
-      desc: "DescValue"
+	name: "NameValue",
+	desc: "DescValue"
     },
   };
 
@@ -985,526 +985,623 @@
   <meta charset="UTF-8">
   <title>Vintage Story Server Configurator</title>
   <style>
-      body {
-          font-family: system-ui, sans-serif;
-          background: #111;
-          color: #ddd;
-          margin: 0;
-          padding: 20px;
-      }
-      h1, h2 {
-          color: #fff;
-      }
-      table td {
-          padding: 10px;
-      }
-      table td:first-child {
-          width: 250px;
-      }
-      fieldset {
-          border: 1px solid #333;
-          margin-bottom: 20px;
-          padding: 10px;
-      }
-      legend {
-          padding: 0 8px;
-          color: #aaa;
-      }
-      label {
-          display: block;
-          margin: 6px 0;
-      }
-      select, input[type="text"], input[type="number"] {
-          width: 575px;
-          background: #1a1a1a;
-          color: #ddd;
-          border: 1px solid #333;
-          padding: 4px;
-      }
-      input[type="checkbox"] {
-          transform: scale(1.2);
-          margin-right: 6px;
-      }
-      button {
-          background: #2a2a2a;
-          color: #fff;
-          border: 1px solid #444;
-          padding: 10px 20px;
-          cursor: pointer;
-      }
-      button:hover {
-          background: #3a3a3a;
-      }
-      #signature {
-          position: fixed;
-          bottom: 10px;
-          right: 10px;
-          background: rgba(0,0,0,0.6);
-          color: white;
-          padding: 4px 8px;
-          border-radius: 4px;
-          font-size: 14px;
-          z-index: 1000;
-          opacity: 0.5;
-          text-decoration: none;
-      }
+	body {
+		  font-family: system-ui, sans-serif;
+		  background: #111;
+		  color: #ddd;
+		  margin: 0;
+		  padding: 20px;
+	}
+	h1, h2 {
+		  color: #fff;
+	}
+	table td {
+		  padding: 10px;
+	}
+	table td:first-child {
+		  width: 250px;
+	}
+	fieldset {
+		  border: 1px solid #333;
+		  margin-bottom: 20px;
+		  padding: 10px;
+	}
+	legend {
+		  padding: 0 8px;
+		  color: #aaa;
+	}
+	label {
+		  display: block;
+		  margin: 6px 0;
+	}
+	select, input[type="text"], input[type="number"] {
+		  width: 575px;
+		  background: #1a1a1a;
+		  color: #ddd;
+		  border: 1px solid #333;
+		  padding: 4px;
+	}
+	input[type="checkbox"] {
+		  transform: scale(1.2);
+		  margin-right: 6px;
+	}
+	button {
+		  background: #2a2a2a;
+		  color: #fff;
+		  border: 1px solid #444;
+		  padding: 10px 20px;
+		  cursor: pointer;
+	}
+	button:hover {
+		  background: #3a3a3a;
+	}
+	#signature {
+		  position: fixed;
+		  bottom: 10px;
+		  right: 10px;
+		  background: rgba(0,0,0,0.6);
+		  color: white;
+		  padding: 4px 8px;
+		  border-radius: 4px;
+		  font-size: 14px;
+		  z-index: 1000;
+		  opacity: 0.5;
+		  text-decoration: none;
+	}
 
-      @keyframes glowUp {
-          0% {
-              box-shadow: 0 0 0 rgba(120, 180, 255, 0);
-              transform: translateY(0);
-          }
-          100% {
-              box-shadow: 0 0 12px rgba(120, 180, 255, 0.35);
-              transform: translateY(-2px);
-          }
-      }
+	@keyframes glowUp {
+		  0% {
+			box-shadow: 0 0 0 rgba(120, 180, 255, 0);
+			transform: translateY(0);
+		  }
+		  100% {
+			box-shadow: 0 0 12px rgba(120, 180, 255, 0.35);
+			transform: translateY(-2px);
+		  }
+	}
 
-      .export-glow {
-          animation: glowUp 0.4s ease-out forwards;
-          background-color: #2f3b55;
-      }
+	.export-glow {
+		  animation: glowUp 0.4s ease-out forwards;
+		  background-color: #2f3b55;
+	}
+		
+	.tabs {
+		display: flex;
+		gap: 6px;
+		margin: 20px 0 10px 0;
+		border-bottom: 1px solid #333;
+	}
+	
+	.tab {
+		padding: 8px 14px;
+		cursor: pointer;
+		background: #1a1a1a;
+		color: #aaa;
+		border: 1px solid #333;
+		border-bottom: none;
+	}
+	
+	.tab.active {
+		background: #2a2a2a;
+		color: #fff;
+		border-color: #555;
+	}
+	
+	.tab-content {
+		display: none;
+	}
+	
+	.tab-content.active {
+		display: block;
+	}
+	
 
-  </style>
-  </head>
-  <body>
+	</style>
+	</head>
+	<body>
 
-  <h1>Vintage Story Server Configurator</h1>
+	<h1>Vintage Story Server Configurator</h1>
 
-  <a id="signature" href="https://github.com/yani9o/VSS_Configurator" target="_blank">by yani9o</a>
+	<a id="signature" href="https://github.com/yani9o/VSS_Configurator" target="_blank">by yani9o</a>
 
-  <table style="padding:13px">
-    <tr>
-      <td>Playstyle-Preset:</td>
-      <td><select id="playstyleSelect"></select></td>
-    </tr>
-  </table>
+	<table style="padding:13px">
+	<tr>
+	<td>Playstyle-Preset:</td>
+	<td><select id="playstyleSelect"></select></td>
+	</tr>
+	</table>
 
-  <div id="configRoot"></div>
+	<div class="tabs" id="tabBar"></div>
+	<div id="configRoot"></div>
 
-  <div style="display:flex; align-items:center; gap:12px; margin-top:10px;">
-    <button id="exportBtn" onclick="exportConfig()">Export Configuration</button>
+	<div style="display:flex; align-items:center; gap:12px; margin-top:10px;">
+	<button id="exportBtn" onclick="exportConfig()">Export Configuration</button>
 
-    <label style="display:flex; align-items:center; cursor:pointer;">
-      <input type="checkbox" id="exportWorldOnly">
-      Only export WorldConfig
-    </label>
-  </div>
+	<label style="display:flex; align-items:center; cursor:pointer;">
+	<input type="checkbox" id="exportWorldOnly">
+	Only export WorldConfig
+	</label>
+	</div>
 
-  <script>
-  let serverConfig;
-  let attributesByCode = {};
-  let playstyles = [];
+	<script>
+	let serverConfig;
+	let attributesByCode = {};
+	let playstyles = [];
 
-  let baseConfig; // deep copy
+	let baseConfig; // deep copy
+	
+	let lastActiveTab = null;
+	
+	
 
-  async function loadData() {
-      const cfg = SERVERCONFIG_DATA;
-      serverConfig = cfg;
+	function addOtherOptions(attrs) {
+		const before = [];
+		const worldgen = [];
+		const after = [];
 
-      const meta = OPTIONS_DATA;
+		let hasSeed = false;
+		let hasWorldHeight = false;
+		let gotoafter = false;
 
-      const defaultWorldConfig = buildDefaultWorldConfig();
-
-      playstyles = [
-          {
-              code: "default",
-              playListCode: "server",
-              langCode: "preset-default",
-              mods: [],
-              listOrder: 0,
-              worldType: "standard",
-              worldConfig: defaultWorldConfig
-          },
-          ...meta.playstyles
-      ];
-
-      serverConfig.WorldConfig.WorldConfiguration =
-          JSON.parse(JSON.stringify(defaultWorldConfig));
-
-      serverConfig.WorldConfig.PlayStyle = "default";
-
-      baseConfig = JSON.parse(JSON.stringify(defaultWorldConfig));
-
-      meta.worldConfigAttributes.forEach(a => {
-          attributesByCode[a.code] = a;
-      });
-
-      buildPlaystyleSelect();
-      buildUI();
-  }
-
-  function buildPlaystyleSelect() {
-      const sel = document.getElementById('playstyleSelect');
-      playstyles.forEach(ps => {
-          const opt = document.createElement('option');
-          opt.value = ps.code;
-          opt.textContent = OPTIONS_INFO[ps.code].name ?? 'server';
-          sel.appendChild(opt);
-      });
-
-      sel.value = serverConfig.WorldConfig.PlayStyle;
-
-      sel.onchange = () => applyPlaystyle(sel.value);
-  }
-
-  function applyPlaystyle(code) {
-      const ps = playstyles.find(p => p.code === code);
-      if (!ps) return;
-
-      serverConfig.WorldConfig.WorldConfiguration = JSON.parse(JSON.stringify(baseConfig));
-
-      Object.entries(ps.worldConfig).forEach(([k, v]) => {
-          serverConfig.WorldConfig.WorldConfiguration[k] = v;
-      });
-
-      serverConfig.WorldConfig.PlayStyle = code;
-
-      buildUI();
-  }
-
-  function buildServerSettings() {
-      const root = document.getElementById('configRoot');
-
-      const fs = document.createElement('fieldset');
-      const lg = document.createElement('legend');
-      const info = OPTIONS_INFO;
-      const name = info['server'].name ?? 'server';
-      lg.textContent = name;
-      fs.appendChild(lg);
-
-      const table = document.createElement('table');
-
-      const fields = [
-          ['ServerName','text'],
-          ['ServerDescription','text'],
-          ['WelcomeMessage','text'],
-          ['MaxClients','number'],
-          ['MaxClientsInQueue','number'],
-          ['Password','text'],
-          ['AdvertiseServer','bool'],
-          ['PassTimeWhenEmpty','bool'],
-          ['Port','number'],
-          ['SaveFileLocation','text']
-      ];
-
-      fields.forEach(([key, type]) => {
-          const tr = document.createElement('tr');
-          const tdLabel = document.createElement('td');
-          const info = OPTIONS_INFO[key];
-          const name = info?.name ?? key;
-          const desc = info?.desc ?? '';
-          tdLabel.textContent = name;
-          tdLabel.title = desc;
-          const tdInput = document.createElement('td');
-          let input = document.createElement('input');
-
-          if (type === 'bool') {
-              input.type = 'checkbox';
-              input.checked = serverConfig[key] === true || serverConfig[key] === 'true';
-              input.onchange = () => serverConfig[key] = input.checked;
-          } else {
-              input.type = type;
-              input.value = serverConfig[key] ?? '';
-              input.oninput = () => serverConfig[key] = input.value;
-          }
-
-          input.title = desc;
-
-          tdInput.appendChild(input);
-          tr.appendChild(tdLabel);
-          tr.appendChild(tdInput);
-          table.appendChild(tr);
-      });
-
-      fs.appendChild(table);
-      root.appendChild(fs);
-  }
-
-  function buildOtherGroup() {
-      const root = document.getElementById('configRoot');
-      const fs = document.createElement('fieldset');
-      const lg = document.createElement('legend');
-      const info = OPTIONS_INFO;
-      const name = info['other'].name ?? 'other';
-      lg.textContent = name;
-      fs.appendChild(lg);
-
-      const table = document.createElement('table');
-
-      // WorldHeight row
-      let tr = document.createElement('tr');
-      let tdLabel = document.createElement('td');
-      tdLabel.textContent = info['WorldHeight'].name ?? 'WorldHeight';
-      tdLabel.title = info['WorldHeight'].desc ?? '';
-      let tdInput = document.createElement('td');
-      const select = document.createElement('select');
-      const heights = [128, 192, 256, 320, 384, 448, 512];
-      heights.forEach(h => {
-          const opt = document.createElement('option');
-          opt.value = h;
-          opt.textContent = h;
-          select.appendChild(opt);
-      });
-      select.value = serverConfig.WorldConfig.WorldConfiguration.worldHeight ?? 256;
-      select.onchange = () => serverConfig.WorldConfig.WorldConfiguration.worldHeight = parseInt(select.value);
-      tdInput.appendChild(select);
-      tdInput.title = info['WorldHeight'].desc ?? '';
-      tr.appendChild(tdLabel);
-      tr.appendChild(tdInput);
-      table.appendChild(tr);
-
-      // Seed row
-      tr = document.createElement('tr');
-      tdLabel = document.createElement('td');
-      tdLabel.textContent = info['Seed'].name ?? 'Seed';
-      tdLabel.title = info['Seed'].desc ?? '';
-      tdInput = document.createElement('td');
-      const input = document.createElement('input');
-      input.type = 'text';
-      input.value = serverConfig.WorldConfig.WorldConfiguration.Seed ?? '';
-      input.oninput = () => serverConfig.WorldConfig.WorldConfiguration.Seed = input.value;
-      input.title = info['Seed'].desc ?? '';
-      tdInput.appendChild(input);
-      tr.appendChild(tdLabel);
-      tr.appendChild(tdInput);
-      table.appendChild(tr);
-
-      fs.appendChild(table);
-      root.appendChild(fs);
-  }
-
-  function buildUI() {
-      const root = document.getElementById('configRoot');
-      root.innerHTML = '';
-
-      buildServerSettings();
-      buildOtherGroup();
-
-      const wc = serverConfig.WorldConfig.WorldConfiguration;
-      const categories = {};
-
-      Object.keys(wc).forEach(key => {
-          if(key === 'PlayStyle') return;
-          const meta = attributesByCode[key];
-          const cat = meta ? meta.category : 'otherConfig';
-          if (!categories[cat]) categories[cat] = [];
-          categories[cat].push(key);
-      });
-
-      Object.entries(categories).forEach(([cat, keys]) => {
-          if (cat === 'otherConfig') return;
-          const fs = document.createElement('fieldset');
-          const lg = document.createElement('legend');
-          const info = OPTIONS_INFO[cat];
-          const name = info?.name ?? cat;
-          lg.textContent = name;
-          fs.appendChild(lg);
-
-          const table = document.createElement('table');
-          keys.forEach(key => {
-              const meta = attributesByCode[key];
-              const info = OPTIONS_INFO[key];
-              const name = info?.name ?? key;
-              const desc = info?.desc ?? '';
-              const tr = document.createElement('tr');
-              const tdLabel = document.createElement('td');
-              tdLabel.textContent = name;
-              if (desc) { tdLabel.title = desc; }
-              const tdInput = document.createElement('td');
-              tdInput.appendChild(makeInput(key, wc[key]));
-              if (desc) { tdInput.title = desc; }
-              tr.appendChild(tdLabel); tr.appendChild(tdInput);
-              table.appendChild(tr);
-          });
-
-          fs.appendChild(table);
-          root.appendChild(fs);
-      });
-  }
-
-  function makeInput(key, value) {
-      const meta = attributesByCode[key];
-      let input;
-
-      const isBool =
-          meta?.dataType === 'bool' ||
-          value === true ||
-          value === false ||
-          value === 'true' ||
-          value === 'false';
-
-      if (meta && meta.dataType === 'dropdown') {
-          input = document.createElement('select');
-          meta.values.forEach((v, i) => {
-              const opt = document.createElement('option');
-              opt.value = v;
-              opt.textContent = meta.names?.[i] ?? v;
-              input.appendChild(opt);
-          });
-          input.value = value;
-          input.onchange = () => serverConfig.WorldConfig.WorldConfiguration[key] = input.value;
-      }
-      else if (isBool) {
-          input = document.createElement('input');
-          input.type = 'checkbox';
-          input.checked = value === true || value === 'true';
-          input.onchange = () =>
-              serverConfig.WorldConfig.WorldConfiguration[key] = input.checked;
-      }
-      else if (!isNaN(value)) {
-          input = document.createElement('input');
-          input.type = 'number';
-          input.value = value;
-          input.onchange = () =>
-              serverConfig.WorldConfig.WorldConfiguration[key] = input.value;
-      }
-      else {
-          input = document.createElement('input');
-          input.type = 'text';
-          input.value = value ?? '';
-          input.onchange = () =>
-              serverConfig.WorldConfig.WorldConfiguration[key] = input.value;
-      }
-
-      return input;
-  }
-  
-  function toNumberIfNumeric(value) {
-    if (typeof value === 'number') return value;
-  
-    if (typeof value === 'string') {
-      const trimmed = value.trim();
-      if (trimmed === '') return value;
-  
-      const n = Number(trimmed);
-      if (!Number.isNaN(n)) return n;
-    }
-  
-    return value;
-  }
-  
-  function normalizeNumbers(obj) {
-    for (const key in obj) {
-      const val = obj[key];
-  
-      if (val && typeof val === 'object' && !Array.isArray(val)) {
-        normalizeNumbers(val);
-      } else {
-        obj[key] = toNumberIfNumeric(val);
-      }
-    }
-  }
-  
-  function insertAfterKey(obj, afterKey, newKey, newValue) {
-    const result = {};
-  
-    for (const key of Object.keys(obj)) {
-      result[key] = obj[key];
-  
-      if (key === afterKey) {
-        result[newKey] = newValue;
-      }
-    }
-  
-    return result;
-  }
-
-  function exportConfig() {
-      const btn = document.getElementById('exportBtn');
-      const originalText = btn.textContent;
-      const exportWorldOnly = document.getElementById('exportWorldOnly').checked;
-
-      const name = serverConfig.ServerName || 'Vintage Story Server';
-      const savepath = serverConfig.SaveFileLocation;
-	  if (typeof savepath === 'string' && savepath.trim() !== '') {
-	    const separator = savepath.includes('\\') ? '\\' : '/';
-		const cleaned = savepath.replace(/\\\\/g, '\\');
-	    const normalized = cleaned.replace(/[\\/]+$/, '');
-	    const finalPath = normalized + separator + name + '.vcdbs';
-		serverConfig.WorldConfig = insertAfterKey(serverConfig.WorldConfig, 'Seed', 'SaveFileLocation', finalPath);
-		delete serverConfig.SaveFileLocation;
-	  } else {
-		if (serverConfig.WorldConfig) {
-		  delete serverConfig.WorldConfig.SaveFileLocation;
+		// Sammeln & Flags
+		for (const attr of attrs) {
+			if (attr.category === "worldgen") {
+				if (!gotoafter) gotoafter = true;
+				if (attr.code === "Seed") hasSeed = true;
+				if (attr.code === "worldHeight") hasWorldHeight = true;
+				worldgen.push(attr);
+			} else {
+				if (!gotoafter) {
+					before.push(attr);
+				} else {
+					after.push(attr);
+				}
+			}
 		}
-		delete serverConfig.SaveFileLocation;
-	  }
 
-      serverConfig.WorldConfig.WorldName = name;
-      serverConfig.ServerIdentifier = crypto.randomUUID();
-	  
-	  const MapSizeX = serverConfig.WorldConfig.WorldConfiguration.worldWidth ?? 1024000;
-	  const MapSizeY = serverConfig.WorldConfig.WorldConfiguration.worldHeight ?? 256;
-	  const MapSizeZ = serverConfig.WorldConfig.WorldConfiguration.worldLength ?? 1024000;
-	  
-	  serverConfig.MapSizeX = MapSizeX;
-	  serverConfig.MapSizeY = MapSizeY;
-	  serverConfig.WorldConfig.WorldConfiguration.worldHeight = MapSizeY;
-	  serverConfig.WorldConfig.MapSizeY = MapSizeY;
-	  serverConfig.MapSizeZ = MapSizeZ;
+		// worldHeight sicherstellen (zwischen width & length)
+		if (!hasWorldHeight) {
+			worldgen.unshift({
+				category: "worldgen",
+				code: "worldHeight",
+				dataType: "dropdown",
+				values: ["128", "192", "256", "320", "384", "448", "512"],
+				names: ["128", "192", "256", "320", "384", "448", "512"],
+				default: "256",
+				onlyDuringWorldCreate: true
+			});
+		}
 
-      if (serverConfig.WorldConfig.PlayStyle === "default") {
-          serverConfig.WorldConfig.PlayStyle = "surviveandbuild";
-      }
+		// Seed sicherstellen (immer ganz vorne)
+		if (!hasSeed) {
+			worldgen.unshift({
+				category: "worldgen",
+				code: "Seed",
+				dataType: "text",
+				default: "",
+				onlyDuringWorldCreate: true
+			});
+		}
 
-	  normalizeNumbers(serverConfig);
+		return [...before,...worldgen,...after];
+	}
+	
+	OPTIONS_DATA.worldConfigAttributes = addOtherOptions(OPTIONS_DATA.worldConfigAttributes);
+	
+	async function loadData() {
+		const cfg = SERVERCONFIG_DATA;
+		serverConfig = cfg;
 
-      let exportData;
+		const meta = OPTIONS_DATA;
 
-      if (exportWorldOnly) {
-          exportData = JSON.parse(JSON.stringify(serverConfig.WorldConfig));
-      } else {
-          exportData = JSON.parse(JSON.stringify(serverConfig));
-      }
-	  
-	  serverConfig.SaveFileLocation = savepath;
+		const defaultWorldConfig = buildDefaultWorldConfig();
 
-      const blob = new Blob(
-          [JSON.stringify(exportData, null, 2)],
-          { type: 'application/json' }
-      );
+		playstyles = [
+			{
+				code: "default",
+				playListCode: "server",
+				langCode: "preset-default",
+				mods: [],
+				listOrder: 0,
+				worldType: "standard",
+				worldConfig: defaultWorldConfig
+			},
+			...meta.playstyles
+		];
 
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = exportWorldOnly
-          ? 'worldconfig.json'
-          : 'serverconfig.json';
-      a.click();
+		serverConfig.WorldConfig.WorldConfiguration =
+			JSON.parse(JSON.stringify(defaultWorldConfig));
 
-      btn.textContent = exportWorldOnly
-          ? "Copy the downloaded file's content in your existing config!"
-          : "Put the downloaded file in your server's data folder!";
-      btn.disabled = true;
-      btn.classList.add('export-glow');
+		serverConfig.WorldConfig.PlayStyle = "default";
 
-      setTimeout(() => {
-          btn.textContent = originalText;
-          btn.disabled = false;
-          btn.classList.remove('export-glow');
-      }, 10000);
-  }
+		baseConfig = JSON.parse(JSON.stringify(defaultWorldConfig));
 
-  function buildDefaultWorldConfig() {
-      const cfg = {};
-      OPTIONS_DATA.worldConfigAttributes.forEach(attr => {
-          if (attr.default !== undefined) {
-              // bools must be real booleans
-              if (attr.dataType === 'bool') {
-			    cfg[attr.code] = attr.default === 'true';
-			  } else if (attr.dataType === 'int' || attr.dataType === 'float') {
-			    const n = Number(attr.default);
-			    cfg[attr.code] = Number.isNaN(n) ? attr.default : n;
-			  } else {
-			    cfg[attr.code] = attr.default;
-			  }
-          }
-      });
-      return cfg;
-  }
+		meta.worldConfigAttributes.forEach(a => {
+			attributesByCode[a.code] = a;
+		});
 
-  loadData();
-  </script>
+		buildPlaystyleSelect();
+		buildUI();
+	}
 
-  </body>
-  </html>
+	function buildPlaystyleSelect() {
+		const sel = document.getElementById('playstyleSelect');
+		playstyles.forEach(ps => {
+			const opt = document.createElement('option');
+			opt.value = ps.code;
+			opt.textContent = OPTIONS_INFO[ps.code].name ?? 'server';
+			sel.appendChild(opt);
+		});
+
+		sel.value = serverConfig.WorldConfig.PlayStyle;
+
+		sel.onchange = () => applyPlaystyle(sel.value);
+	}
+
+	function applyPlaystyle(code) {
+		const ps = playstyles.find(p => p.code === code);
+		if (!ps) return;
+
+		serverConfig.WorldConfig.WorldConfiguration = JSON.parse(JSON.stringify(baseConfig));
+
+		Object.entries(ps.worldConfig).forEach(([k, v]) => {
+			serverConfig.WorldConfig.WorldConfiguration[k] = v;
+		});
+
+		serverConfig.WorldConfig.PlayStyle = code;
+
+		buildUI();
+	}
+
+	function buildServerSettings(root) {
+		const fs = document.createElement('fieldset');
+		const lg = document.createElement('legend');
+		const info = OPTIONS_INFO;
+		const name = info['server'].name ?? 'server';
+		lg.textContent = name;
+		fs.appendChild(lg);
+
+		const table = document.createElement('table');
+
+		const fields = [
+			['ServerName','text'],
+			['ServerDescription','text'],
+			['WelcomeMessage','text'],
+			['MaxClients','number'],
+			['MaxClientsInQueue','number'],
+			['Password','text'],
+			['AdvertiseServer','bool'],
+			['PassTimeWhenEmpty','bool'],
+			['Port','number'],
+			['SaveFileLocation','text']
+		];
+
+		fields.forEach(([key, type]) => {
+			const tr = document.createElement('tr');
+			const tdLabel = document.createElement('td');
+			const info = OPTIONS_INFO[key];
+			const name = info?.name ?? key;
+			const desc = info?.desc ?? '';
+			tdLabel.textContent = name;
+			tdLabel.title = desc;
+			const tdInput = document.createElement('td');
+			let input = document.createElement('input');
+
+			if (type === 'bool') {
+				input.type = 'checkbox';
+				input.checked = serverConfig[key] === true || serverConfig[key] === 'true';
+				input.onchange = () => serverConfig[key] = input.checked;
+			} else {
+				input.type = type;
+				input.value = serverConfig[key] ?? '';
+				input.oninput = () => serverConfig[key] = input.value;
+			}
+
+			input.title = desc;
+
+			tdInput.appendChild(input);
+			tr.appendChild(tdLabel);
+			tr.appendChild(tdInput);
+			table.appendChild(tr);
+		});
+
+		fs.appendChild(table);
+		root.appendChild(fs);
+	}
+  
+	function createTab(code, label) {
+		const tab = document.createElement('div');
+		tab.className = 'tab';
+		tab.textContent = label;
+		tab.dataset.tab = code;
+		tab.onclick = () => activateTab(code);
+		return tab;
+	}
+
+	function createTabContent(code) {
+		const div = document.createElement('div');
+		div.className = 'tab-content';
+		div.id = `tab-${code}`;
+		return div;
+	}
+
+	function activateTab(code) {
+		lastActiveTab = code;
+
+		document.querySelectorAll('.tab').forEach(t =>
+			t.classList.toggle('active', t.dataset.tab === code)
+		);
+		document.querySelectorAll('.tab-content').forEach(c =>
+			c.classList.toggle('active', c.id === `tab-${code}`)
+		);
+	}
+
+
+	function buildUI() {
+		const root = document.getElementById('configRoot');
+		const tabBar = document.getElementById('tabBar');
+
+		root.innerHTML = '';
+		tabBar.innerHTML = '';
+
+		let firstTab = null;
+
+		function addTab(code, label, buildFn) {
+			const tab = createTab(code, label);
+			const content = createTabContent(code);
+
+			tabBar.appendChild(tab);
+			root.appendChild(content);
+
+			buildFn(content);
+
+			if (!firstTab) firstTab = code;
+		}
+
+		// Server tab
+		addTab('server', OPTIONS_INFO['server']?.name ?? 'Server', buildServerSettings);
+
+		// World config tabs
+		const wc = serverConfig.WorldConfig.WorldConfiguration;
+		const categories = {};
+
+		Object.keys(wc).forEach(key => {
+			const meta = attributesByCode[key];
+			const cat = meta?.category;
+			if (!cat) return;
+			if (!categories[cat]) categories[cat] = [];
+			categories[cat].push(key);
+		});
+
+		Object.entries(categories).forEach(([cat, keys]) => {
+			addTab(cat, OPTIONS_INFO[cat]?.name ?? cat, container => {
+				const fs = document.createElement('fieldset');
+				const lg = document.createElement('legend');
+				lg.textContent = OPTIONS_INFO[cat]?.name ?? cat;
+				fs.appendChild(lg);
+
+				const table = document.createElement('table');
+
+				keys.forEach(key => {
+					const info = OPTIONS_INFO[key];
+					const tr = document.createElement('tr');
+
+					const tdLabel = document.createElement('td');
+					tdLabel.textContent = info?.name ?? key;
+					tdLabel.title = info?.desc ?? '';
+
+					const tdInput = document.createElement('td');
+					tdInput.appendChild(makeInput(key, wc[key]));
+
+					tr.appendChild(tdLabel);
+					tr.appendChild(tdInput);
+					table.appendChild(tr);
+				});
+
+				fs.appendChild(table);
+				container.appendChild(fs);
+			});
+		});
+
+		const tabToActivate =
+			lastActiveTab && document.querySelector(`[data-tab="${lastActiveTab}"]`)
+				? lastActiveTab
+				: firstTab;
+
+		activateTab(tabToActivate);
+
+	}
+	function makeInput(key, value) {
+		const meta = attributesByCode[key];
+		let input;
+
+		const isBool =
+			meta?.dataType === 'bool' ||
+			value === true ||
+			value === false ||
+			value === 'true' ||
+			value === 'false';
+
+		if (meta && meta.dataType === 'dropdown') {
+			input = document.createElement('select');
+			meta.values.forEach((v, i) => {
+				const opt = document.createElement('option');
+				opt.value = v;
+				opt.textContent = meta.names?.[i] ?? v;
+				input.appendChild(opt);
+			});
+			input.value = value;
+			input.onchange = () => serverConfig.WorldConfig.WorldConfiguration[key] = input.value;
+		}
+		else if (isBool) {
+			input = document.createElement('input');
+			input.type = 'checkbox';
+			input.checked = value === true || value === 'true';
+			input.onchange = () =>
+				serverConfig.WorldConfig.WorldConfiguration[key] = input.checked;
+		}
+		else if (!isNaN(value)) {
+			input = document.createElement('input');
+			input.type = 'number';
+			input.value = value;
+			input.onchange = () =>
+				serverConfig.WorldConfig.WorldConfiguration[key] = input.value;
+		}
+		else {
+			input = document.createElement('input');
+			input.type = 'text';
+			input.value = value ?? '';
+			input.onchange = () =>
+				serverConfig.WorldConfig.WorldConfiguration[key] = input.value;
+		}
+
+		return input;
+	}
+
+	function toNumberIfNumeric(value) {
+		if (typeof value === 'number') return value;
+
+		if (typeof value === 'string') {
+			const trimmed = value.trim();
+			if (trimmed === '') return value;
+			const n = Number(trimmed);
+			if (!Number.isNaN(n)) return n;
+		}
+
+		return value;
+	}
+
+	function normalizeNumbers(obj) {
+		for (const key in obj) {
+			const val = obj[key];
+
+			if (val && typeof val === 'object' && !Array.isArray(val)) {
+				normalizeNumbers(val);
+			} else {
+				obj[key] = toNumberIfNumeric(val);
+			}
+		}
+	}
+
+	function insertAfterKey(obj, afterKey, newKey, newValue) {
+		const result = {};
+
+		for (const key of Object.keys(obj)) {
+			result[key] = obj[key];
+
+			if (key === afterKey) {
+				result[newKey] = newValue;
+			}
+		}
+
+		return result;
+	}
+
+	function exportConfig() {
+		const btn = document.getElementById('exportBtn');
+		const originalText = btn.textContent;
+		const exportWorldOnly = document.getElementById('exportWorldOnly').checked;
+
+		const name = serverConfig.ServerName || 'Vintage Story Server';
+		const savepath = serverConfig.SaveFileLocation;
+			if (typeof savepath === 'string' && savepath.trim() !== '') {
+				const separator = savepath.includes('\\') ? '\\' : '/';
+				const cleaned = savepath.replace(/\\\\/g, '\\');
+				const normalized = cleaned.replace(/[\\/]+$/, '');
+				const finalPath = normalized + separator + name + '.vcdbs';
+				serverConfig.WorldConfig = insertAfterKey(serverConfig.WorldConfig, 'Seed', 'SaveFileLocation', finalPath);
+				delete serverConfig.SaveFileLocation;
+			} else {
+				if (serverConfig.WorldConfig) {
+					delete serverConfig.WorldConfig.SaveFileLocation;
+				}
+				delete serverConfig.SaveFileLocation;
+			}
+
+			serverConfig.WorldConfig.WorldName = name;
+			serverConfig.ServerIdentifier = crypto.randomUUID();
+			
+			const Seed = serverConfig.WorldConfig.WorldConfiguration.Seed ?? null;
+			if (Seed) {
+				serverConfig.WorldConfig.Seed = Seed;
+			} else {
+				serverConfig.WorldConfig.Seed = null;
+			}
+			delete serverConfig.WorldConfig.WorldConfiguration.Seed
+			
+			const MapSizeX = serverConfig.WorldConfig.WorldConfiguration.worldWidth ?? 1024000;
+			const MapSizeY = serverConfig.WorldConfig.WorldConfiguration.worldHeight ?? 256;
+			const MapSizeZ = serverConfig.WorldConfig.WorldConfiguration.worldLength ?? 1024000;
+			
+			
+			serverConfig.MapSizeX = MapSizeX;
+			serverConfig.MapSizeY = MapSizeY;
+			serverConfig.WorldConfig.WorldConfiguration.worldHeight = MapSizeY;
+			serverConfig.WorldConfig.MapSizeY = MapSizeY;
+			serverConfig.MapSizeZ = MapSizeZ;
+
+		if (serverConfig.WorldConfig.PlayStyle === "default") {
+			serverConfig.WorldConfig.PlayStyle = "surviveandbuild";
+		}
+
+			normalizeNumbers(serverConfig);
+
+		let exportData;
+
+		if (exportWorldOnly) {
+			exportData = JSON.parse(JSON.stringify(serverConfig.WorldConfig));
+		} else {
+			exportData = JSON.parse(JSON.stringify(serverConfig));
+		}
+			
+			serverConfig.SaveFileLocation = savepath;
+			serverConfig.WorldConfig.WorldConfiguration.Seed = Seed;
+
+		const blob = new Blob(
+			[JSON.stringify(exportData, null, 2)],
+			{ type: 'application/json' }
+		);
+
+		const a = document.createElement('a');
+		a.href = URL.createObjectURL(blob);
+		a.download = exportWorldOnly
+			? 'worldconfig.json'
+			: 'serverconfig.json';
+		a.click();
+
+		btn.textContent = exportWorldOnly
+			? "Copy the downloaded file's content in your existing config!"
+			: "Put the downloaded file in your server's data folder!";
+		btn.disabled = true;
+		btn.classList.add('export-glow');
+
+		setTimeout(() => {
+			btn.textContent = originalText;
+			btn.disabled = false;
+			btn.classList.remove('export-glow');
+		}, 10000);
+	}
+
+	function buildDefaultWorldConfig() {
+		const cfg = {};
+		OPTIONS_DATA.worldConfigAttributes.forEach(attr => {
+			if (attr.default !== undefined) {
+				// bools must be real booleans
+				if (attr.dataType === 'bool') {
+					cfg[attr.code] = attr.default === 'true';
+				} else if (attr.dataType === 'int' || attr.dataType === 'float') {
+					const n = Number(attr.default);
+					cfg[attr.code] = Number.isNaN(n) ? attr.default : n;
+				} else {
+					cfg[attr.code] = attr.default;
+				}
+			}
+		});
+		return cfg;
+	}
+
+	loadData();
+	</script>
+
+</body>
+</html>
