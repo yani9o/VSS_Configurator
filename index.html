@@ -1000,149 +1000,175 @@
   </script>
 
 
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-  <meta charset="UTF-8">
-  <title>Vintage Story Server Configurator</title>
-  <style>
-	body {
-		  font-family: system-ui, sans-serif;
-		  background: #111;
-		  color: #ddd;
-		  margin: 0;
-		  padding: 20px;
-	}
-	h1, h2 {
-		  color: #fff;
-	}
-	table td {
-		  padding: 10px;
-	}
-	table td:first-child {
-		  width: 250px;
-	}
-	fieldset {
-		  border: 1px solid #333;
-		  margin-bottom: 20px;
-		  padding: 10px;
-	}
-	legend {
-		  padding: 0 8px;
-		  color: #aaa;
-	}
-	label {
-		  display: block;
-		  margin: 6px 0;
-	}
-	select, input[type="text"], input[type="number"] {
-		  width: 575px;
-		  background: #1a1a1a;
-		  color: #ddd;
-		  border: 1px solid #333;
-		  padding: 4px;
-	}
-	input[type="checkbox"] {
-		  transform: scale(1.2);
-		  margin-right: 6px;
-	}
-	button {
-		  background: #2a2a2a;
-		  color: #fff;
-		  border: 1px solid #444;
-		  padding: 10px 20px;
-		  cursor: pointer;
-	}
-	button:hover {
-		  background: #3a3a3a;
-	}
-	#signature {
-		  position: fixed;
-		  bottom: 10px;
-		  right: 10px;
-		  background: rgba(0,0,0,0.6);
-		  color: white;
-		  padding: 4px 8px;
-		  border-radius: 4px;
-		  font-size: 14px;
-		  z-index: 1000;
-		  opacity: 0.5;
-		  text-decoration: none;
-	}
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Vintage Story Server Configurator</title>
+		<style>
+			body {
+				font-family: system-ui, sans-serif;
+				background: #111;
+				color: #ddd;
+				margin: 0;
+				padding: 20px;
+			}
+			.page {
+				display: flex;
+				justify-content: center;
+			}
+			.content {
+				width: max-content;
+				max-width: 100%;
+			}
+			h1, h2 {
+				color: #fff;
+			}
+			table td {
+				padding: 10px;
+			}
+			table td:first-child {
+				width: 250px;
+			}
+			fieldset {
+				border: 1px solid #333;
+				margin-bottom: 20px;
+				padding: 10px;
+			}
+			legend {
+				padding: 0 8px;
+				color: #aaa;
+			}
+			label {
+				display: block;
+				margin: 6px 0;
+			}
+			select, input[type="text"], input[type="number"] {
+				width: 575px;
+				background: #1a1a1a;
+				color: #ddd;
+				border: 1px solid #333;
+				padding: 4px;
+			}
+			input[type="checkbox"] {
+				transform: scale(1.2);
+				margin-right: 6px;
+			}
+			button {
+				background: #2a2a2a;
+				color: #fff;
+				border: 1px solid #444;
+				padding: 10px 20px;
+				cursor: pointer;
+			}
+			button:hover {
+				background: #333;
+			}
+			#signature {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: rgba(0,0,0,0.6);
+				color: white;
+				padding: 4px 8px;
+				border-radius: 4px;
+				font-size: 14px;
+				z-index: 1000;
+				opacity: 0.5;
+				text-decoration: none;
+			}
 
-	@keyframes glowUp {
-		  0% {
-			box-shadow: 0 0 0 rgba(120, 180, 255, 0);
-			transform: translateY(0);
-		  }
-		  100% {
-			box-shadow: 0 0 12px rgba(120, 180, 255, 0.35);
-			transform: translateY(-2px);
-		  }
-	}
+			@keyframes glowUp {
+				0% {
+					box-shadow: 0 0 0 rgba(120, 180, 255, 0);
+					transform: translateY(0);
+				}
+				100% {
+					box-shadow: 0 0 12px rgba(120, 180, 255, 0.35);
+					transform: translateY(-2px);
+				}
+			}
 
-	.export-glow {
-		  animation: glowUp 0.4s ease-out forwards;
-		  background-color: #2f3b55;
-	}
+			.export-glow {
+				animation: glowUp 0.4s ease-out forwards;
+				background-color: #2f3b55;
+			}
 
-	.tabs {
-		display: flex;
-		gap: 6px;
-		margin: 20px 0 10px 0;
-		border-bottom: 1px solid #333;
-	}
+			.tabs {
+				display: flex;
+				gap: 6px;
+				margin: 20px 0 20px 0;
+				/*border-bottom: 1px solid #333;*/
+			}
 
-	.tab {
-		padding: 8px 14px;
-		cursor: pointer;
-		background: #1a1a1a;
-		color: #aaa;
-		border: 1px solid #333;
-		border-bottom: none;
-	}
+			.tab {
+				padding: 8px 14px;
+				cursor: pointer;
+				background: #1a1a1a;
+				color: #aaa;
+				border: 1px solid #333;
+				/*border-bottom: none;*/
+			}
 
-	.tab.active {
-		background: #2a2a2a;
-		color: #fff;
-		border-color: #555;
-	}
+			.tab.active {
+				background: #333;
+				color: #fff;
+				border-color: #555;
+			}
 
-	.tab-content {
-		display: none;
-	}
+			.tab-content {
+				display: none;
+			}
 
-	.tab-content.active {
-		display: block;
-	}
+			.tab-content.active {
+				display: block;
+			}
 
+			.resetPresetBtn {
+				cursor: pointer;
+				font-size: 18px;
+				padding: 6px;
+				border-radius: 4px;
+				user-select: none;
+			}
 
-	</style>
+			.resetPresetBtn:hover {
+				background: rgba(0, 0, 0, 0.08);
+			}
+
+		</style>
 	</head>
 	<body>
 
-	<h1>Vintage Story Server Configurator</h1>
+		<div class="page">
+			<div class="content">
+				<h1>Vintage Story Server Configurator</h1>
 
-	<a id="signature" href="https://github.com/yani9o/VSS_Configurator" target="_blank">by yani9o</a>
+				<a id="signature" href="https://github.com/yani9o/VSS_Configurator" target="_blank">by yani9o</a>
 
-	<table style="padding:13px">
-	<tr>
-	<td>Playstyle-Preset:</td>
-	<td><select id="playstyleSelect"></select></td>
-	</tr>
-	</table>
+				<table style="padding: 10px 13px 0px 13px">
+					<tr>
+						<td>Playstyle Preset:</td>
+						<td>
+							<select id="playstyleSelect"></select>
+							<span class="resetPresetBtn" title="Reset to Preset's defaults" onclick="resetToPresetDefaults()">⟳</span>
+						</td>
+					</tr>
+				</table>
 
-	<div class="tabs" id="tabBar"></div>
-	<div id="configRoot"></div>
+				<div class="tabs" id="tabBar"></div>
+				<div id="configRoot"></div>
 
-	<div style="display:flex; align-items:center; gap:12px; margin-top:10px;">
-	<button id="exportBtn" onclick="exportConfig()">Export Configuration</button>
+				<div style="display:flex; align-items:center; gap:12px; margin-top:10px;">
+					<button id="exportBtn" onclick="exportConfig()">Export Configuration</button>
 
-	<label style="display:flex; align-items:center; cursor:pointer;">
-	<input type="checkbox" id="exportWorldOnly">
-	Only export WorldConfig
-	</label>
-	</div>
+					<label style="display:flex; align-items:center; cursor:pointer;">
+					<input type="checkbox" id="exportWorldOnly">
+					Only export WorldConfig
+					</label>
+				</div>
+			</div>
+		</div>
 
 	<script>
 	let serverConfig;
@@ -1304,13 +1330,18 @@
 		buildUI();
 	}
 
+	function resetToPresetDefaults() {
+		const currentPreset = serverConfig.WorldConfig.PlayStyle;
+		applyPlaystyle(currentPreset);
+	}
+
 	function buildServerSettings(root) {
 		const fs = document.createElement('fieldset');
-		const lg = document.createElement('legend');
+		//const lg = document.createElement('legend');
 		const info = OPTIONS_INFO;
 		const name = info['server'].name ?? 'server';
-		lg.textContent = name;
-		fs.appendChild(lg);
+		//lg.textContent = name;
+		//fs.appendChild(lg);
 
 		const table = document.createElement('table');
 
@@ -1427,9 +1458,9 @@
 		Object.entries(categories).forEach(([cat, keys]) => {
 			addTab(cat, OPTIONS_INFO[cat]?.name ?? cat, container => {
 				const fs = document.createElement('fieldset');
-				const lg = document.createElement('legend');
-				lg.textContent = OPTIONS_INFO[cat]?.name ?? cat;
-				fs.appendChild(lg);
+				//const lg = document.createElement('legend');
+				//lg.textContent = OPTIONS_INFO[cat]?.name ?? cat;
+				//fs.appendChild(lg);
 
 				const table = document.createElement('table');
 
