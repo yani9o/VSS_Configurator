@@ -615,366 +615,359 @@
     };
 
     // Separate Static Info so the other arrays can easier be updated
-  const OPTIONS_INFO = {
-    // Playstyle Preset
-    default: {
-	name: "Default"
-    },
-    surviveandbuild: {
-	name: "Standard"
-    },
-    exploration: {
-	name: "Exploration"
-    },
-    wildernesssurvival: {
-	name: "Wilderness Survival"
-    },
-    homosapiens: {
-	name: "Homo Sapiens"
-    },
+	const OPTIONS_INFO = {
+	
+		// Playstyle Preset
+		default: {
+			name: "Default"
+		},
+		surviveandbuild: {
+			name: "Standard"
+		},
+		exploration: {
+			name: "Exploration"
+		},
+		wildernesssurvival: {
+			name: "Wilderness Survival"
+		},
+		homosapiens: {
+			name: "Homo Sapiens"
+		},
 
+		// Server Options
+		server: {
+			name: "Server"
+		},
+		ServerName: {
+			name: "Server Name",
+			desc: "Server name visible in the server list."
+		},
+		ServerDescription: {
+			name: "Server Description",
+			desc: "Server Description visible in server list details."
+		},
+		WelcomeMessage: {
+			name: "Welcome Message",
+			desc: "Welcome message when players join the server. Placeholder {0} will be replaced with the player's nickname."
+		},
+		MaxClients: {
+			name: "Player Limit",
+			desc: "Maximum number of players that may connect to the server."
+		},
+		MaxClientsInQueue: {
+			name: "Player Queue Limit",
+			desc: "Maximum number of players in queue when server is full."
+		},
+		Password: {
+			name: "Password",
+			desc: "Set a password for your server. If none is set anyone can join."
+		},
+		AdvertiseServer: {
+			name: "Make Server Public",
+			desc: "If enabled, the server will be added to the public server listing."
+		},
+		PassTimeWhenEmpty: {
+			name: "Persistent Calendar",
+			desc: "If time should pass when the server has no connected players."
+		},
+		Port: {
+			name: "Port",
+			desc: "Port what server should listen. Portforwarding needed."
+		},
+		SaveFileLocation: {
+			name: "Savefile Location",
+			desc: "[OPTIONAL] Set a custom Savefile Location. \nFilename will be set from Servername. \nKnow what you're doing..."
+		},
 
-    // Server Options
-    server: {
-	name: "Server Options"
-    },
-    ServerName: {
-	name: "Server Name",
-	desc: "Server name visible in the server list."
-    },
-    ServerDescription: {
-	name: "Server Description",
-	desc: "Server Description visible in server list details."
-    },
-    WelcomeMessage: {
-	name: "Welcome Message",
-	desc: "Welcome message when players join the server. Placeholder {0} will be replaced with the player's nickname."
-    },
-    MaxClients: {
-	name: "Player Limit",
-	desc: "Maximum number of players that may connect to the server."
-    },
-    MaxClientsInQueue: {
-	name: "Player Queue Limit",
-	desc: "Maximum number of players in queue when server is full."
-    },
-    Password: {
-	name: "Password",
-	desc: "Set a password for your server. If none is set anyone can join."
-    },
-    AdvertiseServer: {
-	name: "Make Server Public",
-	desc: "If enabled, the server will be added to the public server listing."
-    },
-    PassTimeWhenEmpty: {
-	name: "Persistent Calendar",
-	desc: "If time should pass when the server has no connected players."
-    },
-    Port: {
-	name: "Port",
-	desc: "Port what server should listen. Portforwarding needed."
-    },
-    SaveFileLocation: {
-	name: "Savefile Location",
-	desc: "[OPTIONAL] Set a custom Savefile Location. \nFilename will be set from Servername. \nKnow what you're doing..."
-    },
+		// Player, Spawn and Death
+		spawnndeath: {
+			name: "Player, Spawn and Death"
+		},
+		gameMode: {
+			name: "Game Mode",
+			desc: "Survival: Limited blocks, limited health, cannot fly. \nCreative: Infinite blocks, infinite health, can fly and access to the World Edit tools."
+		},
+		playerlives: {
+			name: "Player Lives",
+			desc: "Sets the amount of lives a player has before he can no longer respawn."
+		},
+		startingClimate: {
+			name: "Starting Climate",
+			desc: "The climate the player will start out in. Only applies if Climate Distribution is set to Realistic."
+		},
+		spawnRadius: {
+			name: "Random Respawn Radius",
+			desc: "When a new player joins or dies without setting a new spawn point, this is the radius around the map center inside which the player randomly spawns."
+		},
+		graceTimer: {
+			name: "Grace Timer",
+			desc: "How many days before mobs begin to spawn."
+		},
+		deathPunishment: {
+			name: "Death Punishment",
+			desc: "Whether or not to keep your inventory when you die."
+		},
+		droppedItemsTimer: {
+			name: "Dropped Items Timer",
+			desc: "If you drop your inventory contents when you die, how long (in real world time) the dropped items will remain before being automatically de-spawned."
+		},
 
-    // Other Options
-    other: {
-	name: "World Options"
-    },
-    worldHeight: {
-	name: "World Height",
-	desc: "Height of the world during generation. (slow chunk loading above 384 blocks)"
-    },
-    Seed: {
-	name: "World Seed",
-	desc: "Does not guarantee exactly the same world each time!"
-    },
+		// Survival Options
+		survivalchallenges: {
+			name: "Survival Challenges"
+		},
+		seasons: {
+			name: "Seasons",
+			desc: "If enabled, seasons will pass over time, otherwise 'spring' will make the climate always stay at spring."
+		},
+		daysPerMonth: {
+			name: "Days per Month",
+			desc: "Amount of days each in-game month should have. This determines the length of a year and the length of seasons. One year is always 12 months. We recommend adjusting hunger rate, health regeneration rate and food spoilage to match any changes to days per month."
+		},
+		harshWinters: {
+			name: "True Winters",
+			desc: "When enabled, cold temperatures will damage crops, reduce animal spawn during winter and reduce meat harvested from animals."
+		},
+		blockGravity: {
+			name: "Block Gravity",
+			desc: "Which blocks should fall down if they are not supported by a block below."
+		},
+		caveIns: {
+			name: "Cave-Ins",
+			desc: "Causes unstable rock to collapse when mined."
+		},
+		allowFallingBlocks: {
+			name: "Allow falling Blocks",
+			desc: "Causes unstable rock to collapse when mined."
+		},
+		allowFireSpread: {
+			name: "Allow Fire Spread",
+			desc: "Allows fire to spread to other flammable blocks."
+		},
+		lightningFires: {
+			name: "Fire from Lightning",
+			desc: "Whether a lightning strike should ignite a fire without protection from lightning rods."
+		},
+		allowUndergroundFarming: {
+			name: "Allow Underground Farming",
+			desc: "On: Crops can be grown below sea level with artificial light (block light). \nOff: Each meter below sea level incurs a 1 light level penalty, making deep farming impossible."
+		},
+		noLiquidSourceTransport: {
+			name: "Prevent Liquid Source Transport",
+			desc: "On: Buckets cannot be used to create new water source blocks. \nOff: Buckets can be used to create new water source blocks."
+		},
+		playerHealthPoints: {
+			name: "Player Health Points",
+			desc: "How many base health points the player starts out with, excluding the extra health points gained from the nutrition system."
+		},
+		playerHealthRegenSpeed: {
+			name: "Health Regeneration Rate",
+			desc: "The rate at which the player regenerates Health."
+		},
+		playerHungerSpeed: {
+			name: "Hunger Rate",
+			desc: "The rate at which the player gets hungry."
+		},
+		lungCapacity: {
+			name: "Lung Capacity",
+			desc: "How long you can breathe underwater."
+		},
+		bodyTemperatureResistance: {
+			name: "Body Temperature Hardiness",
+			desc: "The outside temperature in °C the player can withstand without clothing, when dry and standing still."
+		},
+		playerMoveSpeed: {
+			name: "Walk Speed",
+			desc: "The speed at which the player normally moves around. In-game choices (character class, armor) will also affect movement speed."
+		},
+		creatureHostility: {
+			name: "Creature Hostility",
+			desc: "Aggressive: Wolves, Drifters and Locust will attack you on sight. Other creatures attack when provoked. \nPassive: Creatures only attack when provoked. \nNever hostile: Creatures will never fight back."
+		},
+		creatureStrength: {
+			name: "Creature Strength",
+			desc: "How much damage a creature should inflict, e.g. at 200% creatures will do twice the amount of the usual damage."
+		},
+		creatureSwimSpeed: {
+			name: "Creature Swim Speed",
+			desc: "Affects overall swim speed of all creatures."
+		},
+		foodSpoilSpeed: {
+			name: "Food Spoilage Rate",
+			desc: "How fast food should spoil."
+		},
+		saplingGrowthRate: {
+			name: "Sapling Growth Rate",
+			desc: "Tree sapling growth time."
+		},
+		toolDurability: {
+			name: "Tool Durability",
+			desc: "How long tools should last until they break."
+		},
+		toolMiningSpeed: {
+			name: "Tool Mining Speed",
+			desc: "How fast tools should break blocks."
+		},
+		propickNodeSearchRadius: {
+			name: "Prospecting Radius",
+			desc: "The prospecting pick is a tool to help players to find the location of ores. When this Node Search mode is enabled, it assists the player greatly in locating ores: if a node is detected, the ore is guaranteed to be within the specified range."
+		},
+		microblockChiseling: {
+			name: "Microblock Chiseling",
+			desc: "If enabled, the chisel can be used to carve and change the shape of blocks. \nDefault: Stone, Wood & Bricks in survival. \nMost cubic blocks in creative"
+		},
+		allowCoordinateHud: {
+			name: "Coordinate Overlay",
+			desc: "Whether to allow the use of the coordinate overlay toggled via Ctrl + V."
+		},
+		allowMap: {
+			name: "World Map",
+			desc: "Whether to allow the use of the world map."
+		},
+		colorAccurateWorldmap: {
+			name: "Color-Accurate World Map",
+			desc: "If activated, the world map will be rendered with the authentic block colors, otherwise, it will feature visuals reminiscent of a medieval world map."
+		},
+		loreContent: {
+			name: "Lore Content",
+			desc: "Whether to generate lore related content or anything related to previous human history."
+		},
+		clutterObtainable: {
+			name: "Clutter obtainable",
+			desc: "Can the player obtain clutter blocks from ruins by breaking them?"
+		},
 
-    // Player, Spawn and Death
-    spawnndeath: {
-	name: "Player, Spawn and Death"
-    },
-    gameMode: {
-	name: "Game Mode",
-	desc: "Survival: Limited blocks, limited health, cannot fly. \nCreative: Infinite blocks, infinite health, can fly and access to the World Edit tools."
-    },
-    playerlives: {
-	name: "Player Lives",
-	desc: "Sets the amount of lives a player has before he can no longer respawn."
-    },
-    startingClimate: {
-	name: "Starting Climate",
-	desc: "The climate the player will start out in. Only applies if Climate Distribution is set to Realistic."
-    },
-    spawnRadius: {
-	name: "Random Respawn Radius",
-	desc: "When a new player joins or dies without setting a new spawn point, this is the radius around the map center inside which the player randomly spawns."
-    },
-    graceTimer: {
-	name: "Grace Timer",
-	desc: "How many days before mobs begin to spawn."
-    },
-    deathPunishment: {
-	name: "Death Punishment",
-	desc: "Whether or not to keep your inventory when you die."
-    },
-    droppedItemsTimer: {
-	name: "Dropped Items Timer",
-	desc: "If you drop your inventory contents when you die, how long (in real world time) the dropped items will remain before being automatically de-spawned."
-    },
+		// Temporal Options
+		temporalstability: {
+			name: "Temporal Stability",
+		},
+		temporalStability: {
+			name: "Temporal Stability",
+			desc: "Enables or disables the temporal stability game mechanic."
+		},
+		temporalStorms: {
+			name: "Temporal Storms",
+			desc: "How often temporal storms should occur."
+		},
+		tempstormDurationMul: {
+			name: "Temporal Storm Length",
+			desc: "How long a temporal storm should last."
+		},
+		temporalRifts: {
+			name: "Temporal Rifts",
+			desc: "Temporal rifts cause Drifters to appear on the worlds surface. \nOff: Disables rifts and surface drifters. \nInvisible: Rifts spawn drifters, but are invisible, do not affect your temporal stability and make no sound. \nVisible: Rifts spawn drifters, can be seen, emit sounds and affect your temporal stability."
+		},
+		temporalGearRespawnUses: {
+			name: "Temporal Gear Respawns",
+			desc: "The temporal gear allows you to set a spawn point. Here you can configure how often it can be used for respawning at the set point."
+		},
+		temporalStormSleeping: {
+			name: "Temporal Storm Sleeping",
+			desc: "Sleeping during temporal storms."
+		},
 
-    // Survival Options
-    survivalchallenges: {
-	name: "Survival Challenges"
-    },
-    seasons: {
-	name: "Seasons",
-	desc: "If enabled, seasons will pass over time, otherwise 'spring' will make the climate always stay at spring."
-    },
-    daysPerMonth: {
-	name: "Days per Month",
-	desc: "Amount of days each in-game month should have. This determines the length of a year and the length of seasons. One year is always 12 months. We recommend adjusting hunger rate, health regeneration rate and food spoilage to match any changes to days per month."
-    },
-    harshWinters: {
-	name: "True Winters",
-	desc: "When enabled, cold temperatures will damage crops, reduce animal spawn during winter and reduce meat harvested from animals."
-    },
-    blockGravity: {
-	name: "Block Gravity",
-	desc: "Which blocks should fall down if they are not supported by a block below."
-    },
-    caveIns: {
-	name: "Cave-Ins",
-	desc: "Causes unstable rock to collapse when mined."
-    },
-    allowFallingBlocks: {
-	name: "Allow falling Blocks",
-	desc: "Causes unstable rock to collapse when mined."
-    },
-    allowFireSpread: {
-	name: "Allow Fire Spread",
-	desc: "Allows fire to spread to other flammable blocks."
-    },
-    lightningFires: {
-	name: "Fire from Lightning",
-	desc: "Whether a lightning strike should ignite a fire without protection from lightning rods."
-    },
-    allowUndergroundFarming: {
-	name: "Allow Underground Farming",
-	desc: "On: Crops can be grown below sea level with artificial light (block light). \nOff: Each meter below sea level incurs a 1 light level penalty, making deep farming impossible."
-    },
-    noLiquidSourceTransport: {
-	name: "Prevent Liquid Source Transport",
-	desc: "On: Buckets cannot be used to create new water source blocks. \nOff: Buckets can be used to create new water source blocks."
-    },
-    playerHealthPoints: {
-	name: "Player Health Points",
-	desc: "How many base health points the player starts out with, excluding the extra health points gained from the nutrition system."
-    },
-    playerHealthRegenSpeed: {
-	name: "Health Regeneration Rate",
-	desc: "The rate at which the player regenerates Health."
-    },
-    playerHungerSpeed: {
-	name: "Hunger Rate",
-	desc: "The rate at which the player gets hungry."
-    },
-    lungCapacity: {
-	name: "Lung Capacity",
-	desc: "How long you can breathe underwater."
-    },
-    bodyTemperatureResistance: {
-	name: "Body Temperature Hardiness",
-	desc: "The outside temperature in °C the player can withstand without clothing, when dry and standing still."
-    },
-    playerMoveSpeed: {
-	name: "Walk Speed",
-	desc: "The speed at which the player normally moves around. In-game choices (character class, armor) will also affect movement speed."
-    },
-    creatureHostility: {
-	name: "Creature Hostility",
-	desc: "Aggressive: Wolves, Drifters and Locust will attack you on sight. Other creatures attack when provoked. \nPassive: Creatures only attack when provoked. \nNever hostile: Creatures will never fight back."
-    },
-    creatureStrength: {
-	name: "Creature Strength",
-	desc: "How much damage a creature should inflict, e.g. at 200% creatures will do twice the amount of the usual damage."
-    },
-    creatureSwimSpeed: {
-	name: "Creature Swim Speed",
-	desc: "Affects overall swim speed of all creatures."
-    },
-    foodSpoilSpeed: {
-	name: "Food Spoilage Rate",
-	desc: "How fast food should spoil."
-    },
-    saplingGrowthRate: {
-	name: "Sapling Growth Rate",
-	desc: "Tree sapling growth time."
-    },
-    toolDurability: {
-	name: "Tool Durability",
-	desc: "How long tools should last until they break."
-    },
-    toolMiningSpeed: {
-	name: "Tool Mining Speed",
-	desc: "How fast tools should break blocks."
-    },
-    propickNodeSearchRadius: {
-	name: "Prospecting Radius",
-	desc: "The prospecting pick is a tool to help players to find the location of ores. When this Node Search mode is enabled, it assists the player greatly in locating ores: if a node is detected, the ore is guaranteed to be within the specified range."
-    },
-    microblockChiseling: {
-	name: "Microblock Chiseling",
-	desc: "If enabled, the chisel can be used to carve and change the shape of blocks. \nDefault: Stone, Wood & Bricks in survival. \nMost cubic blocks in creative"
-    },
-    allowCoordinateHud: {
-	name: "Coordinate Overlay",
-	desc: "Whether to allow the use of the coordinate overlay toggled via Ctrl + V."
-    },
-    allowMap: {
-	name: "World Map",
-	desc: "Whether to allow the use of the world map."
-    },
-    colorAccurateWorldmap: {
-	name: "Color-Accurate World Map",
-	desc: "If activated, the world map will be rendered with the authentic block colors, otherwise, it will feature visuals reminiscent of a medieval world map."
-    },
-    loreContent: {
-	name: "Lore Content",
-	desc: "Whether to generate lore related content or anything related to previous human history."
-    },
-    clutterObtainable: {
-	name: "Clutter obtainable",
-	desc: "Can the player obtain clutter blocks from ruins by breaking them?"
-    },
-
-    // Temporal Options
-    temporalstability: {
-	name: "Temporal Stability",
-    },
-    temporalStability: {
-	name: "Temporal Stability",
-	desc: "Enables or disables the temporal stability game mechanic."
-    },
-    temporalStorms: {
-	name: "Temporal Storms",
-	desc: "How often temporal storms should occur."
-    },
-    tempstormDurationMul: {
-	name: "Temporal Storm Length",
-	desc: "How long a temporal storm should last."
-    },
-    temporalRifts: {
-	name: "Temporal Rifts",
-	desc: "Temporal rifts cause Drifters to appear on the worlds surface. \nOff: Disables rifts and surface drifters. \nInvisible: Rifts spawn drifters, but are invisible, do not affect your temporal stability and make no sound. \nVisible: Rifts spawn drifters, can be seen, emit sounds and affect your temporal stability."
-    },
-    temporalGearRespawnUses: {
-	name: "Temporal Gear Respawns",
-	desc: "The temporal gear allows you to set a spawn point. Here you can configure how often it can be used for respawning at the set point."
-    },
-    temporalStormSleeping: {
-	name: "Temporal Storm Sleeping",
-	desc: "Sleeping during temporal storms."
-    },
-
-    // World Generation Options
-    worldgen: {
-	name: "World Generation"
-    },
-    worldClimate: {
-	name: "Climate Distribution",
-	desc: "Realistic: Cold towards north, hot towards south. Walking east and west has roughly the same climate. (recommended) \nPatchy: Random patches of hot and cold. \nPlease note: The seasons system has been optimized for Realistic climate."
-    },
-    landcover: {
-	name: "Landcover",
-	desc: "How much percent of the world should be land. The rest is ocean."
-    },
-    oceanscale: {
-	name: "Ocean Scale",
-	desc: "Determines how much ocean will be between pieces of land."
-    },
-    upheavelCommonness: {
-	name: "Upheaval Rate",
-	desc: "How common geologic upheaval should be. Produces large scale hilly terrain."
-    },
-    geologicActivity: {
-	name: "Geologic Activity",
-	desc: "Some areas now have underground lava rivers closer to the surface, as well as hot springs above underground lava pools."
-    },
-    landformScale: {
-	name: "Landform Scale",
-	desc: "Landforms are the principal mechanic that shape the terrain. \nThey are what determine where are lakes, mountains, hills, flat lands, cliffs,... how common they are, and (optionally) in what climate they can occur. \nAn increased landform scale means the same landform will occupy a larger area. In other words, you will encounter wider mountains, wider lakes, wider flat lands, etc."
-    },
-    worldWidth: {
-	name: "World Width",
-	desc: "How wide the world map should be (X axis, West-East)"
-    },
-    worldLength: {
-	name: "World Length",
-	desc: "How long the world map should be (Z axis, North-South)"
-    },
-    worldEdge: {
-	name: "World Edge",
-	desc: "What should happen when a player or a creature walks over the edge of the world."
-    },
-    polarEquatorDistance: {
-	name: "Polar-Equator Distance",
-	desc: "How far (in blocks) a player must walk to reach the equator, starting from polar regions. \nOnly applies if Climate Distribution is set to Realistic."
-    },
-    storyStructuresDistScaling: {
-	name: "Story Distance Scaling",
-	desc: "If lore content is enabled, this determines how far you have to travel to reach them (50% means only half as far as the default). \nDefault value is an estimated 2.5hours of full travel with Elk to all the locations."
-    },
-    globalTemperature: {
-	name: "Global Temperature",
-	desc: "Changes the world-wide temperature. \nLow or high temperatures might be difficult or impossible to survive or progress through."
-    },
-    globalPrecipitation: {
-	name: "Global Precipitation",
-	desc: "Changes the world wide precipitation levels. \nExtreme aridity or humidity might be difficult or impossible to survive."
-    },
-    globalForestation: {
-	name: "Forestation & Shrubs",
-	desc: "Changes the amount of forests and shrubs to be generated. High values will tend to make crossing terrain slower for players."
-    },
-    globalDepositSpawnRate: {
-	name: "Global Deposit Spawn Rate",
-	desc: "Affects the spawn rate of all ores. Does not affect areas devoid of certain minerals."
-    },
-    surfaceCopperDeposits: {
-	name: "Surface Copper Frequency",
-	desc: "How often surface copper deposits should spawn."
-    },
-    surfaceTinDeposits: {
-	name: "Surface Tin Frequency",
-	desc: "How often surface tin deposits should spawn."
-    },
-    snowAccum: {
-	name: "Snow and Ice",
-	desc: "When enabled, snow will accumulate on the ground in snowy weather at cold temperatures, as well as water freezing when it's cold enough. \nSnow and ice will melt at warm temperatures."
-    },
-    multiplayer: {
-	name: "Multiplayer"
-    },
-    allowLandClaiming: {
-	name: "Land Claiming",
-	desc: "Whether to allow the use of the land claiming system, which allows players to deny access to areas of the world to other players."
-    },
-    classExclusiveRecipes: {
-	name: "Class exclusive Recipes",
-	desc: "If enabled, some crafting recipes become exclusive to certain character classes. (recommended)"
-    },
-    auctionHouse: {
-	name: "Auction House",
-	desc: "Whether to allow the use of the server-wide auction house at Trader wagons."
-    },
-    key: {
-	name: "NameValue",
-	desc: "DescValue"
-    },
-  };
+		// Other Options
+		Seed: {
+			name: "World Seed",
+			desc: "Does not guarantee exactly the same world each time!"
+		},
+		worldHeight: {
+			name: "World Height",
+			desc: "Height of the world during generation. (slow chunk loading above 384 blocks)"
+		},
+		
+		// World Generation Options
+		worldgen: {
+			name: "World Generation"
+		},
+		worldClimate: {
+			name: "Climate Distribution",
+			desc: "Realistic: Cold towards north, hot towards south. Walking east and west has roughly the same climate. (recommended) \nPatchy: Random patches of hot and cold. \nPlease note: The seasons system has been optimized for Realistic climate."
+		},
+		landcover: {
+			name: "Landcover",
+			desc: "How much percent of the world should be land. The rest is ocean."
+		},
+		oceanscale: {
+			name: "Ocean Scale",
+			desc: "Determines how much ocean will be between pieces of land."
+		},
+		upheavelCommonness: {
+			name: "Upheaval Rate",
+			desc: "How common geologic upheaval should be. Produces large scale hilly terrain."
+		},
+		geologicActivity: {
+			name: "Geologic Activity",
+			desc: "Some areas now have underground lava rivers closer to the surface, as well as hot springs above underground lava pools."
+		},
+		landformScale: {
+			name: "Landform Scale",
+			desc: "Landforms are the principal mechanic that shape the terrain. \nThey are what determine where are lakes, mountains, hills, flat lands, cliffs,... how common they are, and (optionally) in what climate they can occur. \nAn increased landform scale means the same landform will occupy a larger area. In other words, you will encounter wider mountains, wider lakes, wider flat lands, etc."
+		},
+		worldWidth: {
+			name: "World Width",
+			desc: "How wide the world map should be (X axis, West-East)"
+		},
+		worldLength: {
+			name: "World Length",
+			desc: "How long the world map should be (Z axis, North-South)"
+		},
+		worldEdge: {
+			name: "World Edge",
+			desc: "What should happen when a player or a creature walks over the edge of the world."
+		},
+		polarEquatorDistance: {
+			name: "Polar-Equator Distance",
+			desc: "How far (in blocks) a player must walk to reach the equator, starting from polar regions. \nOnly applies if Climate Distribution is set to Realistic."
+		},
+		storyStructuresDistScaling: {
+			name: "Story Distance Scaling",
+			desc: "If lore content is enabled, this determines how far you have to travel to reach them (50% means only half as far as the default). \nDefault value is an estimated 2.5hours of full travel with Elk to all the locations."
+		},
+		globalTemperature: {
+			name: "Global Temperature",
+			desc: "Changes the world-wide temperature. \nLow or high temperatures might be difficult or impossible to survive or progress through."
+		},
+		globalPrecipitation: {
+			name: "Global Precipitation",
+			desc: "Changes the world wide precipitation levels. \nExtreme aridity or humidity might be difficult or impossible to survive."
+		},
+		globalForestation: {
+			name: "Forestation & Shrubs",
+			desc: "Changes the amount of forests and shrubs to be generated. High values will tend to make crossing terrain slower for players."
+		},
+		globalDepositSpawnRate: {
+			name: "Global Deposit Spawn Rate",
+			desc: "Affects the spawn rate of all ores. Does not affect areas devoid of certain minerals."
+		},
+		surfaceCopperDeposits: {
+			name: "Surface Copper Frequency",
+			desc: "How often surface copper deposits should spawn."
+		},
+		surfaceTinDeposits: {
+			name: "Surface Tin Frequency",
+			desc: "How often surface tin deposits should spawn."
+		},
+		snowAccum: {
+			name: "Snow and Ice",
+			desc: "When enabled, snow will accumulate on the ground in snowy weather at cold temperatures, as well as water freezing when it's cold enough. \nSnow and ice will melt at warm temperatures."
+		},
+		multiplayer: {
+			name: "Multiplayer"
+		},
+		allowLandClaiming: {
+			name: "Land Claiming",
+			desc: "Whether to allow the use of the land claiming system, which allows players to deny access to areas of the world to other players."
+		},
+		classExclusiveRecipes: {
+			name: "Class exclusive Recipes",
+			desc: "If enabled, some crafting recipes become exclusive to certain character classes. (recommended)"
+		},
+		auctionHouse: {
+			name: "Auction House",
+			desc: "Whether to allow the use of the server-wide auction house at Trader wagons."
+		}
+	};
 
   </script>
 
@@ -1429,6 +1422,7 @@
 		activateTab(tabToActivate);
 
 	}
+	
 	function makeInput(key, value) {
 		const meta = attributesByCode[key];
 		let input;
@@ -1472,8 +1466,17 @@
 			input.onchange = () =>
 				serverConfig.WorldConfig.WorldConfiguration[key] = input.value;
 		}
+		
+		if (meta.onlyDuringWorldCreate) {
+			const wrapper = document.createElement('span');
+			wrapper.appendChild(input);
+			wrapper.appendChild(document.createTextNode(' *'));
+			wrapper.title = "Can't be changed after initial World Creation!";
+			return wrapper;
+		}
 
 		return input;
+
 	}
 
 	function toNumberIfNumeric(value) {
