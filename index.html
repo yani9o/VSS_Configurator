@@ -1545,6 +1545,10 @@
 
 		activateTab(tabToActivate);
 
+		if (document.getElementById('exportWorldConfigOnly').checked) {
+			document.getElementById('exportWorldConfigOnly').checked = false;
+		}
+
 	}
 
 	function makeInput(key, value) {
@@ -1842,6 +1846,10 @@
 			styleEl = document.createElement("style");
 			styleEl.id = "worldconfig-highlight-style";
 			document.head.appendChild(styleEl);
+			stylElset = true;
+		}
+
+		if (!document.getElementById("tr-ServerName").class) {
 			stylElset = true;
 		}
 
