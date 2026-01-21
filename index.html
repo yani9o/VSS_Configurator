@@ -348,7 +348,7 @@
     "GroupChatHistorySize": 20,
     "MaxOwnedGroupChannelsPerUser": 10,
     "OnlyWhitelisted": false,
-    "WhitelistMode": 1,
+    "WhitelistMode": 0,
     "VerifyPlayerAuth": true,
     "DefaultSpawn": null,
     "AllowPvP": true,
@@ -644,10 +644,10 @@
 
 		// Playstyle Preset
 		default: {
-			name: "Default"
+			name: "No Preset"
 		},
 		surviveandbuild: {
-			name: "Standard"
+			name: "Standard (Survival)"
 		},
 		exploration: {
 			name: "Exploration"
@@ -686,12 +686,16 @@
 			name: "Player Queue Limit",
 			desc: "Maximum number of players in queue when server is full."
 		},
+		WhitelistMode: {
+			name: "Whitelist Mode",
+			desc: "Sets whether the whitelist is enabled, meaning only whitelisted players can join the server. \n\nDefault: On. \nOff: Anyone can join - set a password! \nOn: Only whitelisted players can join. \n\nUse Server Console to add/remove Players from Whitelist: \n/player <player> whitelist [add/remove][optional reason]"
+		},
 		Password: {
 			name: "Password",
-			desc: "Set a password for your server. If none is set anyone can join."
+			desc: "Set a password for your server. \nWARNING! If Whitelist is disabled and no Passwort required: ANYONE can join."
 		},
 		AdvertiseServer: {
-			name: "Make Server Public",
+			name: "Server Advertising",
 			desc: "If enabled, the server will be added to the public server listing."
 		},
 		PassTimeWhenEmpty: {
@@ -994,6 +998,10 @@
 		auctionHouse: {
 			name: "Auction House",
 			desc: "Whether to allow the use of the server-wide auction house at Trader wagons."
+		},
+		AllowPvP: {
+			name: "Allow PvP",
+			desc: "If players can hit each other."
 		}
 	};
 
@@ -1124,7 +1132,7 @@
 				display: block;
 			}
 
-			.resetPresetBtn {
+			.iconBtn {
 				cursor: pointer;
 				font-size: 18px;
 				padding: 6px;
@@ -1132,7 +1140,7 @@
 				user-select: none;
 			}
 
-			.resetPresetBtn:hover {
+			.iconBtn:hover {
 				background: rgba(0, 0, 0, 0.08);
 			}
 
@@ -1148,10 +1156,14 @@
 
 				<table style="padding: 10px 13px 0px 13px">
 					<tr>
-						<td>Playstyle Preset:</td>
 						<td>
-							<select id="playstyleSelect"></select>
-							<span class="resetPresetBtn" title="Reset to Preset's defaults" onclick="resetToPresetDefaults()">⟳</span>
+								Playstyle Preset:
+						</td>
+						<td>
+							<select style="width: 500px;" id="playstyleSelect"></select>
+							<span class="iconBtn" title="Reset to Preset's defaults" onclick="resetToPresetDefaults()">⟳</span>
+							<span style="margin-left: 15px;" id="importBtn" class="iconBtn" title="Import your serverconfig.json" onclick="document.getElementById('importFile').click()">📂</span>
+							<input type="file" id="importFile" accept=".json" style="display:none" onchange="importConfigFile(event)"/>
 						</td>
 					</tr>
 				</table>
@@ -1160,11 +1172,11 @@
 				<div id="configRoot"></div>
 
 				<div style="display:flex; align-items:center; gap:12px; margin-top:10px;">
+
 					<button id="exportBtn" onclick="exportConfig()">Export Configuration</button>
 
-					<label style="display:flex; align-items:center; cursor:pointer;">
-					<input type="checkbox" id="exportWorldOnly">
-					Only export WorldConfig
+					<label style="display:flex; align-items:center; cursor:pointer;" title="Only shows WorldConfig Parameters, others will be dimmed.">
+						<input type="checkbox" id="exportWorldConfigOnly" onClick="checkHighlighting()"> Only export WorldConfig
 					</label>
 				</div>
 			</div>
@@ -1175,7 +1187,7 @@
 	let attributesByCode = {};
 	let playstyles = [];
 
-	let baseConfig; // deep copy
+	let baseConfig;
 
 	let lastActiveTab = null;
 
@@ -1197,18 +1209,15 @@
 
 		if (!attr) return;
 
-		// Add value if missing
 		if (!attr.values.includes("superflat")) {
 			attr.values.push("superflat");
 		}
 
-		// Add display name if missing
 		if (!attr.names.includes("Superflat")) {
 			attr.names.push("Superflat");
 		}
 	}
 
-	// Call once after OPTIONS_DATA is defined
 	addCreativeMode();
 
 	function addOtherOptions(attrs) {
@@ -1218,6 +1227,7 @@
 
 		let hasSeed = false;
 		let hasWorldHeight = false;
+		let hasPvP = false;
 		let gotoafter = false;
 
 		// Sammeln & Flags
@@ -1227,6 +1237,8 @@
 				if (attr.code === "Seed") hasSeed = true;
 				if (attr.code === "worldHeight") hasWorldHeight = true;
 				worldgen.push(attr);
+			} else if (attr.category === "") {
+				if (attr.code === "AllowPvP") hasPvP = true;
 			} else {
 				if (!gotoafter) {
 					before.push(attr);
@@ -1236,7 +1248,6 @@
 			}
 		}
 
-		// worldHeight sicherstellen (zwischen width & length)
 		if (!hasWorldHeight) {
 			worldgen.unshift({
 				category: "worldgen",
@@ -1249,7 +1260,6 @@
 			});
 		}
 
-		// Seed sicherstellen (immer ganz vorne)
 		if (!hasSeed) {
 			worldgen.unshift({
 				category: "worldgen",
@@ -1257,6 +1267,15 @@
 				dataType: "text",
 				default: "",
 				onlyDuringWorldCreate: true
+			});
+		}
+
+		if (!hasPvP) {
+			after.push({
+				category: "multiplayer",
+				code: "AllowPvP",
+				dataType: "bool",
+				default: "true"
 			});
 		}
 
@@ -1351,6 +1370,7 @@
 			['WelcomeMessage','text'],
 			['MaxClients','number'],
 			['MaxClientsInQueue','number'],
+			['WhitelistMode','dropdown'],
 			['Password','text'],
 			['AdvertiseServer','bool'],
 			['PassTimeWhenEmpty','bool'],
@@ -1358,8 +1378,17 @@
 			['SaveFileLocation','text']
 		];
 
+		const whitelistMeta = {
+			code: 'WhitelistMode',
+			dataType: 'dropdown',
+			values: [0, 1, 2],
+			names: ['Default', 'Off', 'On'],
+			default: 0
+		};
+
 		fields.forEach(([key, type]) => {
 			const tr = document.createElement('tr');
+			tr.id = "tr-" + key;
 			const tdLabel = document.createElement('td');
 			const info = OPTIONS_INFO[key];
 			const name = info?.name ?? key;
@@ -1369,7 +1398,17 @@
 			const tdInput = document.createElement('td');
 			let input = document.createElement('input');
 
-			if (type === 'bool') {
+			if ( key === 'WhitelistMode' ) {
+				input = document.createElement('select');
+				whitelistMeta.values.forEach((v, i) => {
+					const opt = document.createElement('option');
+					opt.value = v;
+					opt.textContent = whitelistMeta.names[i];
+					input.appendChild(opt);
+				});
+				input.value = serverConfig[key] ?? whitelistMeta.default;
+				input.onchange = () => serverConfig[key] = input.value;
+			} else if ( type === 'bool' ) {
 				input.type = 'checkbox';
 				input.checked = serverConfig[key] === true || serverConfig[key] === 'true';
 				input.onchange = () => serverConfig[key] = input.checked;
@@ -1440,10 +1479,8 @@
 			if (!firstTab) firstTab = code;
 		}
 
-		// Server tab
 		addTab('server', OPTIONS_INFO['server']?.name ?? 'Server', buildServerSettings);
 
-		// World config tabs
 		const wc = serverConfig.WorldConfig.WorldConfiguration;
 		const categories = {};
 
@@ -1467,6 +1504,7 @@
 				keys.forEach(key => {
 					const info = OPTIONS_INFO[key];
 					const tr = document.createElement('tr');
+					tr.id = "tr-" + key;
 
 					const tdLabel = document.createElement('td');
 					tdLabel.textContent = info?.name ?? key;
@@ -1474,12 +1512,12 @@
 
 					const tdInput = document.createElement('td');
 					tdInput.appendChild(makeInput(key, wc[key]));
+					tdInput.title = info?.desc ?? '';
 
 					tr.appendChild(tdLabel);
 					tr.appendChild(tdInput);
 					table.appendChild(tr);
 
-					// Visual separator after worldHeight in worldgen
 					if (cat === "worldgen" && key === "worldHeight") {
 						const sepTr = document.createElement('tr');
 						const sepTd = document.createElement('td');
@@ -1503,10 +1541,7 @@
 			});
 		});
 
-		const tabToActivate =
-			lastActiveTab && document.querySelector(`[data-tab="${lastActiveTab}"]`)
-				? lastActiveTab
-				: firstTab;
+		const tabToActivate = lastActiveTab && document.querySelector(`[data-tab="${lastActiveTab}"]`) ? lastActiveTab : firstTab;
 
 		activateTab(tabToActivate);
 
@@ -1615,73 +1650,91 @@
 		return result;
 	}
 
+	function handleConfigData(input) {
+		const cleanData = structuredClone(input);
+		const exportWorldConfigOnly = document.getElementById('exportWorldConfigOnly').checked;
+		const name = cleanData.ServerName || 'Vintage Story Server';
+		const savepath = cleanData.SaveFileLocation;
+		if (typeof savepath === 'string' && savepath.trim() !== '') {
+			const separator = savepath.includes('\\') ? '\\' : '/';
+			const cleaned = savepath.replace(/\\\\/g, '\\');
+			const normalized = cleaned.replace(/[\\/]+$/, '');
+			const finalPath = normalized + separator + name + '.vcdbs';
+			cleanData.WorldConfig = insertAfterKey(cleanData.WorldConfig, 'Seed', 'SaveFileLocation', finalPath);
+			delete cleanData.SaveFileLocation;
+		} else {
+			if (cleanData.WorldConfig) {
+				delete cleanData.WorldConfig.SaveFileLocation;
+			}
+			delete cleanData.SaveFileLocation;
+		}
+
+		cleanData.WorldConfig.WorldName = name;
+		cleanData.ServerIdentifier = crypto.randomUUID();
+
+		const Seed = cleanData.WorldConfig.WorldConfiguration.Seed ?? null;
+		if (Seed) {
+			cleanData.WorldConfig.Seed = Seed;
+		} else {
+			cleanData.WorldConfig.Seed = null;
+		}
+		delete cleanData.WorldConfig.WorldConfiguration.Seed
+
+		if (cleanData.WorldConfig.PlayStyle === "default") {
+			cleanData.WorldConfig.PlayStyle = "surviveandbuild";
+		}
+
+		cleanData.WorldConfig.PlayStyleLangCode = cleanData.WorldConfig.PlayStyle + "-bands";
+
+		if ( cleanData.WorldConfig.WorldConfiguration.worldClimate === "superflat" ) {
+			cleanData.WorldConfig.WorldType = "superflat";
+		} else {
+			cleanData.WorldConfig.WorldType = "standard";
+		}
+
+		const MapSizeX = cleanData.WorldConfig.WorldConfiguration.worldWidth ?? 1024000;
+		const MapSizeY = cleanData.WorldConfig.WorldConfiguration.worldHeight ?? 256;
+		const MapSizeZ = cleanData.WorldConfig.WorldConfiguration.worldLength ?? 1024000;
+
+
+		cleanData.MapSizeX = MapSizeX;
+		cleanData.MapSizeY = MapSizeY;
+		cleanData.WorldConfig.WorldConfiguration.worldHeight = MapSizeY;
+		cleanData.WorldConfig.MapSizeY = MapSizeY;
+		cleanData.MapSizeZ = MapSizeZ;
+
+		if ( cleanData.WhitelistMode === "1" ) {
+			cleanData.OnlyWhitelisted = false;
+		} else {
+			cleanData.OnlyWhitelisted = true;
+		}
+
+		cleanData.AllowPvP = cleanData.WorldConfig.WorldConfiguration.AllowPvP;
+		delete cleanData.WorldConfig.WorldConfiguration.AllowPvP;
+
+		normalizeValues(cleanData);
+
+		let DataToExport;
+		if (exportWorldConfigOnly) {
+			DataToExport = JSON.parse(JSON.stringify(cleanData.WorldConfig));
+		} else {
+			DataToExport = JSON.parse(JSON.stringify(cleanData));
+		}
+
+		cleanData.SaveFileLocation = savepath;
+		cleanData.WorldConfig.WorldConfiguration.Seed = Seed;
+
+		return DataToExport;
+
+	}
+
 	function exportConfig() {
 		const btn = document.getElementById('exportBtn');
 		const originalText = btn.textContent;
-		const exportWorldOnly = document.getElementById('exportWorldOnly').checked;
-
-		const name = serverConfig.ServerName || 'Vintage Story Server';
-		const savepath = serverConfig.SaveFileLocation;
-			if (typeof savepath === 'string' && savepath.trim() !== '') {
-				const separator = savepath.includes('\\') ? '\\' : '/';
-				const cleaned = savepath.replace(/\\\\/g, '\\');
-				const normalized = cleaned.replace(/[\\/]+$/, '');
-				const finalPath = normalized + separator + name + '.vcdbs';
-				serverConfig.WorldConfig = insertAfterKey(serverConfig.WorldConfig, 'Seed', 'SaveFileLocation', finalPath);
-				delete serverConfig.SaveFileLocation;
-			} else {
-				if (serverConfig.WorldConfig) {
-					delete serverConfig.WorldConfig.SaveFileLocation;
-				}
-				delete serverConfig.SaveFileLocation;
-			}
-
-			serverConfig.WorldConfig.WorldName = name;
-			serverConfig.ServerIdentifier = crypto.randomUUID();
-
-			const Seed = serverConfig.WorldConfig.WorldConfiguration.Seed ?? null;
-			if (Seed) {
-				serverConfig.WorldConfig.Seed = Seed;
-			} else {
-				serverConfig.WorldConfig.Seed = null;
-			}
-			delete serverConfig.WorldConfig.WorldConfiguration.Seed
-
-			if (serverConfig.WorldConfig.PlayStyle === "default") {
-				serverConfig.WorldConfig.PlayStyle = "surviveandbuild";
-			}
-
-			serverConfig.WorldConfig.PlayStyleLangCode = serverConfig.WorldConfig.PlayStyle + "-bands";
-
-			if ( serverConfig.WorldConfig.WorldConfiguration.worldClimate === "superflat" ) {
-				serverConfig.WorldConfig.WorldType = "superflat";
-			} else {
-				serverConfig.WorldConfig.WorldType = "standard";
-			}
-
-			const MapSizeX = serverConfig.WorldConfig.WorldConfiguration.worldWidth ?? 1024000;
-			const MapSizeY = serverConfig.WorldConfig.WorldConfiguration.worldHeight ?? 256;
-			const MapSizeZ = serverConfig.WorldConfig.WorldConfiguration.worldLength ?? 1024000;
-
-
-			serverConfig.MapSizeX = MapSizeX;
-			serverConfig.MapSizeY = MapSizeY;
-			serverConfig.WorldConfig.WorldConfiguration.worldHeight = MapSizeY;
-			serverConfig.WorldConfig.MapSizeY = MapSizeY;
-			serverConfig.MapSizeZ = MapSizeZ;
-
-			normalizeValues(serverConfig);
+		const exportWorldConfigOnly = document.getElementById('exportWorldConfigOnly').checked;
 
 		let exportData;
-
-		if (exportWorldOnly) {
-			exportData = JSON.parse(JSON.stringify(serverConfig.WorldConfig));
-		} else {
-			exportData = JSON.parse(JSON.stringify(serverConfig));
-		}
-
-			serverConfig.SaveFileLocation = savepath;
-			serverConfig.WorldConfig.WorldConfiguration.Seed = Seed;
+		exportData = handleConfigData(serverConfig);
 
 		const blob = new Blob(
 			[JSON.stringify(exportData, null, 2)],
@@ -1690,14 +1743,10 @@
 
 		const a = document.createElement('a');
 		a.href = URL.createObjectURL(blob);
-		a.download = exportWorldOnly
-			? 'worldconfig.json'
-			: 'serverconfig.json';
+		a.download = exportWorldConfigOnly ? 'worldconfig.json' : 'serverconfig.json';
 		a.click();
 
-		btn.textContent = exportWorldOnly
-			? "Copy the downloaded file's content in your existing config!"
-			: "Put the downloaded file in your server's data folder!";
+		btn.textContent = exportWorldConfigOnly ? "Copy the downloaded file's content in your existing config!" : "Put the downloaded file in your server's data folder!";
 		btn.disabled = true;
 		btn.classList.add('export-glow');
 
@@ -1712,7 +1761,6 @@
 		const cfg = {};
 		OPTIONS_DATA.worldConfigAttributes.forEach(attr => {
 			if (attr.default !== undefined) {
-				// bools must be real booleans
 				if (attr.dataType === 'bool') {
 					cfg[attr.code] = attr.default === 'true';
 				} else if (attr.dataType === 'int' || attr.dataType === 'float') {
@@ -1727,6 +1775,113 @@
 	}
 
 	loadData();
+
+	function applyImportedConfig(imported) {
+
+		const base = JSON.parse(JSON.stringify(serverConfig));
+
+		for (const key in base) {
+			if (key !== "WorldConfig" && imported[key] !== undefined) {
+				base[key] = imported[key];
+			}
+		}
+
+		if (imported.WorldConfig) {
+
+			base.WorldConfig ??= {};
+
+			for (const key in imported.WorldConfig) {
+				if (key !== "WorldConfiguration") {
+					base.WorldConfig[key] = imported.WorldConfig[key];
+				}
+			}
+
+			if (imported.WorldConfig.WorldConfiguration) {
+				base.WorldConfig.WorldConfiguration = {
+					...base.WorldConfig.WorldConfiguration,
+					...imported.WorldConfig.WorldConfiguration
+				};
+			}
+		}
+
+		base.WorldConfig ??= {};
+		base.WorldConfig.WorldConfiguration ??= {};
+
+		serverConfig = base;
+
+		buildUI();
+
+		alert("Configuration imported and applied.");
+	}
+
+	function importConfigFile(event) {
+		const file = event.target.files[0];
+		if (!file) return;
+
+		const reader = new FileReader();
+		reader.onload = () => {
+			try {
+				const json = JSON.parse(reader.result);
+				applyImportedConfig(json);
+			} catch (err) {
+				alert("Invalid JSON file");
+			}
+		};
+
+		reader.readAsText(file);
+		event.target.value = '';
+	}
+
+	function checkHighlighting() {
+		let stylElset = false;
+		const exportWorldConfigOnly = document.getElementById('exportWorldConfigOnly').checked;
+
+		let styleEl = document.getElementById("worldconfig-highlight-style");
+
+		if (!styleEl) {
+			styleEl = document.createElement("style");
+			styleEl.id = "worldconfig-highlight-style";
+			document.head.appendChild(styleEl);
+			stylElset = true;
+		}
+
+		if (exportWorldConfigOnly) {
+
+			styleEl.textContent = `
+				.isNotWorld {
+					opacity: 0.1;
+					filter: grayscale(60%);
+					transition: opacity .3s ease, filter .3s ease;
+					cursor: default;
+				}
+			`;
+
+			if (stylElset) {
+				const wouldExport = handleConfigData(serverConfig);
+
+				const worldKeys = new Set();
+
+				(function collectKeys(obj) {
+					if (!obj || typeof obj !== "object") return;
+					for (const key of Object.keys(obj)) {
+						worldKeys.add(key);
+						collectKeys(obj[key]);
+					}
+				})(wouldExport);
+
+				document.querySelectorAll("tr[id]").forEach(tr => {
+					const id = tr.id.startsWith("tr-") ? tr.id.slice(3) : tr.id;
+					if (!worldKeys.has(id)) {
+						tr.classList.add("isNotWorld");
+					}
+				});
+			}
+
+		} else {
+			styleEl.textContent = "";
+		}
+	}
+
 	</script>
 
 </body>
